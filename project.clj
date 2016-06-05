@@ -64,7 +64,8 @@
                            :foreign-libs
                            [{:file "resources/public/js/clojure-parinfer.js"
                              :provides ["parinfer.codemirror.mode.clojure.clojure-parinfer"]}]
-                           :optimizations :advanced
+                           ;; TODO: can advanced be used?
+                           :optimizations :simple
                            :pretty-print false}}]}
 
   :figwheel {;; :http-server-root "public" ;; default and assumes "resources"
