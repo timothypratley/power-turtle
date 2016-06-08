@@ -65,12 +65,5 @@
     [turtle-canvas]
     [repl/repl]]
    [:small
-    ;; TODO: don't hardcode this
     (pr-str
-      '[forward back left right color
-        home clean penup pendown
-        start-fill end-fill
-        setxy setheading
-        wait
-        draw-turtle-commands
-        add-action html])]])
+      (mapcat second repl/korean-words))]])

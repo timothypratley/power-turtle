@@ -49,7 +49,7 @@
 
 (def ui
   (reagent/atom
-    [:div "Hint: try typing " [:strong "(html [:h1 \"Hello World!\"])"]]))
+    [:small "Hint: try typing " [:strong "(html [:h1 \"Hello World!\"])"] " or " [:strong "(앞으로 50)"]]))
 
 (defn html [x]
   (reset! ui x))
