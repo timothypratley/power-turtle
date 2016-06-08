@@ -40,14 +40,15 @@
 
 ;; this works for turtle, even though the eval returns failed o_O
 ;; also they must be in separate evals, do doesn't work
+;; TODO: specify in a data structure, so help can be generated
 (def preambles
-  [
-   (pr-str
+  [(pr-str
      '(require '[clojure.set :refer [union]]))
    (pr-str
+     '(require '[power-turtle.power :refer [add-action html red green blue octagon pattern]]))
+   (pr-str
      '(require
-        '[clojure-turtle.core
-          :as turtle
+        '[clojure-turtle.core :as turtle
           :refer [forward back left right color
                   home clean penup pendown
                   start-fill end-fill

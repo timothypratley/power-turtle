@@ -15,7 +15,7 @@
 
 (defn toolbar []
   [:div
-   (for [[k f] power/actions]
+   (for [[k f] @power/actions]
      ^{:key k}
      [action k f])])
 
@@ -59,15 +59,18 @@
    [flipper :img {:src "turtle.jpg" :style {:float "right"}}]
    [:h1 "Power Turtle"]
    [toolbar]
+   @power/ui
    [:br]
    [:div#main
     [turtle-canvas]
     [repl/repl]]
    [:small
+    ;; TODO: don't hardcode this
     (pr-str
       '[forward back left right color
         home clean penup pendown
         start-fill end-fill
         setxy setheading
         wait
-        draw-turtle-commands])]])
+        draw-turtle-commands
+        add-action html])]])

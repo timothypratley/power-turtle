@@ -2,7 +2,8 @@
   (:require
     [clojure-turtle.core
      :refer [forward left right clean home color]
-     :refer-macros [all repeat]]))
+     :refer-macros [all repeat]]
+    [reagent.core :as reagent]))
 
 (def forward-right
   (all
@@ -28,15 +29,27 @@
   (home)
   (clean))
 
+;; TODO: put inside reframe
 (def actions
-  [['<- (all (left 90))]
-   ['-> (all (right 90))]
-   ['<-. (all (forward 10) (left 10))]
-   ['.-> (all (forward 10) (right 10))]
-   ['octagon octagon]
-   ['pattern pattern]
-   ['red red]
-   ['green green]
-   ['blue blue]
-   ['clean clean]
-   ['home home]])
+  (reagent/atom
+    [['<- (all (left 90))]
+     ['-> (all (right 90))]
+     ['<-. (all (forward 10) (left 10))]
+     ['.-> (all (forward 10) (right 10))]
+     ['octagon octagon]
+     ['pattern pattern]
+     ['red red]
+     ['green green]
+     ['blue blue]
+     ['clean clean]
+     ['home home]]))
+
+(defn add-action [label f]
+  (swap! actions conj [label f]))
+
+(def ui
+  (reagent/atom
+    [:div "Hint: try typing " [:strong "(html [:h1 \"Hello World!\"])"]]))
+
+(defn html [x]
+  (reset! ui x))
