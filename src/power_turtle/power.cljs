@@ -1,33 +1,42 @@
 (ns power-turtle.power
-  (:require [clojure-turtle.core
-             :refer [forward left right clean home]
-             :refer-macros [all repeat]]))
+  (:require
+    [clojure-turtle.core
+     :refer [forward left right clean home color]
+     :refer-macros [all repeat]]))
+
+(def forward-right
+  (all
+    (forward 50)
+    (right 45)))
 
 (def octagon
-  (all (repeat 8 (all (forward 30) (right 45)))))
+  (all (repeat 8 forward-right)))
 
-(def octacircle
-  (all
-    (repeat
-      36
-      (all
-        (left 10)
-        (octagon)))))
+(def pattern
+  (all (repeat 12 (all (octagon) (right 30)))))
+
+(def red
+  (all (color [255 0 0])))
+
+(def green
+  (all (color [0 255 0])))
+
+(def blue
+  (all (color [0 0 255])))
 
 (defn init []
   (home)
-  (clean)
-  (octagon)
-  (forward 20)
-  (right 70)
-  (forward 50))
+  (clean))
 
 (def actions
-  {'<- (all (left 90))
-   '-> (all (right 90))
-   '<-. (all (forward 10) (left 10))
-   '.-> (all (forward 10) (right 10))
-   'clean clean
-   'home home
-   'octagon octagon
-   'octacircle octacircle})
+  [['<- (all (left 90))]
+   ['-> (all (right 90))]
+   ['<-. (all (forward 10) (left 10))]
+   ['.-> (all (forward 10) (right 10))]
+   ['octagon octagon]
+   ['pattern pattern]
+   ['red red]
+   ['green green]
+   ['blue blue]
+   ['clean clean]
+   ['home home]])

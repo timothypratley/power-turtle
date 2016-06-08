@@ -2,7 +2,8 @@
   (:require
     [replumb.core :as replumb]
     [replumb.repl :as replumb-repl]
-    [power-turtle.io :as io]))
+    [power-turtle.io :as io]
+    [replumb.repl :as repl]))
 
 (defn replumb-options
   [verbose? src-paths]
@@ -12,12 +13,13 @@
 
 (defn read-eval-call [opts cb source]
   (let [ns (replumb-repl/current-ns)]
-    (replumb/read-eval-call opts
-                            #(cb {:success? (replumb/success? %)
-                                  :result   %
-                                  :prev-ns  ns
-                                  :source   source})
-                            source)))
+    (replumb/read-eval-call
+      opts
+      #(cb {:success? (replumb/success? %)
+            :result %
+            :prev-ns ns
+            :source source})
+      source)))
 
 (defn multiline?
   [input]
@@ -29,8 +31,11 @@
 
 (defn eval-opts
   [verbose src-path]
-  {:get-prompt  replumb/get-prompt
+  {:get-prompt (constantly "")
    :should-eval (complement multiline?)
-   :to-str-fn   (partial replumb/result->string false true)
-   :evaluate    (partial read-eval-call
-                         (replumb-options verbose src-path))})
+   :to-str-fn (partial replumb/result->string false true)
+   :evaluate (comp
+               ;; TODO: use reframe
+               #(swap! power-turtle.view/flip -)
+               (partial read-eval-call
+                        (replumb-options verbose src-path)))})

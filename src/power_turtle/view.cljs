@@ -24,9 +24,10 @@
     [:-ms-transform :-moz-transform :-webkit-transform :transform]
     (repeat (apply str ss))))
 
+(def flip (reagent/atom 90))
+
 (defn flipper [tag attrs & children]
-  (let [flip (reagent/atom 90)
-        flip-spring (anim/spring flip)]
+  (let [flip-spring (anim/spring flip)]
     (swap! flip -)
     (fn a-flipper [tag attrs]
       [:div
@@ -34,9 +35,7 @@
          [tag
           (merge-with
             merge
-            {:style (browser-map "rotateY(" (+ 90 @flip-spring) "deg)")
-             :on-mouse-over #(swap! flip -)
-             :on-mouse-leave #(swap! flip -)}
+            {:style (browser-map "rotateY(" (+ 90 @flip-spring) "deg)")}
             attrs)]
          children)])))
 
@@ -58,9 +57,17 @@
   [:div
    [flipper :img {:src "clojure_logo.png" :style {:float "left"}}]
    [flipper :img {:src "turtle.jpg" :style {:float "right"}}]
-   [:h1 "Clojure Turtle"]
+   [:h1 "Power Turtle"]
    [toolbar]
    [:br]
    [:div#main
     [turtle-canvas]
-    [repl/repl]]])
+    [repl/repl]]
+   [:small
+    (pr-str
+      '[forward back left right color
+        home clean penup pendown
+        start-fill end-fill
+        setxy setheading
+        wait
+        draw-turtle-commands])]])
