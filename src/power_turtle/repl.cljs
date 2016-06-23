@@ -16,7 +16,7 @@
 (defonce console-key :cljs-console)
 
 (def src-paths
-  ["/clj"])
+  ["clj"])
 (def replumb-opts
   (replumb-proxy/replumb-options false src-paths))
 
@@ -112,6 +112,15 @@
       (require '[clojure-turtle.core])
       (require-macros '[power-turtle.pot :refer [import-vars]])
       (import-vars clojure-turtle.core/forward))"
+   ;; TODO: do this less hacky
+   (pr-str
+     `(do
+        ~@(for [[language-name language] [(first languages)]
+                [ns translations] language
+                [sym translation] translations]
+            `(def ~sym
+               ;; TODO:  ~(cljs.repl/doc (symbol ns sym))
+               ~(symbol ns sym)))))
    (pr-str
      `(do
         ~@(for [[language-name language] languages
