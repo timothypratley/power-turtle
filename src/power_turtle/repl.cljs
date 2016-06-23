@@ -108,6 +108,9 @@
 (def preambles
   [#_"(ns 무.무
       (:require-macros [power-turtle.lang.korean :refer [밝히다 함수를정의 모든 반복]]))"
+   ;; These are separate because the require-macros loads a file asyncronously...
+   ;; but i need the ns set before the subsequent preambles can run.
+   "(ns t)"
    "(require-macros '[power-turtle.lang.korean :refer [밝히다 함수를정의 모든 반복]])"
    ;;"(require-macros '[power-turtle.lang.indonesian :refer [밝히다 함수를정의 모든 반복]])"
    #_"(do
