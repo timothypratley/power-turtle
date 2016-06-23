@@ -1,8 +1,5 @@
 (ns power-turtle.repl
   (:require
-    [power-turtle.lang.korean :as korean]
-    [power-turtle.lang.thamil :as thamil]
-    [power-turtle.lang.korean :as spanish]
     [power-turtle.replumb-proxy :as replumb-proxy]
     [re-console.core :as console]
     [re-frame.core :refer [dispatch subscribe]]
@@ -14,14 +11,12 @@
     [re-console.parinfer :as parinfer]
     [parinfer.codemirror.mode.clojure.clojure-parinfer])
   (:require-macros
-    [power-turtle.pot]
-    [power-turtle.lang.korean :refer [밝히다 함수를정의 모든 반복]]
-    [power-turtle.lang.indonesian]))
+    [power-turtle.pot]))
 
 (defonce console-key :cljs-console)
 
 (def src-paths
-  ["/js/compiled/out"])
+  ["/clj"])
 (def replumb-opts
   (replumb-proxy/replumb-options false src-paths))
 

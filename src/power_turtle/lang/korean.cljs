@@ -1,5 +1,5 @@
 (ns power-turtle.lang.korean
-  (:require-macros
+  #_(:require-macros
     [power-turtle.lang.korean :refer [밝히다]]
     [power-turtle.lang.macros :refer [expose-language if2 maptemplate]]))
 
