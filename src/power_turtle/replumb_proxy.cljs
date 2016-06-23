@@ -30,12 +30,12 @@
       (= "EOF" (subs (.-message e) 0 3)))))
 
 (defn eval-opts
-  [verbose src-path]
+  [opts]
   {:get-prompt (constantly "")
    :should-eval (complement multiline?)
    :to-str-fn (partial replumb/result->string false true)
    :evaluate (comp
                ;; TODO: use reframe
                #(swap! power-turtle.view/flip -)
-               (partial read-eval-call
-                        (replumb-options verbose src-path)))})
+               (fn [a b]
+                 (read-eval-call opts a b)))})

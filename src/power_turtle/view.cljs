@@ -4,7 +4,7 @@
     [power-turtle.repl :as repl]
     [clojure-turtle.core :as turtle]
     [quil.core :as quil]
-    [timothypratley.reanimated.core :as anim]
+    [reanimated.core :as anim]
     [reagent.core :as reagent]
     [reagent.dom :refer [dom-node]]))
 
@@ -64,6 +64,14 @@
    [:div#main
     [turtle-canvas]
     [repl/repl]]
-   [:small
-    (pr-str
-      (mapcat second repl/korean-words))]])
+   (into
+     [:div]
+     (for [[lang] repl/languages]
+       [:button lang]))
+   (into
+     [:small]
+     (interpose
+       " · "
+       (for [[ns translations] repl/korean-words
+             [sym translation] translations]
+         [:span {:title (with-out-str (cljs.repl/doc sym))} translation])))])

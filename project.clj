@@ -11,7 +11,8 @@
                  [org.clojure/core.async "0.2.374"
                   :exclusions [org.clojure/tools.reader]]
                  [com.google/clojure-turtle "0.3.0-SNAPSHOT"]
-                 [timothypratley/reanimated "0.2.0"]
+                 [clj-thamil "0.2.0-SNAPSHOT"]
+                 [timothypratley/reanimated "0.3.0"]
                  [reagent                     "0.6.0-SNAPSHOT"]
                  [re-frame                    "0.7.0"]
                  [replumb/replumb             "0.2.2-SNAPSHOT"]

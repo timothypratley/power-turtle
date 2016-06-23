@@ -10,6 +10,11 @@ http://timothypratley.blogspot.com
 
 Conveniences for using clojure-turtle in ClojureScript.
 
+## Todo
+
+* Allow preferred language in route
+* Toggle languages
+
 ## Setup
 
 To get an interactive development environment run:
