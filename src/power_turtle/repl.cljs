@@ -1,5 +1,11 @@
 (ns power-turtle.repl
   (:require
+    [power-turtle.lang.english :as english]
+    [power-turtle.lang.korean :as korean]
+    [power-turtle.lang.tamil :as tamil]
+    [power-turtle.lang.indonesian :as indonesian]
+    [power-turtle.lang.spanish :as spanish]
+    [cljs.js]
     [power-turtle.replumb-proxy :as replumb-proxy]
     [re-console.core :as console]
     [re-frame.core :refer [dispatch subscribe]]
@@ -9,9 +15,7 @@
     [cljsjs.codemirror.addon.runmode.colorize]
     [cljsjs.codemirror.mode.clojure]
     [re-console.parinfer :as parinfer]
-    [parinfer.codemirror.mode.clojure.clojure-parinfer])
-  (:require-macros
-    [power-turtle.pot]))
+    [parinfer.codemirror.mode.clojure.clojure-parinfer]))
 
 (defonce console-key :cljs-console)
 
@@ -41,61 +45,12 @@
        "Paredit is " [:strong (name @mode)]])))
 
 
-(def korean-words
-  '[[clojure-turtle.core [[forward 앞으로]
-                          [back 뒤로]
-                          [left 왼쪽]
-                          [right 권리]
-                          [color 색]
-                          [home 집]
-                          [clean 깨끗한]
-                          [penup 펜까지]
-                          [pendown 펜다운]
-                          [start-fill 채우기시작]
-                          [end-fill 최종채우기]
-                          [setxy 위치]
-                          [setheading 표제]
-                          [wait 기다림]
-                          [draw-turtle-commands 거북이명령을그릴]]]
-    [power-turtle.power [[html 웹페이지]
-                         [add-action 작업을추가]
-                         [red 빨간]
-                         [green 녹색]
-                         [blue 푸른]
-                         [octagon 팔각형]
-                         [pattern 무늬]]]])
-
-(def indonesian-words
-  '[[clojure-turtle.core [[forward 앞으로]
-                          [back 뒤로]
-                          [left 왼쪽]
-                          [right 권리]
-                          [color 색]
-                          [home 집]
-                          [clean 깨끗한]
-                          [penup 펜까지]
-                          [pendown 펜다운]
-                          [start-fill 채우기시작]
-                          [end-fill 최종채우기]
-                          [setxy 위치]
-                          [setheading 표제]
-                          [wait 기다림]
-                          [draw-turtle-commands 거북이명령을그릴]]]
-    [power-turtle.power [[html 웹페이지]
-                         [add-action 작업을추가]
-                         [red 빨간]
-                         [green 녹색]
-                         [blue 푸른]
-                         [octagon 팔각형]
-                         [pattern 무늬]]]])
-
 (def languages
-  [["한국어" korean-words]
-   ;;["bahasa Indonesia" indonesian-words]
-   ;;["தமிழ்" thamil/fns]
-   ;;["Español" spanish/fns]
-   ;;["English" []]
-   ])
+  {"한국어" korean/all
+   "Bahasa Indonesia" indonesian/all
+   "தமிழ்" tamil/all
+   "Español" spanish/all
+   "English" english/all})
 
 ;; this works for turtle, even though the eval returns failed o_O
 ;; also they must be in separate evals, do doesn't work
@@ -106,7 +61,9 @@
    ;; These are separate because the require-macros loads a file asyncronously...
    ;; but i need the ns set before the subsequent preambles can run.
    "(ns t)"
-   "(require-macros '[power-turtle.lang.korean :refer [밝히다 함수를정의 모든 반복]])"
+   (str "(require-macros '[power-turtle.lang.korean :refer " (vec (for [[ns translations] korean/forms
+                                                                        [sym translation] translations]
+                                                                    translation)) "])")
    ;;"(require-macros '[power-turtle.lang.indonesian :refer [밝히다 함수를정의 모든 반복]])"
    #_"(do
       (require '[clojure-turtle.core])

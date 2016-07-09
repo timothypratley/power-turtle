@@ -6,7 +6,8 @@
     [quil.core :as quil]
     [reanimated.core :as anim]
     [reagent.core :as reagent]
-    [reagent.dom :refer [dom-node]]))
+    [reagent.dom :refer [dom-node]]
+    [re-frame.core :refer [subscribe dispatch]]))
 
 (defn action [k f]
   [:button
@@ -50,8 +51,36 @@
        (quil/sketch
          :host (dom-node this)
          :size [640 600]
-         :setup (fn [] (turtle/setup) (power/init))
+         :setup (fn []
+                  (turtle/setup)
+                  (power/init))
          :draw turtle/draw))}))
+
+(defn help-tips []
+  (let [current-langugage (subscribe [:current-language])]
+    (fn a-help-tips []
+      [:div
+       (into
+         [:div]
+         (for [language (sort (keys repl/languages))]
+           [:button
+            {:class (when (= @current-langugage language)
+                      "active")
+             :on-click
+             (fn language-click [e]
+               (dispatch [:current-language language]))}
+            language]))
+       (into
+         [:small]
+         (interpose
+           " · "
+           (sort
+             (for [[ns translations] (repl/languages @current-langugage)
+                   [sym translation] translations]
+               [:span
+                ;; TODO: figure out how to capture doc
+                ;;{:title (with-out-str (cljs.repl/print-doc (meta (var sym))))}
+                translation]))))])))
 
 (defn page []
   [:div
@@ -64,14 +93,4 @@
    [:div#main
     [turtle-canvas]
     [repl/repl]]
-   (into
-     [:div]
-     (for [[lang] repl/languages]
-       [:button lang]))
-   (into
-     [:small]
-     (interpose
-       " · "
-       (for [[ns translations] repl/korean-words
-             [sym translation] translations]
-         [:span {:title (with-out-str (cljs.repl/doc sym))} translation])))])
+   [help-tips]])

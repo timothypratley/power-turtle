@@ -13,4 +13,9 @@
   (fn [db [_]]
     (reaction (get-in @db [:options :verbose]))))
 
+(register-sub
+  :current-language
+  (fn [db [_]]
+    (reaction (get-in @db [:current-language]))))
+
 ;; )

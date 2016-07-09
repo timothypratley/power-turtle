@@ -1,6 +1,6 @@
 (ns power-turtle.handlers
   (:require
-    [re-frame.core :refer [register-handler dispatch]]
+    [re-frame.core :refer [register-handler]]
     [clairvoyant.core :refer-macros [trace-forms]]
     [re-frame-tracer.core :refer [tracer]]))
 
@@ -15,5 +15,10 @@
   :toggle-verbose
   (fn toggle-verbose [db [_]]
     (update-in db [:options :verbose] not)))
+
+(register-handler
+  :current-language
+  (fn current-language [db [_ language]]
+    (assoc-in db [:current-language] language)))
 
 ;;)
