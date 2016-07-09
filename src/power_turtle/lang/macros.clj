@@ -27,7 +27,7 @@
      `(~'~(eval old-name) ~@body#)))
 
 (defmacro translate-forms
-  []
+  [forms]
   `(do
      ~@(for [[old-form# new-form#] (eval forms)]
          `(translate-form-symbol '~old-form# '~new-form#))))
