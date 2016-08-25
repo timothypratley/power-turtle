@@ -61,7 +61,7 @@
                            [{:file "resources/public/js/clojure-parinfer.js"
                              :provides ["parinfer.codemirror.mode.clojure.clojure-parinfer"]}]
                            ;; TODO: can advanced be used?
-                           :optimizations :simple
+                           :optimizations :whitespace
                            :pretty-print false}}]}
 
   :figwheel {:css-dirs ["resources/public/css"]}

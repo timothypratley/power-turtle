@@ -56,36 +56,44 @@
 ;; also they must be in separate evals, do doesn't work
 ;; TODO: How to preserve metadata like docstrings???
 (def preambles
-  [#_"(ns 무.무
+  (into
+    [#_"(ns 무.무
       (:require-macros [power-turtle.lang.korean :refer [밝히다 함수를정의 모든 반복]]))"
-   ;; These are separate because the require-macros loads a file asyncronously...
-   ;; but i need the ns set before the subsequent preambles can run.
-   "(ns t)"
-   (str "(require-macros '[power-turtle.lang.korean :refer " (vec (for [[ns translations] korean/forms
-                                                                        [sym translation] translations]
-                                                                    translation)) "])")
-   ;;"(require-macros '[power-turtle.lang.indonesian :refer [밝히다 함수를정의 모든 반복]])"
-   #_"(do
+     ;; These are separate because the require-macros loads a file asyncronously...
+     ;; but i need the ns set before the subsequent preambles can run.
+     "(ns t)"
+
+     ;;"(require-macros '[power-turtle.lang.indonesian :refer [밝히다 함수를정의 모든 반복]])"
+     #_"(do
       (require '[clojure-turtle.core])
       (require-macros '[power-turtle.pot :refer [import-vars]])
       (import-vars clojure-turtle.core/forward))"
-   ;; TODO: do this less hacky
-   (pr-str
-     `(do
-        ~@(for [[language-name language] [(first languages)]
-                [ns translations] language
-                [sym translation] translations]
-            `(def ~sym
-               ;; TODO:  ~(cljs.repl/doc (symbol ns sym))
-               ~(symbol ns sym)))))
-   (pr-str
-     `(do
-        ~@(for [[language-name language] languages
-                [ns translations] language
-                [sym translation] translations]
-            `(def ~translation
-               ;; TODO:  ~(cljs.repl/doc (symbol ns sym))
-               ~(symbol ns sym)))))])
+     ;; TODO: do this less hacky
+     (pr-str
+       `(do
+          ~@(for [[language-name language] [(first languages)]
+                  [ns translations] language
+                  [sym translation] translations]
+              `(def ~sym
+                 ;; TODO:  ~(cljs.repl/doc (symbol ns sym))
+                 ~(symbol ns sym)))))
+     (pr-str
+       `(do
+          ~@(for [[language-name language] languages
+                  [ns translations] language
+                  [sym translation] translations]
+              `(def ~translation
+                 ;; TODO:  ~(cljs.repl/doc (symbol ns sym))
+                 ~(symbol ns sym)))))]
+    (for [[language forms] {"korean" korean/forms
+                            "indonesian" indonesian/forms
+                            "tamil" tamil/forms
+                            "spanish" spanish/forms}]
+      (str "(require-macros '[power-turtle.lang." language " :refer "
+           (vec (for [[ns translations] forms
+                      [sym translation] translations]
+                  translation))
+           "])"))))
 
 (defn do-preambles []
   (doseq [preamble preambles]
