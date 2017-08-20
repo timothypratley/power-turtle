@@ -1,0 +1,14 @@
+{"ta"
+ {"clojure-turtle.core"
+  {"back" {:existing "back", :alias "பின்னால்"},
+   "clean" {:existing "clean", :alias "துப்புரவு"},
+   "forward" {:existing "forward", :alias "முன்னால்"},
+   "home" {:existing "home", :alias "வீடு"},
+   "left" {:existing "left", :alias "இடது"},
+   "pendown" {:existing "pendown", :alias "எழுதுகோல்வை"},
+   "penup" {:existing "penup", :alias "எழுதுகோலெடு"},
+   "right" {:existing "right", :alias "வலது"},
+   "setheading" {:existing "setheading", :alias "திசைவை"}},
+  "clojure-turtle.macros"
+  {"all" {:existing "all", :alias "எல்லாம்"},
+   "repeat" {:existing "repeat", :alias "மீண்டும்"}}}}

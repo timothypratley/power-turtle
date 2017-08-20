@@ -1,10 +1,5 @@
 (ns power-turtle.repl
   (:require
-    [power-turtle.lang.english :as english]
-    [power-turtle.lang.korean :as korean]
-    [power-turtle.lang.tamil :as tamil]
-    [power-turtle.lang.indonesian :as indonesian]
-    [power-turtle.lang.spanish :as spanish]
     [cljs.js]
     [power-turtle.replumb-proxy :as replumb-proxy]
     [re-console.core :as console]
@@ -15,12 +10,14 @@
     [cljsjs.codemirror.addon.runmode.colorize]
     [cljsjs.codemirror.mode.clojure]
     [re-console.parinfer :as parinfer]
-    [parinfer.codemirror.mode.clojure.clojure-parinfer]))
+    [parinfer.codemirror.mode.clojure.clojure-parinfer])
+  (:require-macros
+    [power-turtle.generate-translations :as g]))
 
 (defonce console-key :cljs-console)
 
 (def src-paths
-  ["clj"])
+  ["src" "js/compiled/out"])
 (def replumb-opts
   (replumb-proxy/replumb-options false src-paths))
 
@@ -44,59 +41,12 @@
                     (dispatch [:set-console-mode console-key new-mode]))}
        "Paredit is " [:strong (name @mode)]])))
 
-
-(def languages
-  {"한국어" korean/all
-   "Bahasa Indonesia" indonesian/all
-   "தமிழ்" tamil/all
-   "Español" spanish/all
-   "English" english/all})
-
-;; this works for turtle, even though the eval returns failed o_O
-;; also they must be in separate evals, do doesn't work
-;; TODO: How to preserve metadata like docstrings???
 (def preambles
-  (into
-    [#_"(ns 무.무
-      (:require-macros [power-turtle.lang.korean :refer [밝히다 함수를정의 모든 반복]]))"
-     ;; These are separate because the require-macros loads a file asyncronously...
-     ;; but i need the ns set before the subsequent preambles can run.
-     "(ns t)"
-
-     ;;"(require-macros '[power-turtle.lang.indonesian :refer [밝히다 함수를정의 모든 반복]])"
-     #_"(do
-      (require '[clojure-turtle.core])
-      (require-macros '[power-turtle.pot :refer [import-vars]])
-      (import-vars clojure-turtle.core/forward))"
-     ;; TODO: do this less hacky
-     (pr-str
-       `(do
-          ~@(for [[language-name language] [(first languages)]
-                  [ns translations] language
-                  [sym translation] translations]
-              `(def ~sym
-                 ;; TODO:  ~(cljs.repl/doc (symbol ns sym))
-                 ~(symbol ns sym)))))
-     (pr-str
-       `(do
-          ~@(for [[language-name language] languages
-                  [ns translations] language
-                  [sym translation] translations]
-              `(def ~translation
-                 ;; TODO:  ~(cljs.repl/doc (symbol ns sym))
-                 ~(symbol ns sym)))))]
-    (for [[language forms] {"korean" korean/forms
-                            "indonesian" indonesian/forms
-                            "tamil" tamil/forms
-                            "spanish" spanish/forms}]
-      (str "(require-macros '[power-turtle.lang." language " :refer "
-           (vec (for [[ns translations] forms
-                      [sym translation] translations]
-                  translation))
-           "])"))))
+  (g/refer-translations))
 
 (defn do-preambles []
   (doseq [preamble preambles]
+    (prn "PPP" preamble)
     (replumb-proxy/read-eval-call
       ;; TODO: why do we get a warning for the defs?
       (assoc replumb-opts :warning-as-error false)

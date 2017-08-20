@@ -1,6 +1,6 @@
 (ns power-turtle.view
   (:require
-    [power-turtle.power :as power]
+    ;;[power-turtle.power :as power]
     [power-turtle.repl :as repl]
     [clojure-turtle.core :as turtle]
     [quil.core :as quil]
@@ -14,7 +14,7 @@
    {:on-click #(f)}
    (name k)])
 
-(defn toolbar []
+#_(defn toolbar []
   [:div
    (for [[k f] @power/actions]
      ^{:key k}
@@ -53,7 +53,7 @@
          :size [640 600]
          :setup (fn []
                   (turtle/setup)
-                  (power/init))
+                  #_(power/init))
          :draw turtle/draw))}))
 
 (defn help-tips []
@@ -62,7 +62,7 @@
       [:div
        (into
          [:div]
-         (for [language (sort (keys repl/languages))]
+         (for [language [] #_(sort (keys repl/languages))]
            [:button
             {:class (when (= @current-langugage language)
                       "active")
@@ -75,7 +75,7 @@
          (interpose
            " · "
            (sort
-             (for [[ns translations] (repl/languages @current-langugage)
+             (for [[ns translations] [] #_(repl/languages @current-langugage)
                    [sym translation] translations]
                [:span
                 ;; TODO: figure out how to capture doc
@@ -87,8 +87,8 @@
    [flipper :img {:src "clojure_logo.png" :style {:float "left"}}]
    [flipper :img {:src "turtle.jpg" :style {:float "right"}}]
    [:h1 "Power Turtle"]
-   [toolbar]
-   @power/ui
+   ;;[toolbar]
+   ;;@power/ui
    [:br]
    [:div#main
     [turtle-canvas]

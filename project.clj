@@ -7,34 +7,38 @@
   :min-lein-version "2.6.1"
 
   :dependencies [[org.clojure/clojure "1.8.0"]
-                 [org.clojure/clojurescript "1.9.93"]
-                 [org.clojure/core.async "0.2.385" :exclusions [org.clojure/tools.reader]]
-                 [com.google/clojure-turtle "0.3.0-SNAPSHOT"]
-                 [clj-thamil "0.2.0-SNAPSHOT"]
+                 [org.clojure/clojurescript "1.9.671"]
+                 [org.clojure/core.async "0.3.443" :exclusions [org.clojure/tools.reader]]
+                 [cban "0.1.0-SNAPSHOT"]
+                 [lein-cban "0.1.0-SNAPSHOT"]
+                 [com.google/clojure-turtle "0.3.0"]
                  [timothypratley/reanimated "0.3.0"]
-                 [reagent                     "0.6.0-SNAPSHOT"]
-                 [re-frame                    "0.7.0"]
-                 [replumb/replumb             "0.2.3"]
-                 [cljsjs/highlight            "8.4-0"]
-                 [re-console                  "0.1.4-SNAPSHOT"]
-                 [re-com                      "0.8.3"]
-                 [cljs-ajax                   "0.5.8"]
-                 [hickory                     "0.6.0"]
-                 [cljsjs/showdown             "1.4.2-0"]
-                 [org.clojure/tools.reader    "1.0.0-alpha3"]
-                 [cljsjs/enquire              "2.1.2-0"]
-                 [com.cemerick/piggieback     "0.2.1"]
-                 [org.clojars.stumitchell/clairvoyant "0.2.0"]
-                 [binaryage/devtools          "0.7.2"]
-                 [day8/re-frame-tracer        "0.1.0-SNAPSHOT"]
-                 [cljsjs/codemirror           "5.11.0-2"]
-                 [adzerk/cljs-console         "0.1.1"]
-                 [re-complete                 "0.1.4-1-SNAPSHOT"]]
+                 [reagent "0.7.0"]
+                 [re-frame "0.9.4"]
+                 [replumb/replumb "0.2.4"]
+                 [cljsjs/highlight "9.12.0-0"]
+                 [re-console "0.1.4-SNAPSHOT"]
+                 [re-com "2.1.0"]
+                 [cljs-ajax "0.6.0"]
+                 [hickory "0.7.1"]
+                 [cljsjs/showdown "1.4.2-0"]
+                 [org.clojure/tools.reader "1.0.3"]
+                 [cljsjs/enquire "2.1.2-0"]
+                 [com.cemerick/piggieback "0.2.2"]
+                 [org.clojars.stumitchell/clairvoyant "0.2.1"]
+                 [binaryage/devtools "0.9.4"]
+                 [day8/re-frame-tracer "0.1.0-SNAPSHOT"]
+                 [cljsjs/codemirror "5.24.0-1"]
+                 [adzerk/cljs-console "0.1.1"]
+                 [re-complete "0.1.4-1-SNAPSHOT"]]
 
-  :plugins [[lein-figwheel "0.5.4-5"]
-            [lein-cljsbuild "1.1.3" :exclusions [[org.clojure/clojure]]]]
+  :plugins [[lein-figwheel "0.5.11"]
+            [lein-cban "0.1.0-SNAPSHOT"]
+            [lein-cljsbuild "1.1.6" :exclusions [[org.clojure/clojure]]]]
 
   :source-paths ["src"]
+
+  :cban {:output-dir "resources/public/src"}
 
   :clean-targets ^{:protect false} ["resources/public/js/compiled" "target"]
 
@@ -66,8 +70,8 @@
 
   :figwheel {:css-dirs ["resources/public/css"]}
 
-  :profiles {:dev {:dependencies [[figwheel-sidecar "0.5.4-5"]
-                                  [com.cemerick/piggieback "0.2.1"]]
+  :profiles {:dev {:dependencies [[figwheel-sidecar "0.5.11"]
+                                  [com.cemerick/piggieback "0.2.2"]]
                    ;; need to add dev source path here to get user.clj loaded
                    :source-paths ["src" "dev"]
                    ;; for CIDER
