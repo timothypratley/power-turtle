@@ -1,6 +1,7 @@
 (ns power-turtle.view.repl
   (:require
     [cljs.js]
+    [power-turtle.api]
     [power-turtle.replumb-proxy :as replumb-proxy]
     [re-console.core :as console]
     [re-frame.core :refer [dispatch subscribe]]
@@ -43,7 +44,9 @@
        "Paredit is " [:strong (name @mode)]])))
 
 (def preambles
-  [(g/require-translations)])
+  ;; TODO: why do macros need to be required explicitly, but other stuff not so much???
+  ["(require-macros '[clojure-turtle.macros :refer [all repeat]])"
+   (g/require-translations)])
 
 (defn do-preambles []
   (doseq [preamble preambles]
