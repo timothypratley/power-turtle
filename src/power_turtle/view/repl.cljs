@@ -13,6 +13,7 @@
     [re-console.parinfer :as parinfer]
     [parinfer.codemirror.mode.clojure.clojure-parinfer])
   (:require-macros
+    [clojure-turtle.macros :refer [all repeat]]
     [power-turtle.translations :as g]))
 
 (defonce console-key :cljs-console)
@@ -45,6 +46,8 @@
 
 (def preambles
   ;; TODO: why do macros need to be required explicitly, but other stuff not so much???
+  ;; ANSWER: needs to load the file at runtime...
+  ;; WHY?? Dunno, just put the file in resources/public/src please!
   ["(require-macros '[clojure-turtle.macros :refer [all repeat]])"
    (g/require-translations)])
 
