@@ -1,9 +1,9 @@
 (ns power-turtle.replumb-proxy
   (:require
+    [re-frame.core :refer [dispatch subscribe]]
     [replumb.core :as replumb]
-    [replumb.repl :as replumb-repl]
-    [power-turtle.io :as io]
-    [replumb.repl :as repl]))
+    [replumb.repl :as repl]
+    [power-turtle.io :as io]))
 
 (defn replumb-options
   [verbose? src-paths]
@@ -12,7 +12,7 @@
           :verbose verbose?}))
 
 (defn read-eval-call [opts cb source]
-  (let [ns (replumb-repl/current-ns)]
+  (let [ns (repl/current-ns)]
     (replumb/read-eval-call
       opts
       #(cb {:success? (replumb/success? %)
@@ -24,7 +24,7 @@
 (defn multiline?
   [input]
   (try
-    (replumb-repl/read-string {} input)
+    (repl/read-string {} input)
     false
     (catch :default e
       (= "EOF" (subs (.-message e) 0 3)))))
@@ -34,8 +34,6 @@
   {:get-prompt (constantly "")
    :should-eval (complement multiline?)
    :to-str-fn (partial replumb/result->string false true)
-   :evaluate (comp
-               ;; TODO: use reframe
-               #(swap! power-turtle.view/flip -)
-               (fn [a b]
-                 (read-eval-call opts a b)))})
+   :evaluate (fn [a b]
+               (dispatch [:flip])
+               (read-eval-call opts a b))})

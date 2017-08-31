@@ -1,14 +1,191 @@
-{"ta"
+{"en"
  {"clojure-turtle.core"
-  {"back" {:existing "back", :alias "பின்னால்"},
-   "clean" {:existing "clean", :alias "துப்புரவு"},
-   "forward" {:existing "forward", :alias "முன்னால்"},
-   "home" {:existing "home", :alias "வீடு"},
-   "left" {:existing "left", :alias "இடது"},
-   "pendown" {:existing "pendown", :alias "எழுதுகோல்வை"},
-   "penup" {:existing "penup", :alias "எழுதுகோலெடு"},
-   "right" {:existing "right", :alias "வலது"},
-   "setheading" {:existing "setheading", :alias "திசைவை"}},
+  {"back" {:resolved true, :existing "back", :alias "back"},
+   "clean" {:resolved true, :existing "clean", :alias "clean"},
+   "color" {:resolved true, :existing "color", :alias "color"},
+   "draw-turtle-commands"
+   {:resolved true,
+    :existing "draw-turtle-commands",
+    :alias "draw-turtle-commands"},
+   "end-fill"
+   {:resolved true, :existing "end-fill", :alias "end-fill"},
+   "forward" {:resolved true, :existing "forward", :alias "forward"},
+   "home" {:resolved true, :existing "home", :alias "home"},
+   "left" {:resolved true, :existing "left", :alias "left"},
+   "pendown" {:resolved true, :existing "pendown", :alias "pendown"},
+   "penup" {:resolved true, :existing "penup", :alias "penup"},
+   "right" {:resolved true, :existing "right", :alias "right"},
+   "setheading"
+   {:resolved true, :existing "setheading", :alias "setheading"},
+   "setxy" {:resolved true, :existing "setxy", :alias "setxy"},
+   "start-fill"
+   {:resolved true, :existing "start-fill", :alias "start-fill"},
+   "wait" {:resolved true, :existing "wait", :alias "wait"}},
   "clojure-turtle.macros"
-  {"all" {:existing "all", :alias "எல்லாம்"},
-   "repeat" {:existing "repeat", :alias "மீண்டும்"}}}}
+  {"all" {:macro true, :resolved true, :existing "all", :alias "all"},
+   "repeat"
+   {:macro true, :resolved true, :existing "repeat", :alias "repeat"}},
+  "power-turtle.api"
+  {"add-action"
+   {:resolved true, :existing "add-action", :alias "add-action"},
+   "blue" {:resolved true, :existing "blue", :alias "blue"},
+   "green" {:resolved true, :existing "green", :alias "green"},
+   "html" {:resolved true, :existing "html", :alias "html"},
+   "octagon" {:resolved true, :existing "octagon", :alias "octagon"},
+   "pattern" {:resolved true, :existing "pattern", :alias "pattern"},
+   "red" {:resolved true, :existing "red", :alias "red"}}},
+ "es"
+ {"clojure-turtle.core"
+  {"back" {:resolved true, :existing "back", :alias "espalda"},
+   "clean" {:resolved true, :existing "clean", :alias "limpiar"},
+   "color" {:resolved true, :existing "color", :alias "color"},
+   "draw-turtle-commands"
+   {:resolved true,
+    :existing "draw-turtle-commands",
+    :alias "dibujar-comandos-tortuga"},
+   "end-fill"
+   {:resolved true, :existing "end-fill", :alias "relleno-final"},
+   "forward" {:resolved true, :existing "forward", :alias "adelante"},
+   "home" {:resolved true, :existing "home", :alias "casa"},
+   "left" {:resolved true, :existing "left", :alias "izquierda"},
+   "pendown"
+   {:resolved true, :existing "pendown", :alias "plumaabajo"},
+   "penup"
+   {:resolved true, :existing "penup", :alias "levantarpincel"},
+   "right" {:resolved true, :existing "right", :alias "derecho"},
+   "setheading"
+   {:resolved true,
+    :existing "setheading",
+    :alias "encabezado-de-conjunto"},
+   "setxy" {:resolved true, :existing "setxy", :alias "xyconjunto"},
+   "start-fill"
+   {:resolved true,
+    :existing "start-fill",
+    :alias "comience-el-llenado"},
+   "wait" {:resolved true, :existing "wait", :alias "espere"}},
+  "clojure-turtle.macros"
+  {"all"
+   {:macro true, :resolved true, :existing "all", :alias "todas"},
+   "repeat"
+   {:macro true,
+    :resolved true,
+    :existing "repeat",
+    :alias "repetir"}},
+  "power-turtle.api"
+  {"add-action"
+   {:resolved true, :existing "add-action", :alias "añadir-acción"},
+   "blue" {:resolved true, :existing "blue", :alias "azul"},
+   "green" {:resolved true, :existing "green", :alias "verde"},
+   "html" {:resolved true, :existing "html", :alias "html"},
+   "octagon" {:resolved true, :existing "octagon", :alias "octágono"},
+   "pattern" {:resolved true, :existing "pattern", :alias "patrón"},
+   "red" {:resolved true, :existing "red", :alias "rojo"}}},
+ "id"
+ {"clojure-turtle.core"
+  {"back" {:resolved true, :existing "back", :alias "kembali"},
+   "clean" {:resolved true, :existing "clean", :alias "bersih"},
+   "color" {:resolved true, :existing "color", :alias "warna"},
+   "draw-turtle-commands"
+   {:resolved true,
+    :existing "draw-turtle-commands",
+    :alias "menggambar-perintah-penyu"},
+   "end-fill"
+   {:resolved true, :existing "end-fill", :alias "akhir-mengisi"},
+   "forward"
+   {:resolved true, :existing "forward", :alias "meneruskan"},
+   "home" {:resolved true, :existing "home", :alias "rumah"},
+   "left" {:resolved true, :existing "left", :alias "kiri"},
+   "pendown" {:resolved true, :existing "pendown", :alias "penake"},
+   "penup" {:resolved true, :existing "penup", :alias "penanaik"},
+   "right" {:resolved true, :existing "right", :alias "kanan"},
+   "setheading"
+   {:resolved true, :existing "setheading", :alias "menetapkankepala"},
+   "setxy" {:resolved true, :existing "setxy", :alias "menetapkanxy"},
+   "start-fill"
+   {:resolved true, :existing "start-fill", :alias "mulai-mengisi"},
+   "wait" {:resolved true, :existing "wait", :alias "tunggu"}},
+  "clojure-turtle.macros"
+  {"all"
+   {:macro true, :resolved true, :existing "all", :alias "semua"},
+   "repeat"
+   {:macro true,
+    :resolved true,
+    :existing "repeat",
+    :alias "berkali-kali"}},
+  "power-turtle.api"
+  {"add-action"
+   {:resolved true,
+    :existing "add-action",
+    :alias "menambahkan-tindakan"},
+   "blue" {:resolved true, :existing "blue", :alias "biru"},
+   "green" {:resolved true, :existing "green", :alias "hijau"},
+   "html" {:resolved true, :existing "html", :alias "jaringan"},
+   "octagon"
+   {:resolved true, :existing "octagon", :alias "segidelapan"},
+   "pattern" {:resolved true, :existing "pattern", :alias "pola"},
+   "red" {:resolved true, :existing "red", :alias "merah"}}},
+ "ko"
+ {"clojure-turtle.core"
+  {"back" {:resolved true, :existing "back", :alias "뒤로"},
+   "clean" {:resolved true, :existing "clean", :alias "깨끗한"},
+   "draw-turtle-commands"
+   {:resolved true,
+    :existing "draw-turtle-commands",
+    :alias "거북이명령을그릴"},
+   "end-fill" {:resolved true, :existing "end-fill", :alias "최종채우기"},
+   "forward" {:resolved true, :existing "forward", :alias "앞으로"},
+   "home" {:resolved true, :existing "home", :alias "집"},
+   "left" {:resolved true, :existing "left", :alias "왼쪽"},
+   "pendown" {:resolved true, :existing "pendown", :alias "펜다운"},
+   "penup" {:resolved true, :existing "penup", :alias "펜까지"},
+   "right" {:resolved true, :existing "right", :alias "권리"},
+   "setheading" {:resolved true, :existing "setheading", :alias "표제"},
+   "setxy" {:resolved true, :existing "setxy", :alias "위치"},
+   "start-fill"
+   {:resolved true, :existing "start-fill", :alias "채우기시작"},
+   "wait" {:resolved true, :existing "wait", :alias "기다림"}},
+  "clojure-turtle.macros"
+  {"all" {:macro true, :resolved true, :existing "all", :alias "모든"},
+   "repeat"
+   {:macro true, :resolved true, :existing "repeat", :alias "자꾸"}},
+  "power-turtle.api"
+  {"add-action"
+   {:resolved true, :existing "add-action", :alias "작업을추가"},
+   "blue" {:resolved true, :existing "blue", :alias "푸른"},
+   "green" {:resolved true, :existing "green", :alias "녹색"},
+   "html" {:resolved true, :existing "html", :alias "웹페이지"},
+   "octagon" {:resolved true, :existing "octagon", :alias "팔각형"},
+   "pattern" {:resolved true, :existing "pattern", :alias "무늬"},
+   "red" {:resolved true, :existing "red", :alias "빨간"}}},
+ "ta"
+ {"clojure-turtle.core"
+  {"back" {:resolved true, :existing "back", :alias "பின்னால்"},
+   "clean" {:resolved true, :existing "clean", :alias "துப்புரவு"},
+   "forward" {:resolved true, :existing "forward", :alias "முன்னால்"},
+   "home" {:resolved true, :existing "home", :alias "வீடு"},
+   "left" {:resolved true, :existing "left", :alias "இடது"},
+   "pendown"
+   {:resolved true, :existing "pendown", :alias "எழுதுகோல்வை"},
+   "penup" {:resolved true, :existing "penup", :alias "எழுதுகோலெடு"},
+   "right" {:resolved true, :existing "right", :alias "வலது"},
+   "setheading"
+   {:resolved true, :existing "setheading", :alias "திசைவை"}},
+  "clojure-turtle.macros"
+  {"all"
+   {:macro true, :resolved true, :existing "all", :alias "எல்லாம்"},
+   "repeat"
+   {:macro true,
+    :resolved true,
+    :existing "repeat",
+    :alias "மீண்டும்"}},
+  "power-turtle.api"
+  {"add-action"
+   {:resolved true,
+    :existing "add-action",
+    :alias "சேர்க்க-நடவடிக்கை"},
+   "blue" {:resolved true, :existing "blue", :alias "நீல"},
+   "green" {:resolved true, :existing "green", :alias "பச்சை"},
+   "html" {:resolved true, :existing "html", :alias "html"},
+   "octagon" {:resolved true, :existing "octagon", :alias "எண்கோணம்"},
+   "pattern" {:resolved true, :existing "pattern", :alias "முறை"},
+   "red" {:resolved true, :existing "red", :alias "சிவப்பு"}}}}

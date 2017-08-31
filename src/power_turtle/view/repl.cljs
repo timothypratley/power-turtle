@@ -1,4 +1,4 @@
-(ns power-turtle.repl
+(ns power-turtle.view.repl
   (:require
     [cljs.js]
     [power-turtle.replumb-proxy :as replumb-proxy]
@@ -12,12 +12,13 @@
     [re-console.parinfer :as parinfer]
     [parinfer.codemirror.mode.clojure.clojure-parinfer])
   (:require-macros
-    [power-turtle.generate-translations :as g]))
+    [power-turtle.translations :as g]))
 
 (defonce console-key :cljs-console)
 
 (def src-paths
   ["src" "js/compiled/out"])
+
 (def replumb-opts
   (replumb-proxy/replumb-options false src-paths))
 
@@ -42,11 +43,10 @@
        "Paredit is " [:strong (name @mode)]])))
 
 (def preambles
-  (g/refer-translations))
+  [(g/require-translations)])
 
 (defn do-preambles []
   (doseq [preamble preambles]
-    (prn "PPP" preamble)
     (replumb-proxy/read-eval-call
       ;; TODO: why do we get a warning for the defs?
       (assoc replumb-opts :warning-as-error false)
@@ -54,16 +54,10 @@
         (println "***" result))
       preamble)))
 
-(defn fire-preamble []
-  [:button
-   {:on-click #(do-preambles)}
-   "Preamble"])
-
 (defn buttons []
   [:div.buttons-container
    [toggle-verbose]
-   [toggle-parinfer]
-   [fire-preamble]])
+   [toggle-parinfer]])
 
 (dispatch [:init-options])
 

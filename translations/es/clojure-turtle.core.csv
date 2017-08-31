@@ -1,0 +1,16 @@
+existing,alias,docstring,comment
+forward,adelante
+back,espalda
+right,derecho
+left,izquierda
+penup,levantarpincel
+pendown,plumaabajo
+clean,limpiar
+setheading,encabezado-de-conjunto
+setxy,xyconjunto
+start-fill,comience-el-llenado
+end-fill,relleno-final
+home,casa
+color,color
+wait,espere
+draw-turtle-commands,dibujar-comandos-tortuga

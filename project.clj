@@ -10,7 +10,6 @@
                  [org.clojure/clojurescript "1.9.671"]
                  [org.clojure/core.async "0.3.443" :exclusions [org.clojure/tools.reader]]
                  [cban "0.1.0-SNAPSHOT"]
-                 [lein-cban "0.1.0-SNAPSHOT"]
                  [com.google/clojure-turtle "0.3.0"]
                  [timothypratley/reanimated "0.3.0"]
                  [reagent "0.7.0"]
@@ -44,10 +43,10 @@
 
   :cljsbuild {:builds
               [{:id "dev"
-                ;; lein figwheel
+                ;; `lein figwheel`
                 :source-paths ["src"]
                 :figwheel {}
-                :compiler {:main power-turtle.main
+                :compiler {:main power-turtle.view.main
                            :asset-path "js/compiled/out"
                            :output-to "resources/public/js/compiled/power_turtle.js"
                            :output-dir "resources/public/js/compiled/out"
@@ -57,10 +56,10 @@
                            :source-map-timestamp true}}
 
                {:id "min"
-                ;; lein cljsbuild once min
+                ;; `lein cljsbuild once min`
                 :source-paths ["src"]
                 :compiler {:output-to "resources/public/js/compiled/power_turtle.js"
-                           :main power-turtle.main
+                           :main power-turtle.view.main
                            :foreign-libs
                            [{:file "resources/public/js/clojure-parinfer.js"
                              :provides ["parinfer.codemirror.mode.clojure.clojure-parinfer"]}]
