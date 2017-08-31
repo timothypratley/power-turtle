@@ -2,8 +2,7 @@
   (:require
     #?(:cljs [power-turtle.view.toolbar :as toolbar])
     #?(:cljs [power-turtle.view.html-hook :as html-hook])
-    [clojure-turtle.core :refer [left right forward color home clean]])
-  (:require-macros
+    [clojure-turtle.core :refer [left right forward color home clean]]
     [clojure-turtle.macros :refer [all repeat]]))
 
 (def forward-right
