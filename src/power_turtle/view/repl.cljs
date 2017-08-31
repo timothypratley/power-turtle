@@ -48,14 +48,15 @@
   ["(require-macros '[clojure-turtle.macros :refer [all repeat]])"
    (g/require-translations)])
 
-(defn do-preambles []
-  (doseq [preamble preambles]
-    (replumb-proxy/read-eval-call
-      ;; TODO: why do we get a warning for the defs?
-      (assoc replumb-opts :warning-as-error false)
-      (fn [{:keys [result]}]
-        (println "***" result))
-      preamble)))
+(defn do-preambles [[preamble & more]]
+  (replumb-proxy/read-eval-call
+    ;; TODO: why do we get a warning for the defs?
+    (assoc replumb-opts :warning-as-error false)
+    (fn [{:keys [result]}]
+      (println "***" result)
+      (when (seq more)
+        (do-preambles more)))
+    preamble))
 
 (defn buttons []
   [:div.buttons-container
@@ -65,7 +66,7 @@
 (dispatch [:init-options])
 
 (defn repl []
-  (do-preambles)
+  (do-preambles preambles)
   (fn []
     [:div#repl
      [console/console console-key
