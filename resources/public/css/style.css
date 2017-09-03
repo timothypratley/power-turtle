@@ -75,6 +75,7 @@ h1 {
 }
 
 #repl {
+    width: 100%;
 }
 
 .re-console-container {
@@ -143,6 +144,8 @@ h1 {
 
 #main {
     display: flex;
+    float: left;
+    width: 100%;
 }
 
 @media all and (max-width: 800px) {

@@ -9,6 +9,7 @@
     [power-turtle.view.help :as help]
     [power-turtle.view.repl :as repl]
     [power-turtle.view.title :as title]
+    [cljsjs.showdown]
     [reagent.core :as reagent]
     [reagent.dom :refer [dom-node]]
     [re-frame.core :refer [subscribe dispatch]]))
@@ -20,6 +21,7 @@
    @html-hook/component
    [:br]
    [:div#main
+    [:div]
     [canvas/turtle-canvas]
     [repl/repl]]
    [help/help-tips]])
