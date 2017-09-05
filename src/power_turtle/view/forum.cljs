@@ -7,5 +7,4 @@
    [:div#disqus_thread
     {:ref (fn [this]
             (when (and this js/window.DISQUS)
-              (prn "Calling reset")
               (js/window.DISQUS.reset #js {:reload true})))}]])

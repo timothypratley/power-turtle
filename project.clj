@@ -47,7 +47,7 @@
               [{:id "dev"
                 ;; `lein figwheel`
                 :source-paths ["src"]
-                :watch-paths ["resources/public/lessons" "src"]
+                ;;:watch-paths ["resources/public/lessons" "src"]
                 :figwheel {:on-jsload "power-turtle.main/on-reload"}
                 :compiler {:main power-turtle.main
                            :asset-path "js/compiled/out"

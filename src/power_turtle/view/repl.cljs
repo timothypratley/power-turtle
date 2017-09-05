@@ -67,9 +67,10 @@
    [toggle-parinfer]])
 
 (dispatch [:init-options])
-(do-preambles preambles)
 
 (defn repl []
+  (defonce so-ugly-why-are-you-like-this?
+    (do-preambles preambles))
   (fn []
     [:div#repl
      [console/console console-key
