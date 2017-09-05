@@ -9,6 +9,11 @@
 ;; (trace-forms {:tracer (tracer :color "brown")}
 
 (reg-sub-raw
+  :route
+  (fn [db [_]]
+    (reaction (get-in @db [:route]))))
+
+(reg-sub-raw
   :get-console-verbose
   (fn [db [_]]
     (reaction (get-in @db [:options :verbose]))))

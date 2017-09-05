@@ -67,9 +67,9 @@
    [toggle-parinfer]])
 
 (dispatch [:init-options])
+(do-preambles preambles)
 
 (defn repl []
-  (do-preambles preambles)
   (fn []
     [:div#repl
      [console/console console-key

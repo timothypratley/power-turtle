@@ -7,33 +7,35 @@
   :min-lein-version "2.6.1"
 
   :dependencies [[org.clojure/clojure "1.8.0"]
-                 [org.clojure/clojurescript "1.9.671"]
+                 [org.clojure/clojurescript "1.9.908"]
                  [org.clojure/core.async "0.3.443" :exclusions [org.clojure/tools.reader]]
+                 [org.clojure/tools.reader "1.0.6"]
+                 [org.clojars.stumitchell/clairvoyant "0.2.1"]
+                 [adzerk/cljs-console "0.1.1"]
+                 [binaryage/devtools "0.9.4"]
+                 [bidi "2.1.2"]
                  [cban "0.1.0-SNAPSHOT"]
                  [com.google/clojure-turtle "0.3.0"]
-                 [timothypratley/reanimated "0.3.0"]
-                 [reagent "0.7.0"]
-                 [re-frame "0.9.4"]
-                 [replumb/replumb "0.2.4"]
+                 [cljs-ajax "0.7.2"]
+                 [cljsjs/codemirror "5.24.0-1"]
                  [cljsjs/highlight "9.12.0-0"]
+                 [cljsjs/enquire "2.1.2-0"]
+                 [cljsjs/showdown "1.4.2-0"]
+                 [day8/re-frame-tracer "0.1.0-SNAPSHOT"]
+                 [hickory "0.7.1"]
+                 [com.cemerick/piggieback "0.2.2"]
+                 [reagent "0.7.0"]
+                 [re-frame "0.10.1"]
+                 [replumb/replumb "0.2.4"]
                  [re-console "0.1.4-SNAPSHOT"]
                  [re-com "2.1.0"]
-                 [cljs-ajax "0.6.0"]
-                 [hickory "0.7.1"]
-                 [cljsjs/showdown "1.4.2-0"]
-                 [org.clojure/tools.reader "1.0.3"]
-                 [cljsjs/enquire "2.1.2-0"]
-                 [com.cemerick/piggieback "0.2.2"]
-                 [org.clojars.stumitchell/clairvoyant "0.2.1"]
-                 [binaryage/devtools "0.9.4"]
-                 [day8/re-frame-tracer "0.1.0-SNAPSHOT"]
-                 [cljsjs/codemirror "5.24.0-1"]
-                 [adzerk/cljs-console "0.1.1"]
-                 [re-complete "0.1.4-1-SNAPSHOT"]]
+                 [re-complete "0.1.4-1-SNAPSHOT"]
+                 [soda-ash "0.4.0"]
+                 [timothypratley/reanimated "0.3.0"]]
 
-  :plugins [[lein-figwheel "0.5.11"]
+  :plugins [[lein-figwheel "0.5.13"]
             [lein-cban "0.1.0-SNAPSHOT"]
-            [lein-cljsbuild "1.1.6" :exclusions [[org.clojure/clojure]]]]
+            [lein-cljsbuild "1.1.7" :exclusions [[org.clojure/clojure]]]]
 
   :source-paths ["src"]
 
@@ -45,8 +47,9 @@
               [{:id "dev"
                 ;; `lein figwheel`
                 :source-paths ["src"]
-                :figwheel {}
-                :compiler {:main power-turtle.view.main
+                :watch-paths ["resources/public/lessons" "src"]
+                :figwheel {:on-jsload "power-turtle.main/on-reload"}
+                :compiler {:main power-turtle.main
                            :asset-path "js/compiled/out"
                            :output-to "resources/public/js/compiled/power_turtle.js"
                            :output-dir "resources/public/js/compiled/out"
@@ -59,7 +62,7 @@
                 ;; `lein cljsbuild once min`
                 :source-paths ["src"]
                 :compiler {:output-to "resources/public/js/compiled/power_turtle.js"
-                           :main power-turtle.view.main
+                           :main power-turtle.main
                            :foreign-libs
                            [{:file "resources/public/js/clojure-parinfer.js"
                              :provides ["parinfer.codemirror.mode.clojure.clojure-parinfer"]}]
@@ -69,7 +72,7 @@
 
   :figwheel {:css-dirs ["resources/public/css"]}
 
-  :profiles {:dev {:dependencies [[figwheel-sidecar "0.5.11"]
+  :profiles {:dev {:dependencies [[figwheel-sidecar "0.5.13"]
                                   [com.cemerick/piggieback "0.2.2"]]
                    ;; need to add dev source path here to get user.clj loaded
                    :source-paths ["src" "dev"]

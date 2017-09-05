@@ -6,8 +6,6 @@ body { -webkit-animation: androidBugfix infinite 1s; }
 body {
   font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
   text-align: center;
-  width: 80%;
-  margin: 40px auto 0;
 }
 
 a {

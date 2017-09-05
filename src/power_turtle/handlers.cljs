@@ -19,13 +19,18 @@
 (reg-event-db
   :current-language
   (fn current-language [db [_ language]]
-    (assoc-in db [:current-language] language)))
+    (assoc db :current-language language)))
 
 (reg-event-db
   :flip
   (fn flip [db [_ v]]
     (if v
-      (assoc-in db [:flip] v)
+      (assoc db :flip v)
       (update db :flip -))))
+
+(reg-event-db
+  :route
+  (fn route [db [_ route-name]]
+    (assoc db :route route-name)))
 
 ;;)
