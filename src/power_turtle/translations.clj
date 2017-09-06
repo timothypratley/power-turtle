@@ -6,16 +6,12 @@
 
 (def translations
   (cban/read-translation-maps
-    [;;"clojure-core-translations-map.edn"
+    ["clojure-core-translations-map.edn"
      ;; TODO: move upstream?  "clojure-turtle-translations-map.edn"
      "power-turtle-translations-map.edn"]))
 
 (defmacro require-translations []
-  (str
-    "(require "
-    (string/join " "
-      (cban/generate-refer-clauses translations))
-    ")"))
+  (cban/generate-require-statement translations))
 
 (defmacro translation-map []
   translations)
