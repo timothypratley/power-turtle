@@ -13,12 +13,13 @@
    [:p
     {:style {:margin-top "6em"}}
     "This is a place to learn how to write computer programs."]
+   ;; TODO: make this a call to action
    [:p
     {:style {:margin-top "3em"}}
     "Choose a lesson from the menu above to get a guided tour of what you can do."]
    [:p
     {:style {:margin-top "3em"}}
-    "If you have any questions please add the in the form, or contact Elango Cheran and Timothy Pratley."]
+    "If you have any questions please add the in the forum, or contact Elango Cheran and Timothy Pratley."]
    [:footer
     {:style {:margin-top "6em"}}
     " 🐢 "

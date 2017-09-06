@@ -69,6 +69,7 @@
 (dispatch [:init-options])
 
 (defn repl []
+  ;; TODO: but I do want it to run earlier than this!!!
   (defonce so-ugly-why-are-you-like-this?
     (do-preambles preambles))
   (fn []
