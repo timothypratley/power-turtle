@@ -5,7 +5,6 @@
     ;; TODO: Do I need these?? -- how can I generate this? generate a ns!
     [clojure-turtle.core]
     [power-turtle.api]
-    [bocko.core]
     ;[cban.clojure-turtle-core-en]
     ;[cban.power-turtle-api-en]
     ;[cban.clojure-turtle-core-es]
