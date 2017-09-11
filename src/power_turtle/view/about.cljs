@@ -8,37 +8,43 @@
             :padding "1em 0em"
             :vertical true}}
    [:h1
-    {:style {:margin-top "6em"}}
+    {:style {:margin-top "3em"}}
     "Welcome to Power Turtle!"]
+   [:img {:src "turtle.jpg"
+          :style {:margin-top "3em"}}]
    [:p
-    {:style {:margin-top "6em"}}
+    {:style {:margin-top "3em"}}
     "This is a place to learn how to write computer programs."]
    ;; TODO: make this a call to action
-   [:p
-    {:style {:margin-top "3em"}}
-    "Choose a lesson from the menu above to get a guided tour of what you can do."]
-   [:p
-    {:style {:margin-top "3em"}}
-    "If you have any questions please add the in the forum, or contact Elango Cheran and Timothy Pratley."]
+   [sa/Message
+    {:info true
+     :style {:margin-top "3em"}}
+    [:p
+     "Choose a lesson from the menu above to get started."]]
+
    [:footer
-    {:style {:margin-top "6em"}}
+    {:style {:margin-top "9em"}}
     " 🐢 "
     [:a
      {:href "https://youtu.be/0fKpGy2QuMM"
       :target "_blank"}
-     "Why Turtle?"]
+     "Why turtle?"]
     " 🐢 "
     [:a
      {:href "http://clojurebridge.github.io/curriculum/#/1"
       :target "_blank"}
-     "Learn Clojure"]
+     "ClojureBridge ciriculum"]
     " 🐢 "
     [:a
      {:href "http://github.com/timothypratley/power-turtle"
       :target "_blank"}
-     "Source"]
+     "Source code"]
     " 🐢 "
     [:a
      {:href "http://timothypratley.blogspot.com"
       :target "_blank"}
-     "Blog"]]])
+     "My blog"]
+    [:p
+     {:style {:margin-top "3em"}}
+     "Contact me "
+     [:a {:href "mailto:timothypratley@gmail.com"} "timothypratley@gmail.com"]]]])

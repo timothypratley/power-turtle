@@ -31,7 +31,7 @@
                  [re-com "2.1.0"]
                  [re-complete "0.1.4-1-SNAPSHOT"]
                  [soda-ash "0.4.0"]
-                 [timothypratley/reanimated "0.3.0"]]
+                 [reanimated "0.5.2"]]
 
   :plugins [[lein-figwheel "0.5.13"]
             [lein-cban "0.1.0-SNAPSHOT"]
@@ -47,15 +47,19 @@
               [{:id "dev"
                 ;; `lein figwheel`
                 :source-paths ["src"]
+                ;; does not help, but I want it to watch markdown files
                 ;;:watch-paths ["resources/public/lessons" "src"]
                 :figwheel {:on-jsload "power-turtle.main/on-reload"}
                 :compiler {:main power-turtle.main
+                           :preloads [devtools.preload]
                            :asset-path "js/compiled/out"
                            :output-to "resources/public/js/compiled/power_turtle.js"
                            :output-dir "resources/public/js/compiled/out"
                            :foreign-libs
                            [{:file "resources/public/js/clojure-parinfer.js"
                              :provides ["parinfer.codemirror.mode.clojure.clojure-parinfer"]}]
+                           :closure-defines {"goog.DEBUG" true
+                                             "clairvoyant.core.devmode" true}
                            :source-map-timestamp true}}
 
                {:id "min"
@@ -67,7 +71,16 @@
                            [{:file "resources/public/js/clojure-parinfer.js"
                              :provides ["parinfer.codemirror.mode.clojure.clojure-parinfer"]}]
                            ;; TODO: can advanced be used?
-                           :optimizations :whitespace
+                           :closure-defines {"goog.DEBUG" false
+                                             "clairvoyant.core.devmode" false}
+                           :elide-asserts true
+                           :source-map-timestamp true
+                           :optimizations :simple
+                           :parallel-build true
+                           :optimize-constants true
+                           :static-fns true
+                           ;; https://clojurescript.org/guides/self-hosting
+                           ;; :dump-core false
                            :pretty-print false}}]}
 
   :figwheel {:css-dirs ["resources/public/css"]}

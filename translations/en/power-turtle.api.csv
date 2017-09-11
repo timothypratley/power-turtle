@@ -1,4 +1,8 @@
 existing,alias,docstring,comment
+forward,forward
+back,back
+right,right
+left,left
 html,html
 add-action,add-action
 red,red

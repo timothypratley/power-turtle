@@ -1,7 +1,7 @@
 (ns power-turtle.handlers
   (:require
-    [re-frame.core :refer [reg-event-db]]
     [clairvoyant.core :refer-macros [trace-forms]]
+    [re-frame.core :refer [reg-event-db]]
     [re-frame-tracer.core :refer [tracer]]))
 
 ;; (trace-forms {:tracer (tracer :color "green")}

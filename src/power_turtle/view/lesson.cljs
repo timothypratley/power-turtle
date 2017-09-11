@@ -56,7 +56,8 @@
         (if enabled ">" "-")]])]])
 
 (defn lesson-view [{:keys [id]}]
-  (reset! pos [(try (dec (int id)) (catch :default ex 0)) 1 0])
+  (when (not= (first @pos) id)
+    (reset! pos [(try (dec (int id)) (catch :default ex 0)) 1 0]))
   [:div
    [lesson-slides]
-   [workspace/workspace]])
+   [workspace/workspace id]])

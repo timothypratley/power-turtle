@@ -65,7 +65,8 @@ h1 {
     text-decoration: none;
 }
 
-#turtle-canvas {
+#space canvas,
+#space div {
     width: 100%;
     flex: 0 0 50%;
     border-radius: 10px;
@@ -142,7 +143,6 @@ h1 {
 
 #main {
     display: flex;
-    float: left;
     width: 100%;
 }
 

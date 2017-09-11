@@ -1,7 +1,6 @@
 {"en"
  {"clojure-turtle.core"
-  {"back" {:resolved true, :existing "back", :alias "back"},
-   "clean" {:resolved true, :existing "clean", :alias "clean"},
+  {"clean" {:resolved true, :existing "clean", :alias "clean"},
    "color" {:resolved true, :existing "color", :alias "color"},
    "draw-turtle-commands"
    {:resolved true,
@@ -9,12 +8,9 @@
     :alias "draw-turtle-commands"},
    "end-fill"
    {:resolved true, :existing "end-fill", :alias "end-fill"},
-   "forward" {:resolved true, :existing "forward", :alias "forward"},
    "home" {:resolved true, :existing "home", :alias "home"},
-   "left" {:resolved true, :existing "left", :alias "left"},
    "pendown" {:resolved true, :existing "pendown", :alias "pendown"},
    "penup" {:resolved true, :existing "penup", :alias "penup"},
-   "right" {:resolved true, :existing "right", :alias "right"},
    "setheading"
    {:resolved true, :existing "setheading", :alias "setheading"},
    "setxy" {:resolved true, :existing "setxy", :alias "setxy"},
@@ -28,12 +24,16 @@
   "power-turtle.api"
   {"add-action"
    {:resolved true, :existing "add-action", :alias "add-action"},
+   "back" {:resolved true, :existing "back", :alias "back"},
    "blue" {:resolved true, :existing "blue", :alias "blue"},
+   "forward" {:resolved true, :existing "forward", :alias "forward"},
    "green" {:resolved true, :existing "green", :alias "green"},
    "html" {:resolved true, :existing "html", :alias "html"},
+   "left" {:resolved true, :existing "left", :alias "left"},
    "octagon" {:resolved true, :existing "octagon", :alias "octagon"},
    "pattern" {:resolved true, :existing "pattern", :alias "pattern"},
-   "red" {:resolved true, :existing "red", :alias "red"}}},
+   "red" {:resolved true, :existing "red", :alias "red"},
+   "right" {:resolved true, :existing "right", :alias "right"}}},
  "es"
  {"clojure-turtle.core"
   {"back" {:resolved true, :existing "back", :alias "espalda"},

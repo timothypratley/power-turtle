@@ -3,7 +3,7 @@
     [re-frame.core :refer [dispatch subscribe]]
     [replumb.core :as replumb]
     [replumb.repl :as repl]
-    [power-turtle.io :as io]))
+    [re-console.io :as io]))
 
 (defn replumb-options
   [verbose? src-paths]

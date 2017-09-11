@@ -2,13 +2,34 @@
   (:require
     #?(:cljs [power-turtle.view.toolbar :as toolbar])
     #?(:cljs [power-turtle.view.html-hook :as html-hook])
-    [clojure-turtle.core :refer [left right forward color home clean]]
+    [clojure-turtle.core :as turtle :refer [color home clean]]
     [clojure-turtle.macros :refer [all repeat]]))
+
+(defn turtle-state-string [a]
+  (select-keys @a [:x :y :angle]))
+
+;; TODO: support multi-arity?? copy docstrings??
+(defn forward [x]
+  (turtle-state-string (turtle/forward x)))
+(defn back [x]
+  (turtle-state-string (turtle/back x)))
+(defn left [x]
+  (turtle-state-string (turtle/left x)))
+(defn right [x]
+  (turtle-state-string (turtle/right x)))
+
+(defn plot [x y]
+  (quil.core/rect x y 20 20))
 
 (def forward-right
   (all
     (forward 50)
     (right 45)))
+
+(def forward-left
+  (all
+    (forward 50)
+    (left 45)))
 
 (def octagon
   (all (repeat 8 forward-right)))
@@ -34,10 +55,11 @@
 
 #?(:cljs
    (reset! toolbar/actions
-           [['<- (all (left 90))]
-            ['-> (all (right 90))]
-            ['<-. (all (forward 10) (left 10))]
-            ['.-> (all (forward 10) (right 10))]
+           [['<- (all (left 45))]
+            ['-> (all (right 45))]
+            ["^" (all (forward 50))]
+            ['<-. forward-left]
+            ['.-> forward-right]
             ['octagon octagon]
             ['pattern pattern]
             ['red red]

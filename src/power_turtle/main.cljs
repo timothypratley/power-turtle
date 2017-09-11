@@ -5,7 +5,7 @@
     [power-turtle.subs]
     [power-turtle.api]
     [power-turtle.view.toolbar :as toolbar]
-    [power-turtle.view.canvas :as canvas]
+    [power-turtle.view.turtle-canvas :as canvas]
     [power-turtle.view.html-hook :as html-hook]
     [power-turtle.view.help :as help]
     [power-turtle.view.repl :as repl]

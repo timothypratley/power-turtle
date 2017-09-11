@@ -1,7 +1,8 @@
 (ns power-turtle.translations
   (:require [cban.core :as cban]
             [clojure.string :as string]
-            [clojure.java.io :as io])
+            [clojure.java.io :as io]
+            [clojure.tools.reader.edn :as edn])
   (:import (java.io File)))
 
 (def translations
@@ -13,6 +14,10 @@
 (defmacro require-translations []
   (cban/generate-require-statement translations))
 
+(defmacro rr []
+  (read-string
+    (cban/generate-require-statement translations)))
+
 (defmacro translation-map []
   translations)
 
@@ -21,7 +26,7 @@
 (defmacro lessons []
   (try
     (vec
-      (for [^File lesson (seq (.listFiles (io/file (io/resource "public/lessons"))))
+      (for [^File lesson (sort (seq (.listFiles (io/file (io/resource "public/lessons")))))
             :when (.isFile lesson)]
         [(.getName lesson)
          (string/split
