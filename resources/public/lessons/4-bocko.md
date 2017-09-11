@@ -7,4 +7,6 @@
 
     (hlin 3 9 10)   ;; draws a horizontal line
 
+    (vlin 3 9 10)   ;; draws a vertical line
+
     (clear)         ;; clears screen

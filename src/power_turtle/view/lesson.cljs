@@ -56,8 +56,9 @@
         (if enabled ">" "-")]])]])
 
 (defn lesson-view [{:keys [id]}]
-  (when (not= (first @pos) id)
-    (reset! pos [(try (dec (int id)) (catch :default ex 0)) 1 0]))
+  (let [idx (dec (js/Number.parseInt id))]
+    (when (not= (first @pos) idx)
+      (reset! pos [(try idx (catch :default ex 0)) 1 0])))
   [:div
    [lesson-slides]
    [workspace/workspace id]])

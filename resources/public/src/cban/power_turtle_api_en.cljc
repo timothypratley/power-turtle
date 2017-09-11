@@ -11,6 +11,9 @@
 (def blue
   power-turtle.api/blue)
 
+(def color
+  power-turtle.api/color)
+
 (def forward
   power-turtle.api/forward)
 

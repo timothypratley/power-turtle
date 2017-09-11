@@ -155,10 +155,8 @@
          :height 640}])
      :component-did-mount
      (fn bocko-canvas-did-mount [this]
-       (prn "mounted")
        (reset! canvas (dom/dom-node this))
-       (color :pink)
-       (plot 2 3))
+       (redraw))
      :component-will-unmount
      (fn bocko-canvas-will-unmount []
        (reset! canvas nil))}))

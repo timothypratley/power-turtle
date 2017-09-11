@@ -2,7 +2,8 @@
   (:require
     #?(:cljs [power-turtle.view.toolbar :as toolbar])
     #?(:cljs [power-turtle.view.html-hook :as html-hook])
-    [clojure-turtle.core :as turtle :refer [color home clean]]
+    #?(:cljs [power-turtle.view.bocko-canvas :as bocko])
+    [clojure-turtle.core :as turtle :refer [home clean]]
     [clojure-turtle.macros :refer [all repeat]]))
 
 (defn turtle-state-string [a]
@@ -38,17 +39,21 @@
   (all (repeat 12 (all (octagon) (right 30)))))
 
 (def red
-  (all (color [255 0 0])))
+  (all (turtle/color [255 0 0])))
 
 (def green
-  (all (color [0 255 0])))
+  (all (turtle/color [0 255 0])))
 
 (def blue
-  (all (color [0 0 255])))
+  (all (turtle/color [0 0 255])))
 
 (defn init []
   (home)
   (clean))
+
+(defn color [x]
+  ;;(power-turtle.view.bocko-canvas/color x)
+  (turtle/color x))
 
 (defn add-action [label f]
   #?(:cljs (swap! toolbar/actions conj [label f])))

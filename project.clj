@@ -9,7 +9,7 @@
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.9.908"]
                  [org.clojure/core.async "0.3.443" :exclusions [org.clojure/tools.reader]]
-                 [org.clojure/tools.reader "1.0.6"]
+                 [org.clojure/tools.reader "1.1.0"]
                  [org.clojars.stumitchell/clairvoyant "0.2.1"]
                  [adzerk/cljs-console "0.1.1"]
                  [binaryage/devtools "0.9.4"]
@@ -31,7 +31,8 @@
                  [re-com "2.1.0"]
                  [re-complete "0.1.4-1-SNAPSHOT"]
                  [soda-ash "0.4.0"]
-                 [reanimated "0.5.2"]]
+                 ;; TODO: upgrade to just reanimated
+                 [timothypratley/reanimated "0.3.0"]]
 
   :plugins [[lein-figwheel "0.5.13"]
             [lein-cban "0.1.0-SNAPSHOT"]

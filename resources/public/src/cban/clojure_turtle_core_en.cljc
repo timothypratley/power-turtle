@@ -5,9 +5,6 @@
 (def clean
   clojure-turtle.core/clean)
 
-(def color
-  clojure-turtle.core/color)
-
 (def draw-turtle-commands
   clojure-turtle.core/draw-turtle-commands)
 

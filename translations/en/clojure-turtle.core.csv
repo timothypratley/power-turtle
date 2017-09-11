@@ -7,6 +7,5 @@ setxy,setxy
 start-fill,start-fill
 end-fill,end-fill
 home,home
-color,color
 wait,wait
 draw-turtle-commands,draw-turtle-commands

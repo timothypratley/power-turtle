@@ -1,7 +1,6 @@
 {"en"
  {"clojure-turtle.core"
   {"clean" {:resolved true, :existing "clean", :alias "clean"},
-   "color" {:resolved true, :existing "color", :alias "color"},
    "draw-turtle-commands"
    {:resolved true,
     :existing "draw-turtle-commands",
@@ -26,6 +25,7 @@
    {:resolved true, :existing "add-action", :alias "add-action"},
    "back" {:resolved true, :existing "back", :alias "back"},
    "blue" {:resolved true, :existing "blue", :alias "blue"},
+   "color" {:resolved true, :existing "color", :alias "color"},
    "forward" {:resolved true, :existing "forward", :alias "forward"},
    "green" {:resolved true, :existing "green", :alias "green"},
    "html" {:resolved true, :existing "html", :alias "html"},
@@ -33,7 +33,13 @@
    "octagon" {:resolved true, :existing "octagon", :alias "octagon"},
    "pattern" {:resolved true, :existing "pattern", :alias "pattern"},
    "red" {:resolved true, :existing "red", :alias "red"},
-   "right" {:resolved true, :existing "right", :alias "right"}}},
+   "right" {:resolved true, :existing "right", :alias "right"}},
+  "power-turtle.view.bocko-canvas"
+  {"clear" {:existing "clear", :alias "clear"},
+   "hlin" {:existing "hlin", :alias "hlin"},
+   "plot" {:existing "plot", :alias "plot"},
+   "scrn" {:existing "scrn", :alias "scrn"},
+   "vlin" {:existing "vlin", :alias "vlin"}}},
  "es"
  {"clojure-turtle.core"
   {"back" {:resolved true, :existing "back", :alias "espalda"},
