@@ -15,8 +15,9 @@
 (def routes
   [""
    [["about" #'about/about-page]
-    ["lesson" {["/" :id] #'lesson/lesson-view}]
-    ["freestyle" {"" #'workspace/workspace}]
+    ;; uses regex to allow slashes in the id, which can be a url
+    ["lesson" [[["" [#".*" :id]] #'lesson/lesson-view]]]
+    ["freestyle" [["" #'workspace/workspace]]]
     ["forum" #'forum/forum]]])
 
 (def links
@@ -26,6 +27,8 @@
    "lesson/3"
    "lesson/4"
    "lesson/5"
+   "lesson/6"
+   "lesson/7"
    "freestyle"
    "forum"])
 

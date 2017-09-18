@@ -1,4 +1,4 @@
-(ns power-turtle.view.bocko-canvas
+(ns power-turtle.view.canvas.bocko-canvas
   (:require
     [reagent.core :as reagent]
     [reagent.dom :as dom]))
@@ -6,8 +6,8 @@
 (defonce canvas (atom nil))
 (def ^:private ^:const width 40)
 (def ^:private ^:const height 40)
-(def ^:private ^:const pixel-width 28)
-(def ^:private ^:const pixel-height 16)
+(def ^:private ^:const pixel-width 7)
+(def ^:private ^:const pixel-height 4)
 (def ^:private clear-color :black)
 (def ^:private default-color :white)
 (def ^:private clear-screen (vec (repeat height (vec (repeat width clear-color)))))
@@ -148,11 +148,8 @@
      :reagent-render
      (fn render-bocko-canvas []
        [:canvas
-        {:style {:min-width 600
-                 :max-width 600
-                 :background-color "lightgray"}
-         :width 600
-         :height 640}])
+        {:width (* width pixel-width)
+         :height (* height pixel-height)}])
      :component-did-mount
      (fn bocko-canvas-did-mount [this]
        (reset! canvas (dom/dom-node this))

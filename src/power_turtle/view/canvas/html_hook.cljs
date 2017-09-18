@@ -1,4 +1,4 @@
-(ns power-turtle.view.html-hook
+(ns power-turtle.view.canvas.html-hook
   (:require
     [reagent.core :as reagent]))
 
@@ -7,9 +7,6 @@
 
 (defn html-space []
   [:div
-   {:style {:width "600px"
-            :height "640px"
-            :border "1px solid lightgrey"}}
    [:h3 "HTML"]
    [:hr]
    @component])

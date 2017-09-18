@@ -1,8 +1,8 @@
 (ns power-turtle.api
   (:require
     #?(:cljs [power-turtle.view.toolbar :as toolbar])
-    #?(:cljs [power-turtle.view.html-hook :as html-hook])
-    #?(:cljs [power-turtle.view.bocko-canvas :as bocko])
+    #?(:cljs [power-turtle.view.canvas.html-hook :as html-hook])
+    #?(:cljs [power-turtle.view.canvas.bocko-canvas :as bocko])
     [clojure-turtle.core :as turtle :refer [home clean]]
     [clojure-turtle.macros :refer [all repeat]]))
 

@@ -21,24 +21,13 @@ You can command the turtle to turn `left` and `right`.
 
 Try sending these commands one at a time:
 
-    (right 30)
-    (forward 50)
-    (left 30)
-    (forward 50)
+    (right)
+    (forward)
+    (left)
+    (forward)
 
 The number you send indicates how far to move in pixels,
 or how far to turn in degrees.
-
----
-
-You can make more complex commands by combining these commands.
-To do several commands in a row you can combine them with `do`:
-
-    (do
-      (right 120)
-      (forward 50)
-      (right 120)
-      (forward 50))
 
 ---
 
@@ -56,7 +45,7 @@ You can name a combination of commands using `defn`:
     (defn zig []
       (forward 50)
       (right 120)
-      (forward 50))
+      (forward 50)))
 
 And then you can call your new command by name just like any other command:
 
@@ -81,7 +70,7 @@ Try passing a number to the `zag` command:
 
 Try using your new commands together:
 
-    (do
+    (defn zig-zag []
       (zig)
       (zag 100)
       (zig)

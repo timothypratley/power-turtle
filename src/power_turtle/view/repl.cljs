@@ -103,8 +103,7 @@
         ;;(swap! replumb-repl/st #(merge-with merge %1 %2) cache)
         ;;(reset! replumb-repl/st cache)
         )
-      (do-preambles preambles)
-      )))
+      (do-preambles preambles))))
 
 ;; TODO: async these (do I even need to init first? who knows??)
 (dispatch-sync [:init-console console-key (replumb-proxy/eval-opts replumb-opts)])
@@ -116,7 +115,7 @@
    [toggle-parinfer]])
 
 (defn repl []
-  [:div#repl
+  [:div.repl
    [console/console console-key
     {:eval-opts (replumb-proxy/eval-opts replumb-opts)
      :mode-line? false}]

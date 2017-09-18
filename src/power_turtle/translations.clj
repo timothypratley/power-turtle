@@ -21,7 +21,6 @@
 (defmacro translation-map []
   translations)
 
-;;TODO: does this belong here?
 ;;TODO: kinda sux because does not hot reload
 (defmacro lessons []
   (try
@@ -29,8 +28,6 @@
       (for [^File lesson (sort (seq (.listFiles (io/file (io/resource "public/lessons")))))
             :when (.isFile lesson)]
         [(.getName lesson)
-         (string/split
-           (slurp lesson)
-           #"\n---\n")]))
+         (slurp lesson)]))
     (catch Exception ex
       [["Error" [(with-out-str (println ex))]]])))

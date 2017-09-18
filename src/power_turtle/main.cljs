@@ -4,16 +4,8 @@
     [power-turtle.handlers]
     [power-turtle.subs]
     [power-turtle.api]
-    [power-turtle.view.toolbar :as toolbar]
-    [power-turtle.view.turtle-canvas :as canvas]
-    [power-turtle.view.html-hook :as html-hook]
-    [power-turtle.view.help :as help]
-    [power-turtle.view.repl :as repl]
     [power-turtle.view.navigation :as navigation]
-    [power-turtle.view.lesson :as lesson]
-    [reagent.core :as reagent]
-    [reagent.dom :refer [dom-node]]
-    [re-frame.core :refer [subscribe dispatch]]))
+    [reagent.core :as reagent]))
 
 (defn page []
   [:div.container
