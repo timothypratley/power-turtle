@@ -1,3 +1,5 @@
+canvas: turtle
+
 Spirals are interesting shapes which can draw with the turtle.
 
 Drawing a spiral is a little bit like drawing a circle.

@@ -1,3 +1,5 @@
+canvas: turtle
+
 Now that you know how to move the robot turtle with commands
 it is time to start drawing some patterns.
 Patterns are simple shapes that get repeated in many places.

@@ -1,3 +1,5 @@
+canvas: raster
+
     (plot 2 3)      ;; plots a point on the screen
 
     (color :pink)   ;; changes the color to pink

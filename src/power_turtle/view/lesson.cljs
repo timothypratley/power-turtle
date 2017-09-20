@@ -1,34 +1,13 @@
 (ns power-turtle.view.lesson
   (:require
     [power-turtle.view.workspace :as workspace]
-    [cljsjs.showdown]
+    [power-turtle.view.markdown :as md]
     [clojure.string :as string]
     [goog.net.XhrIo :as xhr]
     [reagent.core :as reagent]
-    [soda-ash.core :as sa])
-  (:require-macros
-    [power-turtle.translations :as translations]))
-
-(defn parse-slides [markdown]
-  (string/split markdown #"\n---\n"))
-
-(def lessons
-  (reagent/atom
-    (zipmap
-      (map #(str "/" %) (rest (range 8)))
-      (mapv parse-slides (map second (translations/lessons))))))
-
-(defn make-html [s]
-  (.makeHtml
-    (doto (js/showdown.Converter.)
-      (.setFlavor "github"))
-    s))
-
-;; TODO: use react-remark?
-(defn render-markdown [s]
-  [:div
-   {:dangerouslySetInnerHTML
-    {:__html (make-html s)}}])
+    [re-frame.core :refer [subscribe dispatch]]
+    [soda-ash.core :as sa]
+    [power-turtle.lesson-markdown :as lm]))
 
 (defn lesson-slides [slides slide-index]
   [sa/Segment
@@ -49,7 +28,8 @@
     [:div
      {:style {:width "90%"
               :min-height "200px"}}
-     [render-markdown (get @slides @slide-index "Loading...")]]
+     [md/render-markdown
+      (get-in @slides [@slide-index :content] "Loading...")]]
     (let [enabled (< (inc @slide-index)
                      (count @slides))]
       [:div
@@ -60,15 +40,17 @@
            (swap! slide-index inc))}
         (if enabled ">" "-")]])]])
 
-(defn lesson-view [{:keys [id]}]
+(defn lesson-view [route-params]
   (let [current-id (reagent/atom nil)
         slides (reagent/atom nil)
-        slide-index (reagent/atom 0)]
+        slide-index (reagent/atom 0)
+        current-language (subscribe [:current-language])]
     (fn a-lesson-view [{:keys [id]}]
       (when (not= id @current-id)
         (reset! current-id id)
         (reset! slide-index 0)
-        (reset! slides (get @lessons id))
+        ;; TODO: yuck, clean this up
+        (reset! slides (get-in lm/lessons (cons @current-language (rest (string/split id #"/")))))
         (when-not @slides
           ;; TODO: this breaks the figwheel websocket connection if an external request fails... why?
           ;; TODO: (xhr/cleanup)  also see replumb.io
@@ -76,7 +58,7 @@
                          (let [response (.-target e)]
                            (reset! slides
                                    (if (.isSuccess response)
-                                     (parse-slides (.getResponseText response))
+                                     (lm/parse-slides (.getResponseText response))
                                      [(str
                                         "Lesson failed to load from:<br>"
                                         (let [url (str (when (string/starts-with? id "//") js/location.protocol) id)]
@@ -87,4 +69,4 @@
                                         "\n\nPlease check the URL and try again.")])))))))
       [:div
        [lesson-slides slides slide-index]
-       [workspace/workspace id]])))
+       [workspace/workspace (-> @slides first :properties :canvas)]])))

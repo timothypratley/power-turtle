@@ -1,3 +1,5 @@
+canvas: html
+
 HTML is what web pages like this are made of.
 You can modify part of this page by calling the `html` command.
 

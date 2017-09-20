@@ -12,18 +12,20 @@
    "es" "Español"
    "en" "English"})
 
+(dispatch [:current-language "en"])
+
 (def translations
   (translation-map))
 
 (defn help-tips []
-  (let [current-langugage (subscribe [:current-language])]
+  (let [current-language (subscribe [:current-language])]
     (fn a-help-tips []
       [:div
        (into
          [:div]
          (for [[language-id language-name] (sort languages)]
            [:button
-            {:class (when (= @current-langugage language-id)
+            {:class (when (= @current-language language-id)
                       "active")
              :on-click
              (fn language-click [e]
@@ -33,6 +35,6 @@
          [:small]
          (interpose
            " · "
-           (for [[namespace-name namespace-map] (translations @current-langugage)
+           (for [[namespace-name namespace-map] (translations @current-language)
                  [sym {:keys [alias doc]}] namespace-map]
              [:span (or alias) doc])))])))

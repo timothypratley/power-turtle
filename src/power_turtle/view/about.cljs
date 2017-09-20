@@ -1,5 +1,7 @@
 (ns power-turtle.view.about
   (:require
+    [power-turtle.view.help :as help]
+    [power-turtle.lesson-markdown :as lm]
     [soda-ash.core :as sa]))
 
 (defn about-page []
@@ -16,14 +18,19 @@
     {:style {:margin-top "3em"}}
     "This is a place to learn how to write computer programs."]
    ;; TODO: make this a call to action
-   [sa/Message
-    {:info true
+   [sa/Button
+    {:size "massive"
+     :primary true
+     :href lm/first-lesson
      :style {:margin-top "3em"}}
-    [:p
-     "Choose a lesson from the menu above to get started."]]
+    "Get started"]
+
+   [:div
+    {:style {:margin-top "6em"}}
+    [help/help-tips]]
 
    [:footer
-    {:style {:margin-top "9em"}}
+    {:style {:margin-top "3em"}}
     " 🐢 "
     [:a
      {:href "https://youtu.be/0fKpGy2QuMM"

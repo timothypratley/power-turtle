@@ -8,19 +8,19 @@ Conj 2017
 
 ---
 
-<img src="../img/friends2.jpg" style="width:100%">
+<img alt="Happy friends" src="../img/friends2.jpg" style="width:100%">
 
 ---
 
-<img src="../img/interested.jpg" style="width:100%">
+<img alt="Friend showing other friend computer" src="../img/interested.jpg" style="width:100%">
 
 ---
 
-<img src="../img/beforeanger.jpg" style="width:100%">
+<img alt="Confused by computer" src="../img/beforeanger.jpg" style="width:100%">
 
 ---
 
-<img src="../img/anger.gif" style="width:100%">
+<img alt="Bashing computer on table" src="../img/anger.gif" style="width:100%">
 
 ---
 
@@ -51,7 +51,7 @@ Conj 2017
 
 ---
 
-![alt text](../img/korean.jpg "Traditionally dressed Koreans doing caligraphy")
+![Traditionally dressed Koreans doing caligraphy](../img/korean.jpg)
 
 ---
 
@@ -152,7 +152,7 @@ emacs pic
 
 ---
 
-![alt text](../img/bad-idea.jpg "Excited idiots in a shopping trolley")
+![Excited idiots in a shopping trolley](../img/bad-idea.jpg)
 
 ---
 
@@ -193,7 +193,7 @@ Love Mum
 
 ---
 
-![alt text](../img/beginner.jpg "Beginner surfer")
+![Beginner surfer](../img/beginner.jpg)
 
 ---
 
@@ -210,13 +210,13 @@ https://github.com/viebel/klipse
 
 http://clojurescript.io/
 
-![alt_text](../img/replumb_logo_bg.jpg "Replumb")
+![Replumb](../img/replumb_logo_bg.jpg)
 
 ---
 
 #Power Turtle
 
-![alt text](../turtle.jpg "Turtle")
+![Turtle](../turtle.jpg)
 
 http://timothypratley.github.io/power-turtle
 

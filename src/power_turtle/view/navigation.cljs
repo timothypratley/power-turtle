@@ -8,7 +8,8 @@
     [goog.events :as events]
     [goog.history.EventType :as EventType]
     [re-frame.core :refer [dispatch subscribe]]
-    [soda-ash.core :as sa])
+    [soda-ash.core :as sa]
+    [power-turtle.view.lessons :as lessons])
   (:import
     goog.History))
 
@@ -16,19 +17,14 @@
   [""
    [["about" #'about/about-page]
     ;; uses regex to allow slashes in the id, which can be a url
+    ["lessons" #'lessons/lessons-view]
     ["lesson" [[["" [#".*" :id]] #'lesson/lesson-view]]]
     ["freestyle" [["" #'workspace/workspace]]]
     ["forum" #'forum/forum]]])
 
 (def links
   ["about"
-   "lesson/1"
-   "lesson/2"
-   "lesson/3"
-   "lesson/4"
-   "lesson/5"
-   "lesson/6"
-   "lesson/7"
+   "lessons"
    "freestyle"
    "forum"])
 

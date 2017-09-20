@@ -1,3 +1,5 @@
+canvas: turtle
+
 Hi!
 
 In this lesson you will be sending commands to a robot turtle,

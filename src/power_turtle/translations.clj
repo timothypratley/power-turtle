@@ -14,6 +14,7 @@
 (defmacro require-translations []
   (cban/generate-require-statement translations))
 
+;; TODO: can this be pre-run?
 (defmacro rr []
   (read-string
     (cban/generate-require-statement translations)))
@@ -21,13 +22,18 @@
 (defmacro translation-map []
   translations)
 
-;;TODO: kinda sux because does not hot reload
-(defmacro lessons []
+(defn load-lessons [^File dir]
   (try
-    (vec
-      (for [^File lesson (sort (seq (.listFiles (io/file (io/resource "public/lessons")))))
-            :when (.isFile lesson)]
-        [(.getName lesson)
-         (slurp lesson)]))
+    (into
+      (sorted-map)
+      (for [^File f (.listFiles dir)]
+        [(.getName f)
+         (cond
+           (.isFile f) (slurp f)
+           (.isDirectory f) (load-lessons f))]))
     (catch Exception ex
       [["Error" [(with-out-str (println ex))]]])))
+
+;;TODO: kinda sux because does not hot reload
+(defmacro lessons []
+  (load-lessons (io/file (io/resource "public/lessons"))))
