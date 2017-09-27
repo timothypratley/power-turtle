@@ -1,4 +1,4 @@
-(ns power-turtle.view.canvas.html-hook
+(ns power-turtle.view.canvas.html-canvas
   (:require
     [reagent.core :as reagent]))
 

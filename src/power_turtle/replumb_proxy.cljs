@@ -3,7 +3,8 @@
     [re-frame.core :refer [dispatch subscribe]]
     [replumb.core :as replumb]
     [replumb.repl :as repl]
-    [re-console.io :as io]))
+    [re-console.io :as io]
+    [clojure.string :as string]))
 
 (defn replumb-options
   [verbose? src-paths]
@@ -27,7 +28,7 @@
     (repl/read-string {} input)
     false
     (catch :default e
-      (= "EOF" (subs (.-message e) 0 3)))))
+      (string/starts-with? (.-message e) "Unexpected EOF"))))
 
 (defn eval-opts
   [opts]

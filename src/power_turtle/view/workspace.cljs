@@ -1,7 +1,7 @@
 (ns power-turtle.view.workspace
   (:require
-    [power-turtle.view.canvas.bocko-canvas :as bocko-canvas]
-    [power-turtle.view.canvas.html-hook :as html-hook]
+    [power-turtle.view.canvas.raster-canvas :as raster-canvas]
+    [power-turtle.view.canvas.html-canvas :as html-canvas]
     [power-turtle.view.canvas.quil-canvas :as quil-canvas]
     [power-turtle.view.canvas.turtle-canvas :as turtle-canvas]
     [power-turtle.view.help :as help]
@@ -12,31 +12,32 @@
 
 (def canvases
   {"turtle" [turtle-canvas/turtle-canvas]
-   "raster" [bocko-canvas/bocko-canvas]
+   "raster" [raster-canvas/raster-canvas]
    "quil" [quil-canvas/quil-canvas]
-   "html" [html-hook/html-space]})
+   "html" [html-canvas/html-space]})
 
 (def freestyle-canvas
   (reagent/atom "turtle"))
 
 ;; TODO: why does clicking on them all break the chooser?
 (defn chooser []
-  [sa/Form
-   (for [k (keys canvases)]
-     ^{:key (str "radio-" k)}
-     [sa/FormField
-      [sa/Radio {:label k
-                 :name "canvasChooserGroup"
-                 :value k
-                 :on-click
-                 (fn [e]
-                   (reset! freestyle-canvas k))}]])])
+  [sa/Select
+   {:default-value "turtle"
+    :options (clj->js (for [k (keys canvases)]
+                        {:key k
+                         :value k
+                         :text k}))
+    :on-change
+    (fn chooser-changed [e d]
+      (reset! freestyle-canvas (.-value d)))}])
 
 (defn workspace [canvas-name]
   [:div
    [toolbar/toolbar]
    (when (not canvas-name)
-     [chooser])
+     [:div
+      {:style {:text-align "left"}}
+      [chooser]])
    [:br]
    [:div.main.well
     [:div.space

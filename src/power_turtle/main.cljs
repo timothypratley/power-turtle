@@ -1,8 +1,6 @@
 (ns power-turtle.main
   (:require
-    [power-turtle.aaa-init]
-    [power-turtle.handlers]
-    [power-turtle.subs]
+    [a.init]
     [power-turtle.api]
     [power-turtle.view.navigation :as navigation]
     [reagent.core :as reagent]))
@@ -11,6 +9,8 @@
   [:div.container
    [navigation/current-page]])
 
-(reagent/render-component [page] (js/document.getElementById "app"))
+(reagent/render-component
+  [page]
+  (js/document.getElementById "app"))
 
 (defn on-reload [])

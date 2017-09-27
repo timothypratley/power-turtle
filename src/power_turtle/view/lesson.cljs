@@ -69,4 +69,4 @@
                                         "\n\nPlease check the URL and try again.")])))))))
       [:div
        [lesson-slides slides slide-index]
-       [workspace/workspace (-> @slides first :properties :canvas)]])))
+       [workspace/workspace (-> @slides first :properties :canvas (or "turtle"))]])))

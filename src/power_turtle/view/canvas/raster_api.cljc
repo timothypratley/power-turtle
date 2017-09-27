@@ -1,35 +1,29 @@
-(ns power-turtle.view.canvas.bocko-canvas
-  (:require
-    [reagent.core :as reagent]
-    [reagent.dom :as dom]))
+(ns power-turtle.view.canvas.raster-api)
 
-(defonce canvas (atom nil))
 (def ^:private ^:const width 40)
 (def ^:private ^:const height 40)
-(def ^:private ^:const pixel-width 7)
-(def ^:private ^:const pixel-height 4)
 (def ^:private clear-color :black)
 (def ^:private default-color :white)
 (def ^:private clear-screen (vec (repeat height (vec (repeat width clear-color)))))
 (defonce ^:private raster (atom clear-screen))
 
 (def ^:private color-map
-  {:black       [0 0 0]
-   :red         [157 9 102]
-   :dark-blue   [42 42 229]
-   :purple      [199 52 255]
-   :dark-green  [0 118 26]
-   :dark-gray   [128 128 128]
+  {:black [0 0 0]
+   :red [157 9 102]
+   :dark-blue [42 42 229]
+   :purple [199 52 255]
+   :dark-green [0 118 26]
+   :dark-gray [128 128 128]
    :medium-blue [13 161 255]
-   :light-blue  [170 170 255]
-   :brown       [85 85 0]
-   :orange      [242 94 0]
-   :light-gray  [192 192 192]
-   :pink        [255 137 229]
+   :light-blue [170 170 255]
+   :brown [85 85 0]
+   :orange [242 94 0]
+   :light-gray [192 192 192]
+   :pink [255 137 229]
    :light-green [56 203 0]
-   :yellow      [213 213 26]
-   :aqua        [98 246 153]
-   :white       [255 255 254]})
+   :yellow [213 213 26]
+   :aqua [98 246 153]
+   :white [255 255 254]})
 
 (defn clear
   "Clears this screen."
@@ -39,15 +33,13 @@
 
 (defonce
   ^{:dynamic true
-    :doc     "The color used for plotting."}
+    :doc "The color used for plotting."}
   *color* default-color)
 
 (set-validator!
   #'*color*
   (fn [c] (contains? color-map c)))
 
-;; TODO: export bocko api!
-;; TODO: make turtle and bocko both set their colors
 (defn color
   "Sets the color for plotting.
 
@@ -125,35 +117,3 @@
   [x y]
   {:pre [(integer? x) (integer? y) (<= 0 x 39) (<= 0 y 39)]}
   (scrn* @raster x y))
-
-(defn redraw []
-  (when @canvas
-    (let [ctx (.getContext @canvas "2d")]
-      (doseq [x (range width)
-              y (range height)]
-        (let [[r g b] (color-map (get-in @raster [x y]))]
-          (set! (.-fillStyle ctx) (str "rgb(" r "," g "," b ")"))
-          (.fillRect ctx (* x pixel-width) (* y pixel-height) pixel-width pixel-height))))))
-
-(defonce init
-  (add-watch
-    raster
-    :monitor
-    (fn [_ _ _ _]
-      (redraw))))
-
-(defn bocko-canvas []
-  (reagent/create-class
-    {:display-name "bocko-canvas"
-     :reagent-render
-     (fn render-bocko-canvas []
-       [:canvas
-        {:width (* width pixel-width)
-         :height (* height pixel-height)}])
-     :component-did-mount
-     (fn bocko-canvas-did-mount [this]
-       (reset! canvas (dom/dom-node this))
-       (redraw))
-     :component-will-unmount
-     (fn bocko-canvas-will-unmount []
-       (reset! canvas nil))}))

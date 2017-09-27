@@ -1,15 +1,16 @@
 (ns power-turtle.view.navigation
   (:require
     [power-turtle.view.about :as about]
-    [power-turtle.view.lesson :as lesson]
-    [power-turtle.view.workspace :as workspace]
+    [power-turtle.view.help :as help]
     [power-turtle.view.forum :as forum]
+    [power-turtle.view.lesson :as lesson]
+    [power-turtle.view.lessons :as lessons]
+    [power-turtle.view.workspace :as workspace]
     [bidi.bidi :as bidi]
     [goog.events :as events]
     [goog.history.EventType :as EventType]
     [re-frame.core :refer [dispatch subscribe]]
-    [soda-ash.core :as sa]
-    [power-turtle.view.lessons :as lessons])
+    [soda-ash.core :as sa])
   (:import
     goog.History))
 
@@ -34,19 +35,47 @@
 (defn navigate [event]
   (dispatch [:route (.-token event)]))
 
+;; TODO: Can we get this into the translation inputs somehow?
+(def languages
+  {"ko" "한국어"
+   "id" "Bahasa Indonesia"
+   "ta" "தமிழ்"
+   "es" "Español"
+   "en" "English"})
+
+(defn language-selector []
+  (let [current-language (subscribe [:current-language])]
+    (fn a-language-selector []
+      [sa/MenuMenu
+       {:position "right"}
+       (doall
+         (for [[language-id language-name] (sort languages)]
+           ^{:key language-id}
+           [sa/MenuItem
+            {:active (= @current-language language-id)
+             :on-click
+             (fn language-click [e]
+               (dispatch [:current-language language-id]))}
+            language-name]))])))
+
+(defn menu-bar [route]
+  [sa/Menu
+   {:inverted true}
+   (doall
+     (for [link links]
+       ^{:key link}
+       [sa/MenuItem
+        {:as "a"
+         :href (str "#" link)
+         :active (= @route link)}
+        link]))
+   [language-selector]])
+
 (defn current-page []
   (let [route (subscribe [:route])]
     (fn the-current-page []
       [:div
-       (into
-         [sa/Menu
-          {:inverted true}]
-         (for [link links]
-           [sa/MenuItem
-            {:as "a"
-             :href (str "#" link)
-             :active (= link @route)}
-            link]))
+       [menu-bar route]
        (let [{:keys [handler route-params]} (match @route)]
          [(or handler about/about-page) route-params])])))
 

@@ -30,6 +30,4 @@
   (let [current-language (subscribe [:current-language])]
     (fn a-lessons-view []
       [sa/Container {:style {:text-align "left"}}
-       [:p "Select a lesson below:"]
-       [li (get lm/lessons @current-language) "#lesson"]
-       [help/help-tips]])))
+       [li (get lm/lessons @current-language) "#lesson"]])))

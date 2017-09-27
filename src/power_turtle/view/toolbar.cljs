@@ -1,6 +1,6 @@
 (ns power-turtle.view.toolbar
   (:require
-    [power-turtle.aaa-init]
+    [a.init] ;; TODO: yuck
     [reagent.core :as reagent]
     [re-frame.core :refer [dispatch subscribe]]
     [reanimated.core :as anim]))

@@ -1,8 +1,9 @@
 (ns power-turtle.api
   (:require
+    ;; TODO: make api namespaces
     #?(:cljs [power-turtle.view.toolbar :as toolbar])
-    #?(:cljs [power-turtle.view.canvas.html-hook :as html-hook])
-    #?(:cljs [power-turtle.view.canvas.bocko-canvas :as bocko])
+    #?(:cljs [power-turtle.view.canvas.html-canvas :as html-canvas])
+    [power-turtle.view.canvas.raster-api :as raster-api]
     [clojure-turtle.core :as turtle :refer [home clean]]
     [clojure-turtle.macros :refer [all repeat]]))
 
@@ -10,6 +11,7 @@
   (select-keys @a [:x :y :angle]))
 
 ;; TODO: support multi-arity?? copy docstrings??
+;; TODO: why does multi-arity error, but single warn?
 (defn forward [x]
   (turtle-state-string (turtle/forward x)))
 (defn back [x]
@@ -19,40 +21,35 @@
 (defn right [x]
   (turtle-state-string (turtle/right x)))
 
-(defn plot [x y]
-  (quil.core/rect x y 20 20))
+(defn forward-right []
+  (forward 50)
+  (right 45))
 
-(def forward-right
-  (all
-    (forward 50)
-    (right 45)))
+(defn forward-left []
+  (forward 50)
+  (left 45))
 
-(def forward-left
-  (all
-    (forward 50)
-    (left 45)))
+(defn octagon []
+  (repeat 8 forward-right))
 
-(def octagon
-  (all (repeat 8 forward-right)))
+(defn pattern []
+  (repeat 12 (fn [] (octagon) (right 30))))
 
-(def pattern
-  (all (repeat 12 (all (octagon) (right 30)))))
+(defn red []
+  (turtle/color [255 0 0]))
 
-(def red
-  (all (turtle/color [255 0 0])))
+(defn green []
+  (turtle/color [0 255 0]))
 
-(def green
-  (all (turtle/color [0 255 0])))
-
-(def blue
-  (all (turtle/color [0 0 255])))
+(defn blue []
+  (turtle/color [0 0 255]))
 
 (defn init []
   (home)
   (clean))
 
 (defn color [x]
-  ;;(power-turtle.view.bocko-canvas/color x)
+  (raster-api/color x)
   (turtle/color x))
 
 (defn add-action [label f]
@@ -74,4 +71,4 @@
             ['home home]]))
 
 (defn html [x]
-  #?(:cljs (reset! html-hook/component x)))
+  #?(:cljs (reset! html-canvas/component x)))

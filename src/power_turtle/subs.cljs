@@ -1,6 +1,6 @@
 (ns power-turtle.subs
   (:require
-    [re-frame.core :refer [reg-sub-raw]]
+    [re-frame.core :refer [register-sub]]
     [clairvoyant.core :refer-macros [trace-forms]]
     [re-frame-tracer.core :refer [tracer]])
   (:require-macros
@@ -8,22 +8,22 @@
 
 ;; (trace-forms {:tracer (tracer :color "brown")}
 
-(reg-sub-raw
+(register-sub
   :route
   (fn [db [_]]
     (reaction (get-in @db [:route]))))
 
-(reg-sub-raw
+(register-sub
   :get-console-verbose
   (fn [db [_]]
     (reaction (get-in @db [:options :verbose]))))
 
-(reg-sub-raw
+(register-sub
   :current-language
   (fn [db [_]]
     (reaction (get-in @db [:current-language]))))
 
-(reg-sub-raw
+(register-sub
   :flip
   (fn [db [_]]
     (reaction (get-in @db [:flip]))))

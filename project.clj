@@ -6,6 +6,12 @@
 
   :min-lein-version "2.6.1"
 
+  :aliases {"write-user-namespace" ["run" "-m" "power-turtle.translations/write-user-namespace" "src/cljs/user.cljs"]
+            "collect-caches" ["run" "-m" "power-turtle.collect-caches" "resources/public/js/compiled/out" "resources/public/aot/cache.json"]
+            ;; TODO: need to build with figwheel twice :( how can I make this work??
+            "dev" ["do" ["clean"] ["cban"] ["write-user-namespace"] ["figwheel"] ["collect-caches"] ["figwheel"]]
+            "min" ["do" ["clean"] ["cban"] ["write-user-namespace"] ["cljsbuild" "once" "min"] ["collect-caches"]]}
+
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.9.908"]
                  [org.clojure/core.async "0.3.443" :exclusions [org.clojure/tools.reader]]
@@ -15,6 +21,7 @@
                  [binaryage/devtools "0.9.4"]
                  [bidi "2.1.2"]
                  [cban "0.1.0-SNAPSHOT"]
+                 [com.cognitect/transit-clj "0.8.300"]
                  [com.cognitect/transit-cljs "0.8.239"]
                  [com.cemerick/piggieback "0.2.2"]
                  [com.google/clojure-turtle "0.3.0"]
@@ -25,7 +32,7 @@
                  [day8/re-frame-tracer "0.1.0-SNAPSHOT"]
                  [hickory "0.7.1"]
                  [reagent "0.7.0"]
-                 [re-frame "0.10.1"]
+                 [re-frame "0.7.0"]
                  [replumb/replumb "0.2.4"]
                  [re-console "0.1.4-SNAPSHOT"]
                  [re-com "2.1.0"]
@@ -40,7 +47,7 @@
 
   :source-paths ["src"]
 
-  :cban {:output-dir "resources/public/src"}
+  :cban {:output-dir "src"}
 
   :clean-targets ^{:protect false} ["resources/public/js/compiled" "target"]
 

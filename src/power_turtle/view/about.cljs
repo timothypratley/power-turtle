@@ -1,6 +1,5 @@
 (ns power-turtle.view.about
   (:require
-    [power-turtle.view.help :as help]
     [power-turtle.lesson-markdown :as lm]
     [soda-ash.core :as sa]))
 
@@ -25,12 +24,8 @@
      :style {:margin-top "3em"}}
     "Get started"]
 
-   [:div
-    {:style {:margin-top "6em"}}
-    [help/help-tips]]
-
    [:footer
-    {:style {:margin-top "3em"}}
+    {:style {:margin-top "9em"}}
     " 🐢 "
     [:a
      {:href "https://youtu.be/0fKpGy2QuMM"
