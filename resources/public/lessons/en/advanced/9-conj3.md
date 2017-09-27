@@ -49,30 +49,51 @@ class: middle, inverse, center
 # Learning via Logo
 
 ---
+background-image: url(../../../img/drj_vs_lb.jpg)
+background-position: center
+background-repeat: no-repeat
+background-size: contain
 
 # Logo is interesting
 
 ???
 
-Basic wasn't great
-
-I loved learning Logo
+* BASIC - first language, but wasn't great
+  - started in elementary school
+  - wanted to program Commodore 64 to do other things
+  - took a class at age 10
+  - only could learn enough for a guessing game
+  - too hard to go further
+  - gave up on programming
+* Logo - I loved learning it:
+  - took a class in middle school, at age 11
+  - easy to pick up
+  - drew random pictures
+  - learned how to create more complex pics
+    * fns & recursion to assist
+  - renewed my interest in programming
 
 ---
 
 # Logo is interesting
 
-* Interactive
-* Self discovery
-* Wonder
+* Easy to learn
+* Exploration
 * Empowerment
 
 ???
 
 # What makes Logo interesting
 
-* Sense of empowerment, wonder, and self discovery
-* Learning how to manipulate the environment, interact with the environment.
+* Logo is an environment that is:
+  - simple
+  - interactive
+  - visual
+* Exploration-based learning often as mode of instruction
+  - User learning how to interact & manipulate the environment
+  - Gives sense of:
+    * self-discovery, excitement, wonder
+    * empowerment
 
 
 ---
@@ -85,13 +106,12 @@ background-size: contain
 
 # Philosophical design
 
-* interactivity-first and exploration-first goals
-  - Piaget - theory of knowledge as systems we create to absorb new info
-  - Papert
+* main goals: interactivity & exploration first & foremost
+  - Jean Piaget - theory of knowledge as systems we create to absorb new info
+  - Seymour Papert
     * Student of Piaget
     * Expanded theory - knowledge = systems we create, based on existing knowledge systems, to absorb new info
     * Created Logo just as a means to exemplify his theory
-
 * Mindstorms
 
 ---
@@ -115,16 +135,32 @@ background-size: contain
 
 ???
 
-... add picture of robot
-
-... show logo code
-
-... mark up logo code as lisp
-
-# More on design of Logo
-
 * Visual nature helps
   - Applies to physical robots too
+
+---
+
+# Logo
+
+    TO STOPSIGN
+      FORWARD 200
+      LEFT 90
+      FORWARD 25
+      REPEAT 8 [ RIGHT 45 FORWARD 50 ]
+      HOME
+    END
+
+---
+
+# Lisp
+    
+    (DEFN STOPSIGN
+      (FORWARD 200)
+      (LEFT 90)
+      (FORWARD 25)
+      (REPEAT 8 (FN (RIGHT 45) (FORWARD 50)))
+      (HOME))
+
 * Logo is dialect of Lisp
   - ... expand on this
   
@@ -149,22 +185,28 @@ background-size: contain
 
 ???
 
+* Currently many efforts to teach kids programming
   - Blockly
   - Other things based on Blockly (code.org, physical games for kids with coding component)
+* You can see the Logo origin
+  - Moving character with spatial commands, structuring commands
+  - Even in similarity of Blockly blocks <-> Logo code blocks
+    * As Lispers, Logo code blocks -> Lisp forms without parens
+* Irony:
+  - we start our lives in Lisp
+  - then program with semi-colons & curly braces
+  - then we come back to Lisp
 
-Similarity of Lisp / Logo code & Blockly blocks
 
-There's something familiar about the regularity and simplicity
-of blocks for Lispers. <--  That may be more novel for ppl from
- curly brace languages.
+
+Notes for further reference:
 
  Insert explanation of Blockly being a Lisp (or at least Lisp-like??)
  - composition of fns
  - HOFs (via nested blocks)
  - regularity of "syntax"
  - lack of explicit types
- 
-We start our lives in lisp, then program with semi-colons, then come back to lisp
+
 
 ---
 
