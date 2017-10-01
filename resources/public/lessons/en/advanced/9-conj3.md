@@ -132,16 +132,19 @@ background-size: contain
 ???
 
 * Currently many efforts to teach kids programming
-  - Blockly
+  - Blockly - a JS library for graphical code created at Google
   - Other things based on Blockly (code.org, physical games for kids with coding component)
 * You can see the Logo origin
   - Moving character with spatial commands, structuring commands
   - Even in similarity of Blockly blocks <-> Logo code blocks
     * As Lispers, Logo code blocks -> Lisp forms without parens
 * Irony:
-  - we start our lives in Lisp
+  - we start our lives in Lisp - easy to learn programming
   - then program with semi-colons & curly braces
-  - then we come back to Lisp
+  - then we come back to Lisp - unrivalled power and simplicity
+* Which begs the question:
+  - if the same thing is good for beginners and very advanced users...
+  - ...then why do we avoid it in between?
 
 Notes for further reference:
 
@@ -171,10 +174,11 @@ background-size: contain
 .right-column[
 
 * BASIC - for "beginners"
-* playing → programming
+* playing -> programming
 * gave up on programming
  
 ]
+
 ???
 
 * BASIC - first language, but wasn't great
@@ -241,19 +245,13 @@ background-size: contain
 
 ???
 
-* Visual nature helps
-  - Applies to physical robots too
-* Has to be real
-* Have to be able to relate to it
-* A turtle has personality
-* Connect what you do in the computer to the real world
-* Garry Walter made a robot
-* Robots are relatable
-  - sensing objects
-  - you can write code to respond to a sensor detecting light.
-  - calling code
-  - not just about drawing pictures
-* Interactivity means more than just one sense, and more than one output
+* Interactivity means:
+  - more than just one sense (vision <- also sound, touch)
+  - more than just output (also input)
+* A physical object makes it "real"
+  - tangible
+  - relatable
+  - connected to reality, not abstract
 
 ---
 
@@ -275,9 +273,13 @@ background-size: contain
 
 # Philosophical design
 
-* main goals: interactivity & exploration first & foremost
+* main goals: interactivity & exploration - first & foremost
   - Seymour Papert
-    * Knowledge = systems we create, based on existing knowledge systems, to absorb new info
+    * Knowledge = systems we create, to absorb new info
+      - Those systems must be based on existing knowledge systems we created
+    * Knowledge acquisition happens best when:
+      - We can relate new info to existing knowledge in a personal way
+      - We are put in control of our own learning
     * Created Logo just as a means to exemplify his theory
 
 ---
@@ -300,10 +302,10 @@ class: middle, inverse, center
 
 # Learning Clojure
 
-* Best book?
-* Setup
-* Abstract
-* Lexicomania
+* How to begin? and proceed?
+* Examples abstract
+* Like the Unix CLI
+* Can it get better?
 
 ???
 
@@ -362,8 +364,10 @@ Here are some screenshots
 
 # Different focus
 
-  * Blurring the lines between Logo and Clojure
-  * Blurring the lines between Turtle and Programming
+* We're not the first ones to bridge these concepts
+  - but we have a different focus:
+    * Blurring the lines between Logo and Clojure
+    * Blurring the lines between Turtle and Programming
 
 ---
 class: middle, inverse, center
