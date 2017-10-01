@@ -628,17 +628,27 @@ class: center
 
 @ Elango
 
-  - Papert:  visual and interactive is necessary but not sufficient.  new info must relate to existing knowledge.
 
 * Progression becomes impt
-  - Introducing `map` first - introduce seqs and transforming seqs
-  - Introducing `range` first - introduce seqs
-
-* Logo has a simple & small set of primitives
-* Logo lets people internalize a computation model that is simple and expressive.
-* This model also translates very well to Clojure.
-* We’re trying to make that bridge strong.
-* The focus is on learning useful programming concepts
+  - Macros
+    * We sometimes introduce macros midway through our lessons
+    * Don't need to create them to use them
+  - The 'list' fn
+    * Probably don't need it except when writing macros
+  - The 'vector' fn
+    * Probably don't need it except when transposing nested data
+  - cons cell
+    * Probably don't need it until writing a custom lazy seq
+* Papert:
+  - visual and interactive is necessary but not sufficient
+  - new info must relate to existing knowledge
+* Clojure and Logo
+  - Logo - simple & small set of primitives
+    * Allows people internalize easily
+  - Likewise, we can teach Clojure by starting with a small core of primitives
+  - Clojure vs. Logo
+    * Easy to learn everything there is to Logo because its core is small
+    * Clojure has much larger core, so ordering matters much more
 
 ---
 
