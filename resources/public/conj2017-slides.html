@@ -11,9 +11,6 @@
       body {
         font-family: 'Droid Serif';
       }
-      large {
-        font-size: 4.0em;
-      }
       h1, h2, h3 {
         font-family: 'Yanone Kaffeesatz';
         font-weight: 400;
@@ -28,7 +25,8 @@
       }
       li p { line-height: 1.25em; }
       .red { color: #fa0000; }
-      .large { font-size: 2em; }
+      .blue { color: #0000fa; }
+      .large { font-size: 1.5em; }
       a, a > code {
         color: rgb(249, 38, 114);
         text-decoration: none;
@@ -124,7 +122,11 @@
 <script src="https://remarkjs.com/downloads/remark-latest.min.js">
 </script>
 <script>
-      var slideshow = remark.create({sourceUrl: 'lessons/en/advanced/9-conj3.md'});
+      var slideshow = remark.create(
+        {sourceUrl: 'lessons/en/advanced/9-conj3.md',
+         highlightLanguage: 'clojure',
+         highlightStyle: 'github',
+         highlightSpans: true});
 </script>
 
 <script src="js/compiled/power_turtle.js"></script>
