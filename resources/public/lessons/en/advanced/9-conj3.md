@@ -474,28 +474,60 @@ class: middle, inverse, center
 * In freestyle mode you can choose from several canvases:
   - Turtle
   - Raster canvas; another drawing system based on pixels
+    `(plot 5 5)`
+    `(color :light-green)`
+    `(plot 10 5)`
+    `(hlin 5 10 10)`
     * good for illustrating sequences to make patterns
-    * can create Conway's game of life
     
+
+    (do    
+      ;; Draw 13 stripes cycling over red/white
+      (doseq [[n c] (take 13 
+                      (map vector (range) (cycle [:red :white])))] 
+        (color c)
+        (let [x1 10 
+              x2 30 
+              y (+ 10 n)]
+          (hlin x1 x2 y)))
     
-    (defn neighbours [[x y]]
-      (for [dx [-1 0 1] dy (if (zero? dx) [-1 1] [-1 0 1])]
-        [(+ dx x) (+ dy y)]))
+      ;; Fill in a dark blue field in the corner
+      (color :dark-blue)
+      (doseq [x (range 10 19)
+              y (range 10 17)]
+        (plot x y))
     
-    (defn step [cells]
-      (set (for [[loc n] (frequencies (mapcat neighbours cells))
-                 :when (or (= n 3) (and (= n 2) (cells loc)))]
-             loc)))
+      ;; Add some stars to the field by skipping by 2
+      (color :white)
+      (doseq [x (range 11 19 2)
+              y (range 11 17 2)]
+        (plot x y)))
+        
     
-    (let [loop [board #{[0 2] [1 0] [1 2] [2 1] [2 2]}]]
-    (js/setTimeout 200
+* can create Conway's game of life
+
+   
+    (do
+      (defn neighbours [[x y]]
+        (for [dx [-1 0 1]
+              dy (if (zero? dx)
+                   [-1 1]
+                   [-1 0 1])]
+          [(+ dx x) (+ dy y)]))
+    
+      (defn step [cells]
+        (set (for [[loc n] (frequencies (mapcat neighbours cells))
+                   :when (or (= n 3) (and (= n 2) (cells loc)))]
+               loc)))
+    
+      ((fn draw [board]
+         (clear)
+         (when (< (ffirst board) 38)
+           (run! (fn [[x y]] (plot x y)) board)
+           (js/setTimeout #(draw (step board)) 50)))
+        #{[0 2] [1 0] [1 2] [2 1] [2 2]}))
+
       
-    (
-      (clear)
-      (run! (partial apply plot) board)
-      (Thread/sleep 100)
-      (recur (step board))
-    
   - Quil is a more comprehensive drawing system  
   - The HTML canvas let's you create HTML elements.
     * h1
