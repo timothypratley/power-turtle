@@ -475,15 +475,40 @@ class: middle, inverse, center
 
 * This is Power Turtle; a batteries included REPL
 * The first lessons gets you started with Logo commands
-* In freestyle mode you can choose from several canvases:
-  - Turtle
-  - Raster canvas; another drawing system based on pixels
-    `(plot 5 5)`
-    `(color :light-green)`
-    `(plot 10 5)`
-    `(hlin 5 10 10)`
-    * good for illustrating sequences to make patterns
-    
+
+* In freestyle mode you can choose from several canvases
+* I'll quickly give you a taste for what is possible with each of them
+  - Turtle provides line based drawing
+  
+  
+    (do
+        (defn g [x]
+          (if (zero? x)
+            (forward 14)
+            (let [x (dec x)]
+              (g x)
+              (g x))))
+        (defn f [x]
+          (if (zero? x)
+            (forward 14)
+            (let [x (dec x)]
+              (f x) (left 120)
+              (g x) (right 120)
+              (f x) (right 120)
+              (g x) (left 120)
+              (f x))))
+        (f 4))
+  
+  - Raster provides another drawing system based on pixels
+  
+  
+    (plot 5 5)
+    (color :light-green)
+    (plot 10 5)
+    (hlin 5 10 10)
+     
+  * patterns are a good motivation for sequences
+
 
     (do    
       ;; Draw 13 stripes cycling over red/white
@@ -508,7 +533,7 @@ class: middle, inverse, center
         (plot x y)))
         
     
-* can create Conway's game of life
+  * Pixel alow you to create Conway's game of life
 
    
     (do
@@ -547,7 +572,12 @@ class: middle, inverse, center
     (html [:button "Click me"])
     (html [:div "What's your name" [:input]])
     (html [:svg [:circle {:r 50, :cx 100, :cy 100, :fill "green"}]])
-    (html [:img {:src "turtle.jpg"}])
+    (html [:button [:img {:src "turtle.jpg"}]])
+    
+  - There's also an embedded Datascript/Datomic database
+    * I find it handy for testing queries without setting up a project
+    
+    
     
 * We want learners to transcend Logo
   - into other interesting things
@@ -566,24 +596,25 @@ Let's take a closer look at one of the lessons
   - like circles, like concentric circles...
   - how can you move from small to large?
 
-```
+
     (defn step [x]
       (forward x)
       (right 30))
-```
+
   - Sequences needed for incremental increase in distance travelled
-```
+
+
     (range 10)
     (map step (range 10))
-```
+
   - Because this is a REPL we don't need to explain laziness yet
   - But we can already talk about modifying a sequence 
-```
+
+
     (defn exp [x]
       (* x x 0.1))
     (map exp (range 40))
     (map step (map exp (range 40)))
-```    
 
 * We're writing Clojure.
 * There is a canvas where we can see a product of our efforts
