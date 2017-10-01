@@ -1,7 +1,6 @@
 (ns power-turtle.view.navigation
   (:require
     [power-turtle.view.about :as about]
-    [power-turtle.view.help :as help]
     [power-turtle.view.forum :as forum]
     [power-turtle.view.lesson :as lesson]
     [power-turtle.view.lessons :as lessons]
@@ -10,9 +9,13 @@
     [goog.events :as events]
     [goog.history.EventType :as EventType]
     [re-frame.core :refer [dispatch subscribe]]
-    [soda-ash.core :as sa])
+    [soda-ash.core :as sa]
+    [reagent.core :as reagent])
   (:import
     goog.History))
+
+(defonce route
+  (reagent/atom nil))
 
 (def routes
   [""
@@ -33,7 +36,7 @@
   (bidi/match-route routes s))
 
 (defn navigate [event]
-  (dispatch [:route (.-token event)]))
+  (reset! route (.-token event)))
 
 ;; TODO: Can we get this into the translation inputs somehow?
 (def languages
@@ -72,7 +75,8 @@
    [language-selector]])
 
 (defn current-page []
-  (let [route (subscribe [:route])]
+  (if (= @route "logo")
+    [workspace/canvas-repl "turtle"]
     (fn the-current-page []
       [:div
        [menu-bar route]

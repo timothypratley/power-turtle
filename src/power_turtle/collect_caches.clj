@@ -14,6 +14,7 @@
               :let [cache (with-open [in (io/input-stream f)]
                             (transit/read
                               (transit/reader in :json)))]]
+          ;; TODO: move macros to $macros ????
           [(symbol (:name cache)) cache])))
 
 (defn -main [caches-dir output-cache-file]

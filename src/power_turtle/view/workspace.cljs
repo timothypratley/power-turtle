@@ -31,6 +31,13 @@
     (fn chooser-changed [e d]
       (reset! freestyle-canvas (.-value d)))}])
 
+(defn canvas-repl [canvas-name]
+  [:div.main.well
+   [:div.space
+    (get canvases (or canvas-name @freestyle-canvas)
+         [turtle-canvas/turtle-canvas])]
+   [repl/repl]])
+
 (defn workspace [canvas-name]
   [:div
    [toolbar/toolbar]
@@ -39,9 +46,6 @@
       {:style {:text-align "left"}}
       [chooser]])
    [:br]
-   [:div.main.well
-    [:div.space
-     (get canvases (or canvas-name @freestyle-canvas) [turtle-canvas/turtle-canvas])]
-    [repl/repl]]
+   [canvas-repl canvas-name]
    [:br]
    [help/help-tips]])

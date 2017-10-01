@@ -31,4 +31,4 @@
 
 (defn write-user-namespace [out-path]
   (println "WRITE-USER-NAMESPACE:" out-path)
-  (spit out-path (cban/generate-user-namespace translations)))
+  (spit out-path (cban/generate-user-namespace translations true)))

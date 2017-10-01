@@ -8,7 +8,7 @@
 
   :aliases {"write-user-namespace" ["run" "-m" "power-turtle.translations/write-user-namespace" "src/cljs/user.cljs"]
             "collect-caches" ["run" "-m" "power-turtle.collect-caches" "resources/public/js/compiled/out" "resources/public/aot/cache.json"]
-            ;; TODO: need to build with figwheel twice :( how can I make this work??
+            ;; TODO: need to build with figwheel twice, but there is no figwheel once :( how can I make this work??
             "dev" ["do" ["clean"] ["cban"] ["write-user-namespace"] ["figwheel"] ["collect-caches"] ["figwheel"]]
             "min" ["do" ["clean"] ["cban"] ["write-user-namespace"] ["cljsbuild" "once" "min"] ["collect-caches"]]}
 
