@@ -158,11 +158,23 @@ background-repeat: no-repeat
 background-size: contain
 
 ---
-class: center
 
-<img src="../../../img/C64_startup_animiert.gif" width="500px">
-<img src="../../../img/Commodore-64.jpg" width="500px">
+.left-column[
 
+<center>
+<img src="../../../img/C64_startup_animiert.gif" width="400px">
+<img src="../../../img/Commodore-64.jpg" width="400px">
+</center>
+
+]
+
+.right-column[
+
+* BASIC - for "beginners"
+* playing → programming
+* gave up on programming
+ 
+]
 ???
 
 * BASIC - first language, but wasn't great
@@ -172,7 +184,6 @@ class: center
   - only could learn enough for a guessing game
   - too hard to go further
   - gave up on programming
-
 
 ---
 
@@ -246,8 +257,9 @@ background-size: contain
 
 ---
 
-<img src="../../../img/dash-and-dot.jpg" style="position:relative; float:right; display:block; z-index:2" width="450px">
-<img src="../../../img/ozo.png" style="position:relative; display:block; z-index:1; float:left" width="450px">
+<img src="../../../img/dash-and-dot.jpg" width="350px">
+<img src="../../../img/ozo.png" width="350px">
+<img src="../../../img/microbit-guitar.png" width="700px">
 
 ???
 
@@ -464,6 +476,26 @@ class: middle, inverse, center
   - Raster canvas; another drawing system based on pixels
     * good for illustrating sequences to make patterns
     * can create Conway's game of life
+    
+    
+    (defn neighbours [[x y]]
+      (for [dx [-1 0 1] dy (if (zero? dx) [-1 1] [-1 0 1])]
+        [(+ dx x) (+ dy y)]))
+    
+    (defn step [cells]
+      (set (for [[loc n] (frequencies (mapcat neighbours cells))
+                 :when (or (= n 3) (and (= n 2) (cells loc)))]
+             loc)))
+    
+    (let [loop [board #{[0 2] [1 0] [1 2] [2 1] [2 2]}]]
+    (js/setTimeout 200
+      
+    (
+      (clear)
+      (run! (partial apply plot) board)
+      (Thread/sleep 100)
+      (recur (step board))
+    
   - Quil is a more comprehensive drawing system  
   - The HTML canvas let's you create HTML elements.
     * h1
