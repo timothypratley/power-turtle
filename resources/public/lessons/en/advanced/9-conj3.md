@@ -532,13 +532,23 @@ class: middle, inverse, center
         #{[0 2] [1 0] [1 2] [2 1] [2 2]}))
 
       
-  - Quil is a more comprehensive drawing system  
+  - Quil is a comprehensive drawing system based on Processing
+  
+  
+    (do (quil.core/ellipse 200 200 150 200)
+      (quil.core/arc 200 240 50 50 0 js/Math.PI)
+      (quil.core/triangle 170 175 173 170 176 175)
+      (quil.core/triangle 220 175 223 170 226 175))
+      
   - The HTML canvas let's you create HTML elements.
-    * h1
-    * buttons
-    * inputs
-    * You can put SVG in here.
-    * You could build a game like Tetris here.  
+  
+  
+    (html [:h1 "Hello Conj"])
+    (html [:button "Click me"])
+    (html [:div "What's your name" [:input]])
+    (html [:svg [:circle {:r 50, :cx 100, :cy 100, :fill "green"}]])
+    (html [:img {:src "turtle.jpg"}])
+    
 * We want learners to transcend Logo
   - into other interesting things
   - in Clojure
