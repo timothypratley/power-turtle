@@ -24,15 +24,6 @@
 (defn load-cljs-core-cache! []
   ;; TODO: does the browser cache this?
   (io/fetch-file!
-    "aot/core.cljs.cache.aot.json"
-    (fn fetched [txt]
-      #_(println "Loading aot cache")
-      (let [cache (transit/read (transit/reader :json) txt)]
-        (cljs.js/load-analysis-cache! replumb.repl/st 'cljs.core cache)
-        #_(swap! replumb-repl/st update :cljs.analyzer/namespaces merge cache)
-        #_(println "Loaded" (count cache) "namespaces"))))
-
-  (io/fetch-file!
     "aot/cache.json"
     (fn fetched [txt]
       #_(println "Loading aot cache")

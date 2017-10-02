@@ -10,7 +10,7 @@
             "collect-caches" ["run" "-m" "power-turtle.collect-caches" "resources/public/js/compiled/out" "resources/public/aot/cache.json"]
             ;; TODO: need to build with figwheel twice, but there is no figwheel once :( how can I make this work??
             "dev" ["do" ["clean"] #_["cban"] ["write-user-namespace"] ["figwheel"] ["collect-caches"] ["figwheel"]]
-            "min" ["do" ["clean"] #_["cban"] ["write-user-namespace"] ["cljsbuild" "once" "min"] ["collect-caches"]]}
+            "min" ["do" ["clean"] #_["cban"] ["write-user-namespace"] ["cljsbuild" "once" "dev"] ["collect-caches"] ["cljsbuild" "once" "min"]]}
 
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.9.908"]
