@@ -15,3 +15,4 @@ pom.xml
 *.iml
 .lein*
 resources/public/.git
+resources/public/aot
