@@ -82,7 +82,7 @@ Try using your new commands together:
 
 Some special commands take other commands as input.
 
-    (repeatedly 3 zig)
+    (repeat 3 zig)
 
 Will call `zig` 3 times. Notice that `zig` is not inside `()`.
 

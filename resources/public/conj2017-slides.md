@@ -461,7 +461,6 @@ class: middle, inverse, center
 
 * Now you can compile and Evaluate ClojureScript in the browser
 * All you need to get coding is a URL
-* ClojureScript has reach, anyone can access it
 * I'd been talking with Elango about teaching Clojure through Logo 
   - and we thought, what if we marry turtle with a ClojureScript REPL
 
@@ -474,11 +473,15 @@ class: middle, inverse, center
 ???
 
 * This is Power Turtle; a batteries included REPL
-* The first lessons gets you started with Logo commands
+* The first lesson presents the Logo command: forward, left, right
+* Then combining commands into new commands
+* And how to repeat commands
+* There are a bunch of lessons
+  - we do not have time to look at them closely right now
+  - instead I'll quickly show you some of the capabilities of Power Turtle
 
 * In freestyle mode you can choose from several canvases
-* I'll quickly give you a taste for what is possible with each of them
-  - Turtle provides line based drawing
+  - Turtle we know about already, you can build complex geometric shapes
   
   
     (do
@@ -502,12 +505,13 @@ class: middle, inverse, center
   - Raster provides another drawing system based on pixels
   
   
-    (plot 5 5)
-    (color :light-green)
-    (plot 10 5)
-    (hlin 5 10 10)
+    (do
+      (plot 5 5)
+      (color :light-green)
+      (plot 10 5)
+      (hlin 5 10 10))
      
-  * patterns are a good motivation for sequences
+  * patterns provide a good motivation for sequences
 
 
     (do    
@@ -533,7 +537,7 @@ class: middle, inverse, center
         (plot x y)))
         
     
-  * You can create Conway's game of life
+  * You can even create Conway's game of life
 
    
     (do
@@ -574,26 +578,31 @@ class: middle, inverse, center
       (quil.core/triangle 220 175 223 170 226 175))
       
   - The HTML canvas let's you create HTML elements.
+    * you can make webpages inside this webpage
   
   
-    (html [:h1 "Hello Conj"])
-    (html [:button "Click me"])
-    (html [:div "What's your name" [:input]])
-    (html [:svg [:circle {:r 50, :cx 100, :cy 100, :fill "green"}]])
-    (html [:button [:img {:src "turtle.jpg"}]])
+    (html
+     [:span [:h1 "Hello Conj"]
+      [:form "What's your name? " [:input]]
+      [:button [:img {:src "turtle.jpg"}] "Click me"]
+      [:svg
+       [:circle {:r 50, :cx 100, :cy 100, :fill "green"}]
+       [:circle {:r 25, :cx 100, :cy 100, :fill "blue"}]]])
+       
     
   - There's also an embedded Datascript/Datomic database
     * I find it handy for testing queries without setting up a project
     
+  - And a charting canvas
     
     
 * We want learners to transcend Logo
   - into other interesting things
   - in Clojure
 
-Let's take a closer look at one of the lessons
+*** skip???
+Let's speed through one of the lessons:
 
-* Lesson 1
 * triangle
 * square
 * offset square
@@ -623,6 +632,7 @@ Let's take a closer look at one of the lessons
       (* x x 0.1))
     (map exp (range 40))
     (map step (map exp (range 40)))
+*** end skip
 
 * We're writing Clojure.
 * There is a canvas where we can see a product of our efforts
@@ -719,9 +729,8 @@ http://timothypratley.github.io/power-turtle#lessons.red[//server.org/my-lesson.
 * Your Markdown can be loaded remotely by url
   - you can deliver your own lesson with a link
   - you don't need us to do anything
-* Please contribute lessons so that we can link to them in the lesson list
-  - just send us the markdown and we'll include it
-* As an educator, you get to decide what lessons are best for your situation
+* Please contribute lessons so that we can link to them
+  - if you send us the markdown and we'll include it in the lesson list
 
 ---
 class: middle
@@ -736,14 +745,15 @@ class: middle
 
 @ Timothy
 
-Here is some feedback I received about the existing lessons:
+Here is some feedback I received about the first lesson:
 
 > “It was quite astounding how Noah went off on his own tangent to draw his own patterns about half way through the lesson!”
 
 * This is exactly what I had hoped for.
 * Lessons are guides, but you can really do whatever you want.
 * The emphasis is on self discovery.
-* See if you can figure out how to do X.
+* Good lessons challenge us to figure out how to do something interesting
+  - with a small set of appropriate tools to do so
 
 ---
 background-image: url(../../../img/korean.jpg)
@@ -753,21 +763,21 @@ background-size: contain
 
 ???
 
-* In other news...
+* On a completely different topic...
 * I'm currently learning Korean
-  - fascinating culture and language.
 * The writing system is unique in that it was designed for literacy,
   unlike most other writing systems.
-* The characters are actually very logical, but learning the vocabulary is still hard.
-* Alex - friend from Korea - "How did you learn programming?"
-  - "I learnt English. Then I went to an Australian University. Now I work at Microsoft."
-* Sounds easy, but that's a decade of dedication
-* It's hard to imagine how long it would be before I could code in Korean
+* The characters are very logical.
+* Learning the Korean vocabulary is still difficult.
+* I asked my friend Alex who is from Korea: "How did you learn programming?"
+  - he replied: "I learnt English. Then I went to an Australian University. Now I work at Microsoft."
+* He made it sound easy, but that is a decade of dedication right there.
 * Only 5% of the world speaks English as their first language.
 * 20% if you include non-native speakers.
 * For most people who want to learn programming, the answer is:
-  "Awesome! Go learn English first."
-* But I knew Elango had translated Clojure to Thamil and I wondered if we could do that for other languages too
+  - "Awesome! Go learn English first."
+* But I knew that Elango had translated Clojure to Thamil
+  - and I wondered if we could do that for other languages too
 
 ---
 
@@ -842,10 +852,8 @@ Clojure By Another Name, or CBAN for short.
 
 * lein-cban creates translation wrappers
   - you can use it translate libraries of code
-* cban has several translations of clojure.core
-* Works in ClojureScript
-* Generated wrappers work better with IDEs than var importing
-  - You can navigate to definitions, get docstrings, and arity
+* cban currently has translations of clojure.core to Spanish, Korean, Thamil, and Indonesian
+* Clojure and ClojureScript
   
 ---
   
@@ -859,8 +867,7 @@ Clojure By Another Name, or CBAN for short.
   
 ???
 
-* Translations are CSV text files
-  - you don't have to be a programmer to contribute
+* Translations are comma separated text files
 
 ---
 background-image: url(../img/bad-idea.jpg)
@@ -884,7 +891,8 @@ Love Mum
 
 ???
 
-* Here is one aspect of Power Turtle that did not work out very well...
+* Here is one part of Power Turtle that did not work out very well...
+  - Error handling
 
 Dear Tim
 
@@ -893,7 +901,7 @@ Dear Tim
 Not sure what I am doing, Love Mum
 
 * This is the error message you get when you typo a function call
-  - we can reach a larger audience if we can find a way to improve this
+  - if we can find a way to improve this, we can reach a larger audience
   - good error messages are helpful to everybody, not just beginners
 
 ---
@@ -912,27 +920,24 @@ More effort, more control
 
 ???
 
-* Perhaps you are interested in building something like Power Turtle yourself.
-* Here's how you could go about it:
-
-If you want to embed a ClojureScript REPL on your blog or website,
-
-* Klipse provides a really easy way to do this
-  - just include the klipse script and any code blocks become editable
-    * users appreciate it
-    * its easy!
+* Perhaps you are interested in building something like Power Turtle yourself
+* Here's how you can go about it:
+  - If you want to embed a ClojureScript REPL on your blog or website,
+  - Klipse provides a really easy way to do this
+    * it's super easy!
+    * just include a script in your page and any code blocks become editable
+    * users really appreciate it; I get double the traffic when I use it
 
 * Replumb is what Power Turtle uses as a REPL
-  - Takes more effort, and provides more control
-  
-Power Turtle puts Replumb and Turtle together.
+  - Takes more effort, provides more control
 
 ---
 class: middle, inverse
 
 # Learning Clojure through Logo
 
-1. Easy to get started (nothing to install)
+Clojure is
+1. Easy to get started
 2. Fun (it's Logo)
 3. Learn programming through Logo
 4. in Clojure
@@ -942,13 +947,13 @@ class: middle, inverse
 
 Which brings us back to Learning Clojure through Logo...
 
-Clojure can be a great beginners language.
-
-We've built a programming experience in Power Turtle that is:
-* Easy to get started - nothing to install
-* Delivers the fun of Logo
-* Has a clear progression of concepts to learn
-* Blurs the boundaries of Logo into Clojure
+Clojure is
+* Easy to get started. Visit our webpage and get coding
+* Its Fun! Logo is fun, the canvases are fun.
+* Come to program in Logo
+* Stay for the Clojure
+* We hope to reach more programmers by skipping the boring bits
+  - and getting them hooked on what Clojure can do
 
 ---
 
@@ -967,9 +972,11 @@ We've built a programming experience in Power Turtle that is:
 
 ???
 
-These people helped us greatly.
-
 @ Elango
+
+* ClojureScript self-hosting has some quirks
+  - but there are lots of helpful people eager to help out
+  - in particular these people helped us greatly.
 
 ---
 

@@ -94,4 +94,5 @@
             ['init init]]))
 
 (defn html [x]
-  #?(:cljs (reset! html-canvas/component x)))
+  #?(:cljs (reset! html-canvas/component x))
+  nil)
