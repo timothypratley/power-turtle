@@ -22,7 +22,7 @@
 ;; TODO: why does clicking on them all break the chooser?
 (defn chooser []
   [sa/Select
-   {:default-value "turtle"
+   {:default-value @freestyle-canvas
     :options (clj->js (for [k (keys canvases)]
                         {:key k
                          :value k

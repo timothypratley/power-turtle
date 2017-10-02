@@ -1,8 +1,7 @@
 (ns power-turtle.view.toolbar
   (:require
-    [a.init] ;; TODO: yuck
+    [power-turtle.model :as model]
     [reagent.core :as reagent]
-    [re-frame.core :refer [dispatch subscribe]]
     [reanimated.core :as anim]))
 
 (def actions
@@ -18,11 +17,8 @@
     [:-ms-transform :-moz-transform :-webkit-transform :transform]
     (repeat (apply str ss))))
 
-(dispatch [:flip 90])
-
 (defn flipper [tag attrs & children]
-  (let [flip (subscribe [:flip])
-        flip-spring (anim/spring flip)]
+  (let [flip-spring (anim/spring model/flip)]
     (fn a-flipper [tag attrs]
       [:div
        (into

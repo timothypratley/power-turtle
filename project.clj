@@ -9,8 +9,8 @@
   :aliases {"write-user-namespace" ["run" "-m" "power-turtle.translations/write-user-namespace" "src/cljs/user.cljs"]
             "collect-caches" ["run" "-m" "power-turtle.collect-caches" "resources/public/js/compiled/out" "resources/public/aot/cache.json"]
             ;; TODO: need to build with figwheel twice, but there is no figwheel once :( how can I make this work??
-            "dev" ["do" ["clean"] ["cban"] ["write-user-namespace"] ["figwheel"] ["collect-caches"] ["figwheel"]]
-            "min" ["do" ["clean"] ["cban"] ["write-user-namespace"] ["cljsbuild" "once" "min"] ["collect-caches"]]}
+            "dev" ["do" ["clean"] #_["cban"] ["write-user-namespace"] ["figwheel"] ["collect-caches"] ["figwheel"]]
+            "min" ["do" ["clean"] #_["cban"] ["write-user-namespace"] ["cljsbuild" "once" "min"] ["collect-caches"]]}
 
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.9.908"]
@@ -78,7 +78,6 @@
                            :foreign-libs
                            [{:file "resources/public/js/clojure-parinfer.js"
                              :provides ["parinfer.codemirror.mode.clojure.clojure-parinfer"]}]
-                           ;; TODO: can advanced be used?
                            :closure-defines {"goog.DEBUG" false
                                              "clairvoyant.core.devmode" false}
                            :elide-asserts true
@@ -88,7 +87,7 @@
                            :optimize-constants true
                            :static-fns true
                            ;; https://clojurescript.org/guides/self-hosting
-                           ;; :dump-core false
+                           :dump-core false
                            :pretty-print false}}]}
 
   :figwheel {:css-dirs ["resources/public/css"]}

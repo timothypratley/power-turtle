@@ -1,27 +1,31 @@
 (ns power-turtle.api
+  (:refer-clojure :exclude [repeat])
   (:require
     ;; TODO: make api namespaces
     #?(:cljs [power-turtle.view.toolbar :as toolbar])
     #?(:cljs [power-turtle.view.canvas.html-canvas :as html-canvas])
     [power-turtle.view.canvas.raster-api :as raster-api]
-    [clojure-turtle.core :as turtle :refer [home clean]]))
+    [clojure-turtle.core :as turtle]))
 
-;; TODO: wrap clean and home too, for nil
-
-(defn turtle-state-string [a]
-  (select-keys @a [:x :y :angle]))
+(defn repeat
+  "Repeatedly calls input function f n times and returns the last result"
+  [n f]
+  (last (repeatedly n f)))
 
 ;; TODO: support multi-arity?? copy docstrings??
 ;; TODO: why does multi-arity error, but single warn?
 (defn forward [x]
   (turtle/forward x)
   nil)
+
 (defn back [x]
   (turtle/back x)
   nil)
+
 (defn left [x]
   (turtle/left x)
   nil)
+
 (defn right [x]
   (turtle/right x)
   nil)
@@ -52,14 +56,24 @@
   (turtle/color [0 0 255])
   nil)
 
+(defn clean []
+  (turtle/clean)
+  nil)
+
+(defn home []
+  (turtle/home)
+  nil)
+
 (defn init []
   (home)
   (clean)
+  (turtle/color [0 0 0])
   nil)
 
 (defn color [x]
-  (raster-api/color x)
-  (turtle/color x)
+  (if (keyword? x)
+    (raster-api/color x)
+    (turtle/color x))
   nil)
 
 (defn add-action [label f]
@@ -77,8 +91,7 @@
             ['red red]
             ['green green]
             ['blue blue]
-            ['clean clean]
-            ['home home]]))
+            ['init init]]))
 
 (defn html [x]
   #?(:cljs (reset! html-canvas/component x)))

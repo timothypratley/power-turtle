@@ -1,9 +1,8 @@
 (ns power-turtle.view.lessons
   (:require
     [power-turtle.lesson-markdown :as lm]
-    [power-turtle.view.help :as help]
+    [power-turtle.model :as model]
     [power-turtle.view.markdown :as md]
-    [re-frame.core :refer [subscribe dispatch]]
     [soda-ash.core :as sa]))
 
 (defn li [tree parent]
@@ -27,7 +26,5 @@
          [li lesson link])]])])
 
 (defn lessons-view []
-  (let [current-language (subscribe [:current-language])]
-    (fn a-lessons-view []
-      [sa/Container {:style {:text-align "left"}}
-       [li (get lm/lessons @current-language) "#lesson"]])))
+  [sa/Container {:style {:text-align "left"}}
+   [li (get lm/lessons @model/current-language) "#lesson"]])

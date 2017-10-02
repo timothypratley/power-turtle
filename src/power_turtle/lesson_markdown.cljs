@@ -1,7 +1,6 @@
 (ns power-turtle.lesson-markdown
   (:require
-    [clojure.string :as string])
-  (:require-macros
+    [clojure.string :as string]
     [power-turtle.translations :as translations]))
 
 (def slide-separator
@@ -51,4 +50,4 @@
     (translations/lessons)))
 
 (def first-lesson
-  "#lesson/beginner/1-welcome.md")
+  "#lesson/1-beginner/1-welcome.md")

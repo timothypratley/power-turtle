@@ -1,10 +1,10 @@
 (ns power-turtle.replumb-proxy
   (:require
-    [re-frame.core :refer [dispatch subscribe]]
-    [replumb.core :as replumb]
-    [replumb.repl :as repl]
+    [power-turtle.model :as model]
+    [clojure.string :as string]
     [re-console.io :as io]
-    [clojure.string :as string]))
+    [replumb.core :as replumb]
+    [replumb.repl :as repl]))
 
 (defn replumb-options
   [verbose? src-paths]
@@ -36,5 +36,5 @@
    :should-eval (complement multiline?)
    :to-str-fn (partial replumb/result->string false true)
    :evaluate (fn [a b]
-               (dispatch [:flip])
+               (swap! model/flip -)
                (read-eval-call opts a b))})

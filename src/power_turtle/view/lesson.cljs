@@ -1,13 +1,13 @@
 (ns power-turtle.view.lesson
   (:require
+    [power-turtle.lesson-markdown :as lm]
+    [power-turtle.model :as model]
     [power-turtle.view.workspace :as workspace]
     [power-turtle.view.markdown :as md]
     [clojure.string :as string]
     [goog.net.XhrIo :as xhr]
     [reagent.core :as reagent]
-    [re-frame.core :refer [subscribe dispatch]]
-    [soda-ash.core :as sa]
-    [power-turtle.lesson-markdown :as lm]))
+    [soda-ash.core :as sa]))
 
 (defn lesson-slides [slides slide-index]
   [sa/Segment
@@ -22,7 +22,7 @@
        [:button
         {:disabled (not enabled)
          :on-click
-         (fn [e]
+         (fn previous-slide-click [e]
            (swap! slide-index dec))}
         (if enabled "<" "-")]])
     [:div
@@ -36,21 +36,20 @@
        [:button
         {:disabled (not enabled)
          :on-click
-         (fn [e]
+         (fn next-slide-click [e]
            (swap! slide-index inc))}
         (if enabled ">" "-")]])]])
 
 (defn lesson-view [route-params]
   (let [current-id (reagent/atom nil)
         slides (reagent/atom nil)
-        slide-index (reagent/atom 0)
-        current-language (subscribe [:current-language])]
+        slide-index (reagent/atom 0)]
     (fn a-lesson-view [{:keys [id]}]
       (when (not= id @current-id)
         (reset! current-id id)
         (reset! slide-index 0)
         ;; TODO: yuck, clean this up
-        (reset! slides (get-in lm/lessons (cons @current-language (rest (string/split id #"/")))))
+        (reset! slides (get-in lm/lessons (cons @model/current-language (rest (string/split id #"/")))))
         (when-not @slides
           ;; TODO: this breaks the figwheel websocket connection if an external request fails... why?
           ;; TODO: (xhr/cleanup)  also see replumb.io

@@ -1,8 +1,7 @@
 (ns power-turtle.view.repl
   (:require
-    [a.init] ;; TODO: why? why? why?? -- should work without, make a simpler example and report, parallel compilation?? check the requires is correct
     [cljs.js]
-    [cljs.user] ;; generated to refer the api, we need to compile it
+    [cljs.user] ;; generated to refer the api
     [cljsjs.codemirror]
     [cljsjs.codemirror.addon.edit.matchbrackets]
     [cljsjs.codemirror.addon.runmode.runmode]
@@ -12,7 +11,6 @@
     [replumb.repl :as replumb-repl]
     [re-console.core :as console]
     [re-console.io :as io]
-    [re-frame.core :refer [dispatch subscribe dispatch-sync]]
     [power-turtle.replumb-proxy :as replumb-proxy]))
 
 (defonce console-key :cljs-console)
@@ -22,8 +20,6 @@
 
 (def replumb-opts
   (replumb-proxy/replumb-options false src-paths))
-
-(dispatch [:init-options])
 
 (defn load-cljs-core-cache! []
   ;; TODO: does the browser cache this?
@@ -44,8 +40,6 @@
         (swap! replumb-repl/st update :cljs.analyzer/namespaces merge cache)
         #_(println "Loaded" (count cache) "namespaces")))))
 
-;; TODO: async these? (do I even need to init first? who knows??)
-(dispatch-sync [:init-console console-key (replumb-proxy/eval-opts replumb-opts)])
 (load-cljs-core-cache!)
 
 (defn repl []

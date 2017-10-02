@@ -1,6 +1,6 @@
 (ns power-turtle.main
   (:require
-    [a.init]
+    [a.a_init]
     [power-turtle.api]
     [power-turtle.view.navigation :as navigation]
     [reagent.core :as reagent]))

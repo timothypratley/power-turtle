@@ -1,11 +1,9 @@
 existing,alias,docstring,comment
 penup,penup
 pendown,pendown
-clean,clean
 setheading,setheading
 setxy,setxy
 start-fill,start-fill
 end-fill,end-fill
-home,home
 wait,wait
 draw-turtle-commands,draw-turtle-commands

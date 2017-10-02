@@ -52,7 +52,7 @@
   [c]
   {:pre [(keyword? c)
          (c #{:black :red :dark-blue :purple
-              :dark-green :dark-gray :medium-blue :light-blue
+              :dark-green :dark-gray :medium-blue :medium-green :light-blue
               :brown :orange :light-gray :pink
               :light-green :yellow :aqua :white})]}
   (set! *color* c)

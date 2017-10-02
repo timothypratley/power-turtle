@@ -1,5 +1,6 @@
 (ns power-turtle.view.navigation
   (:require
+    [power-turtle.model :as model]
     [power-turtle.view.about :as about]
     [power-turtle.view.forum :as forum]
     [power-turtle.view.lesson :as lesson]
@@ -8,9 +9,8 @@
     [bidi.bidi :as bidi]
     [goog.events :as events]
     [goog.history.EventType :as EventType]
-    [re-frame.core :refer [dispatch subscribe]]
-    [soda-ash.core :as sa]
-    [reagent.core :as reagent])
+    [reagent.core :as reagent]
+    [soda-ash.core :as sa])
   (:import
     goog.History))
 
@@ -47,19 +47,18 @@
    "en" "English"})
 
 (defn language-selector []
-  (let [current-language (subscribe [:current-language])]
-    (fn a-language-selector []
-      [sa/MenuMenu
-       {:position "right"}
-       (doall
-         (for [[language-id language-name] (sort languages)]
-           ^{:key language-id}
-           [sa/MenuItem
-            {:active (= @current-language language-id)
-             :on-click
-             (fn language-click [e]
-               (dispatch [:current-language language-id]))}
-            language-name]))])))
+  (fn a-language-selector []
+    [sa/MenuMenu
+     {:position "right"}
+     (doall
+       (for [[language-id language-name] (sort languages)]
+         ^{:key language-id}
+         [sa/MenuItem
+          {:active (= @model/current-language language-id)
+           :on-click
+           (fn language-click [e]
+             (reset! model/current-language language-id))}
+          language-name]))]))
 
 (defn menu-bar [route]
   [sa/Menu

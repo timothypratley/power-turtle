@@ -5,10 +5,8 @@ right,권리
 left,왼쪽
 penup,펜까지
 pendown,펜다운
-clean,깨끗한
 setheading,표제
 setxy,위치
-home,집
 wait,기다림
 draw-turtle-commands,거북이명령을그릴
 start-fill,채우기시작

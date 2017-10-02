@@ -1,4 +1,5 @@
 existing,alias,docstring,comment
+repeat,repeat
 forward,forward
 back,back
 right,right
@@ -11,3 +12,5 @@ green,green
 blue,blue
 octagon,octagon
 pattern,pattern
+clean,clean
+home,home

@@ -1,11 +1,6 @@
 {"en"
  {"clojure-turtle.core"
-  {"clean"
-   {:arglists ([] [turt-state]),
-    :resolved true,
-    :existing "clean",
-    :alias "clean"},
-   "draw-turtle-commands"
+  {"draw-turtle-commands"
    {:arglists ([turt]),
     :resolved true,
     :existing "draw-turtle-commands",
@@ -15,11 +10,6 @@
     :resolved true,
     :existing "end-fill",
     :alias "end-fill"},
-   "home"
-   {:arglists ([] [turt-state]),
-    :resolved true,
-    :existing "home",
-    :alias "home"},
    "pendown"
    {:arglists ([] [turt-state]),
     :resolved true,
@@ -50,19 +40,6 @@
     :resolved true,
     :existing "wait",
     :alias "wait"}},
-  "clojure-turtle.macros"
-  {"all"
-   {:macro true,
-    :arglists ([& body]),
-    :resolved true,
-    :existing "all",
-    :alias "all"},
-   "repeat"
-   {:macro true,
-    :arglists ([n & body]),
-    :resolved true,
-    :existing "repeat",
-    :alias "repeat"}},
   "power-turtle.api"
   {"add-action"
    {:arglists ([label f]),
@@ -73,6 +50,8 @@
    {:arglists ([x]), :resolved true, :existing "back", :alias "back"},
    "blue"
    {:arglists ([]), :resolved true, :existing "blue", :alias "blue"},
+   "clean"
+   {:arglists ([]), :resolved true, :existing "clean", :alias "clean"},
    "color"
    {:arglists ([x]),
     :resolved true,
@@ -85,6 +64,8 @@
     :alias "forward"},
    "green"
    {:arglists ([]), :resolved true, :existing "green", :alias "green"},
+   "home"
+   {:arglists ([]), :resolved true, :existing "home", :alias "home"},
    "html"
    {:arglists ([x]), :resolved true, :existing "html", :alias "html"},
    "left"
@@ -101,6 +82,11 @@
     :alias "pattern"},
    "red"
    {:arglists ([]), :resolved true, :existing "red", :alias "red"},
+   "repeat"
+   {:arglists ([n f]),
+    :resolved true,
+    :existing "repeat",
+    :alias "repeat"},
    "right"
    {:arglists ([x]),
     :resolved true,
@@ -136,11 +122,6 @@
     :resolved true,
     :existing "back",
     :alias "espalda"},
-   "clean"
-   {:arglists ([] [turt-state]),
-    :resolved true,
-    :existing "clean",
-    :alias "limpiar"},
    "color"
    {:arglists ([c] [turt-state c]),
     :resolved true,
@@ -161,11 +142,6 @@
     :resolved true,
     :existing "forward",
     :alias "adelante"},
-   "home"
-   {:arglists ([] [turt-state]),
-    :resolved true,
-    :existing "home",
-    :alias "casa"},
    "left"
    {:arglists ([ang] [turt-state ang]),
     :resolved true,
@@ -206,19 +182,6 @@
     :resolved true,
     :existing "wait",
     :alias "espere"}},
-  "clojure-turtle.macros"
-  {"all"
-   {:macro true,
-    :arglists ([& body]),
-    :resolved true,
-    :existing "all",
-    :alias "todas"},
-   "repeat"
-   {:macro true,
-    :arglists ([n & body]),
-    :resolved true,
-    :existing "repeat",
-    :alias "repetir"}},
   "power-turtle.api"
   {"add-action"
    {:arglists ([label f]),
@@ -227,8 +190,15 @@
     :alias "añadir-acción"},
    "blue"
    {:arglists ([]), :resolved true, :existing "blue", :alias "azul"},
+   "clean"
+   {:arglists ([]),
+    :resolved true,
+    :existing "clean",
+    :alias "limpiar"},
    "green"
    {:arglists ([]), :resolved true, :existing "green", :alias "verde"},
+   "home"
+   {:arglists ([]), :resolved true, :existing "home", :alias "casa"},
    "html"
    {:arglists ([x]), :resolved true, :existing "html", :alias "html"},
    "octagon"
@@ -250,11 +220,6 @@
     :resolved true,
     :existing "back",
     :alias "kembali"},
-   "clean"
-   {:arglists ([] [turt-state]),
-    :resolved true,
-    :existing "clean",
-    :alias "bersih"},
    "color"
    {:arglists ([c] [turt-state c]),
     :resolved true,
@@ -275,11 +240,6 @@
     :resolved true,
     :existing "forward",
     :alias "meneruskan"},
-   "home"
-   {:arglists ([] [turt-state]),
-    :resolved true,
-    :existing "home",
-    :alias "rumah"},
    "left"
    {:arglists ([ang] [turt-state ang]),
     :resolved true,
@@ -320,19 +280,6 @@
     :resolved true,
     :existing "wait",
     :alias "tunggu"}},
-  "clojure-turtle.macros"
-  {"all"
-   {:macro true,
-    :arglists ([& body]),
-    :resolved true,
-    :existing "all",
-    :alias "semua"},
-   "repeat"
-   {:macro true,
-    :arglists ([n & body]),
-    :resolved true,
-    :existing "repeat",
-    :alias "berkali-kali"}},
   "power-turtle.api"
   {"add-action"
    {:arglists ([label f]),
@@ -341,8 +288,15 @@
     :alias "menambahkan-tindakan"},
    "blue"
    {:arglists ([]), :resolved true, :existing "blue", :alias "biru"},
+   "clean"
+   {:arglists ([]),
+    :resolved true,
+    :existing "clean",
+    :alias "bersih"},
    "green"
    {:arglists ([]), :resolved true, :existing "green", :alias "hijau"},
+   "home"
+   {:arglists ([]), :resolved true, :existing "home", :alias "rumah"},
    "html"
    {:arglists ([x]),
     :resolved true,
@@ -367,11 +321,6 @@
     :resolved true,
     :existing "back",
     :alias "뒤로"},
-   "clean"
-   {:arglists ([] [turt-state]),
-    :resolved true,
-    :existing "clean",
-    :alias "깨끗한"},
    "draw-turtle-commands"
    {:arglists ([turt]),
     :resolved true,
@@ -387,11 +336,6 @@
     :resolved true,
     :existing "forward",
     :alias "앞으로"},
-   "home"
-   {:arglists ([] [turt-state]),
-    :resolved true,
-    :existing "home",
-    :alias "집"},
    "left"
    {:arglists ([ang] [turt-state ang]),
     :resolved true,
@@ -429,19 +373,6 @@
     :alias "채우기시작"},
    "wait"
    {:arglists ([ms]), :resolved true, :existing "wait", :alias "기다림"}},
-  "clojure-turtle.macros"
-  {"all"
-   {:macro true,
-    :arglists ([& body]),
-    :resolved true,
-    :existing "all",
-    :alias "모든"},
-   "repeat"
-   {:macro true,
-    :arglists ([n & body]),
-    :resolved true,
-    :existing "repeat",
-    :alias "자꾸"}},
   "power-turtle.api"
   {"add-action"
    {:arglists ([label f]),
@@ -450,8 +381,12 @@
     :alias "작업을추가"},
    "blue"
    {:arglists ([]), :resolved true, :existing "blue", :alias "푸른"},
+   "clean"
+   {:arglists ([]), :resolved true, :existing "clean", :alias "깨끗한"},
    "green"
    {:arglists ([]), :resolved true, :existing "green", :alias "녹색"},
+   "home"
+   {:arglists ([]), :resolved true, :existing "home", :alias "집"},
    "html"
    {:arglists ([x]), :resolved true, :existing "html", :alias "웹페이지"},
    "octagon"
@@ -467,21 +402,11 @@
     :resolved true,
     :existing "back",
     :alias "பின்னால்"},
-   "clean"
-   {:arglists ([] [turt-state]),
-    :resolved true,
-    :existing "clean",
-    :alias "துப்புரவு"},
    "forward"
    {:arglists ([len] [turt-state len]),
     :resolved true,
     :existing "forward",
     :alias "முன்னால்"},
-   "home"
-   {:arglists ([] [turt-state]),
-    :resolved true,
-    :existing "home",
-    :alias "வீடு"},
    "left"
    {:arglists ([ang] [turt-state ang]),
     :resolved true,
@@ -507,19 +432,6 @@
     :resolved true,
     :existing "setheading",
     :alias "திசைவை"}},
-  "clojure-turtle.macros"
-  {"all"
-   {:macro true,
-    :arglists ([& body]),
-    :resolved true,
-    :existing "all",
-    :alias "எல்லாம்"},
-   "repeat"
-   {:macro true,
-    :arglists ([n & body]),
-    :resolved true,
-    :existing "repeat",
-    :alias "மீண்டும்"}},
   "power-turtle.api"
   {"add-action"
    {:arglists ([label f]),
@@ -528,8 +440,15 @@
     :alias "சேர்க்க-நடவடிக்கை"},
    "blue"
    {:arglists ([]), :resolved true, :existing "blue", :alias "நீல"},
+   "clean"
+   {:arglists ([]),
+    :resolved true,
+    :existing "clean",
+    :alias "துப்புரவு"},
    "green"
    {:arglists ([]), :resolved true, :existing "green", :alias "பச்சை"},
+   "home"
+   {:arglists ([]), :resolved true, :existing "home", :alias "வீடு"},
    "html"
    {:arglists ([x]), :resolved true, :existing "html", :alias "html"},
    "octagon"

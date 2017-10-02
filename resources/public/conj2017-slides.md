@@ -3,7 +3,7 @@ class: center, middle, inverse
 # Learning Clojure through Logo
 
 <br><br>
-![Turtle](../../../turtle.jpg)
+![Turtle](turtle.jpg)
 
 ### Elango Cheran, Google
 ### Timothy Pratley, Outpace
@@ -533,10 +533,12 @@ class: middle, inverse, center
         (plot x y)))
         
     
-  * Pixel alow you to create Conway's game of life
+  * You can create Conway's game of life
 
    
     (do
+      (defonce t (atom nil))
+      (when t (js/clearTimeout @t)
       (defn neighbours [[x y]]
         (for [dx [-1 0 1]
               dy (if (zero? dx)
@@ -545,16 +547,22 @@ class: middle, inverse, center
           [(+ dx x) (+ dy y)]))
     
       (defn step [cells]
-        (set (for [[loc n] (frequencies (mapcat neighbours cells))
-                   :when (or (= n 3) (and (= n 2) (cells loc)))]
-               loc)))
+        (into {}
+          (for [[[x y :as loc] n] (frequencies (mapcat neighbours (keys cells)))
+                :when (or (= n 3) (and (= n 2) (cells loc)))
+                :when (and (< -1 x 30) (< -1 y 30))]
+            [loc (or
+                   (cells loc)
+                   (rand-nth [:dark-green :medium-green :light-green :light-blue :medium-blue :dark-blue]))])))
     
       ((fn draw [board]
          (clear)
-         (when (< (ffirst board) 38)
-           (run! (fn [[x y]] (plot x y)) board)
-           (js/setTimeout #(draw (step board)) 50)))
-        #{[0 2] [1 0] [1 2] [2 1] [2 2]}))
+         (run! (fn [[[x y] c]] (color c) (plot x y)) board)
+         (reset! t (js/setTimeout #(draw (step board)) 50)))
+       (zipmap
+         [[0 2] [1 0] [1 2] [2 1] [2 2]
+          [21 15] [22 15] [20 16] [21 16] [21 17]]
+         (cycle [:light-blue])))))
 
       
   - Quil is a comprehensive drawing system based on Processing
@@ -896,7 +904,7 @@ Not sure what I am doing, Love Mum
 
 Blogs, website, documentation
 
-![Klipse](../../../img/klipse.gif)
+![Klipse](img/klipse.gif)
 
 ## Replumb
 
@@ -947,8 +955,10 @@ We've built a programming experience in Power Turtle that is:
 # Acknowledgements
 
 * Maria Geller - Bootstrap ClojureScript contributions and advocacy
-* Mike Fikes - Patiently helping use overcome hurdles
 * Andrea Richiardi - Replumb
+* Mike Fikes - Patiently helping use overcome hurdles
+* Thomas Heller - Macro renaming
+* António Monteiro - Bootstrap ClojureScript contributions
 * Yehonathan Sharvit - KLIPSE
 * Nikita Beloglazov - Quil 
 * Neil Fraser - Blockly
