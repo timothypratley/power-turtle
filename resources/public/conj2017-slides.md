@@ -588,10 +588,6 @@ class: middle, inverse, center
       [:svg
        [:circle {:r 50, :cx 100, :cy 100, :fill "green"}]
        [:circle {:r 25, :cx 100, :cy 100, :fill "blue"}]]])
-       
-    
-  - There's also an embedded Datascript/Datomic database
-    * I find it handy for testing queries without setting up a project
     
   - And a charting canvas
     
