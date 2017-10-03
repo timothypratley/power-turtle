@@ -597,6 +597,14 @@ class: middle, inverse, center
       (quil.core/arc 200 240 50 50 0 js/Math.PI)
       (quil.core/triangle 170 175 173 170 176 175)
       (quil.core/triangle 220 175 223 170 226 175))
+
+  - And a charting canvas
+  
+  
+    (power-turtle.view.canvas.chart-canvas/chart (range 10))
+    (power-turtle.view.canvas.chart-canvas/chart (map #(* % %) (range 10)))
+    (power-turtle.view.canvas.chart-canvas/chart (map #(/ 10 %) (range 1 11)))
+    
       
   - The HTML canvas let's you create HTML elements.
     * you can make webpages inside this webpage
@@ -609,8 +617,8 @@ class: middle, inverse, center
       [:svg
        [:circle {:r 50, :cx 100, :cy 100, :fill "green"}]
        [:circle {:r 25, :cx 100, :cy 100, :fill "blue"}]]])
-    
-  - And a charting canvas
+
+  - How's our game of life progressing?    
     
     
 * We want learners to transcend Logo
