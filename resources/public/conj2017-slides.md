@@ -365,12 +365,7 @@ class: middle, inverse, center
 
 ???
 
-<img src="../../../img/clojure_turtle2.png" width="49%">
-<img src="../../../img/clojure_turtle4.png" width="49%">
-<img src="../../../img/clojure-turtle.png" width="49%">
-
-
-Here are some screenshots
+    (insert code here)
 
 ---
 
