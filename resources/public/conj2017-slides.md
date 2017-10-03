@@ -5,7 +5,7 @@ class: center, middle, inverse
 <br><br>
 ![Turtle](turtle.jpg)
 
-### Elango Cheran, Google
+### Elango Cheran, Nest
 ### Timothy Pratley, Outpace
 
 <br>
@@ -146,19 +146,18 @@ background-size: contain
   - if the same thing is good for beginners and very advanced users...
   - ...then why do we avoid it in between?
 
-Notes for further reference:
-
- Insert explanation of Blockly being a Lisp (or at least Lisp-like??)
- - composition of fns
- - HOFs (via nested blocks)
- - regularity of "syntax"
- - lack of explicit types
-
 ---
 background-image: url(../../../img/drj_vs_lb.jpg)
 background-position: center
 background-repeat: no-repeat
 background-size: contain
+
+???
+
+* BASIC - first language, but wasn't great
+  - started in elementary school
+  - wanted to program Commodore 64 to do other things
+
 
 ---
 
@@ -181,27 +180,18 @@ background-size: contain
 
 ???
 
-* BASIC - first language, but wasn't great
-  - started in elementary school
-  - wanted to program Commodore 64 to do other things
+* BASIC (cont'd)
   - took a class at age 10
   - only could learn enough for a guessing game
   - too hard to go further
   - gave up on programming
+  - (so much for Beginner's All-purpose Symbolic Instruction Code)
 
 ---
 
 # Logo is interesting
 
 * Easy
-
---
-
-* Drew what I wanted
-
---
-
-* Made programming fun
 
 ???
 
@@ -210,9 +200,29 @@ TODO: insert drawing an E, and other things
 * Logo - I loved learning it:
   - took a class in middle school, at age 11
   - easy to pick up
+
+
+--
+
+* Drew what I wanted
+
+???
+
+* Logo (cont'd)
   - drew random pictures
   - learned how to create more complex pics
     * fns & recursion to assist
+
+--
+
+* Made programming fun
+
+???
+
+* Logo (cont'd)
+  - took a class in middle school, at age 11
+  - easy to pick up
+  - drew random pictures
   - renewed my interest in programming
 
 ---
@@ -365,9 +375,9 @@ Here are some screenshots
 # Different focus
 
 * We're not the first ones to bridge these concepts
-  - but we have a different focus:
-    * Blurring the lines between Logo and Clojure
-    * Blurring the lines between Turtle and Programming
+* But we have a different focus:
+   - Blurring the lines between Logo and Clojure
+   - Blurring the lines between Turtle and Programming
 
 ---
 class: middle, inverse, center
@@ -651,6 +661,8 @@ background-size: contain
 
 ???
 
+@ Elango
+
 # Show, then tell
 
 * Functions/HOF were the hard part for beginner students
@@ -718,6 +730,8 @@ class: center
 http://timothypratley.github.io/power-turtle#lessons.red[//server.org/my-lesson.md]
 
 ???
+
+@ Timothy
 
 * Perhaps you have a lesson in mind that you want to teach?
 * Good news! Lessons are markdown text files
