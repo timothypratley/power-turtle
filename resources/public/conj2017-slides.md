@@ -347,12 +347,28 @@ class: middle, inverse, center
 
 ---
 
-<img src="../../../img/clojure_turtle1.png" width="49%">
+.left-column-small[
+
+<img src="../../../img/clojure_turtle2.png" width="100%">
+<img src="../../../img/clojure_turtle4.png" width="100%">
+<img src="../../../img/clojure-turtle.png" width="100%">
+
+]
+
+.right-column-large[
+
+<iframe src="index.html#logo" style="width:100%; height: 900px">
+<div id="app"></div>
+</iframe>
+
+]
+
+???
+
 <img src="../../../img/clojure_turtle2.png" width="49%">
 <img src="../../../img/clojure_turtle4.png" width="49%">
 <img src="../../../img/clojure-turtle.png" width="49%">
 
-???
 
 Here are some screenshots
 
