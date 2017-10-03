@@ -5,7 +5,7 @@ class: center, middle, inverse
 <br><br>
 ![Turtle](turtle.jpg)
 
-### Elango Cheran, Google
+### Elango Cheran, Nest
 ### Timothy Pratley, Outpace
 
 <br>
