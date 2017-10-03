@@ -365,7 +365,117 @@ class: middle, inverse, center
 
 ???
 
-    (insert code here)
+
+    ;; Let's start off with a really simple shape: a square
+    
+    (forward 30)
+    (right 90)
+    (forward 30)
+    (right 90)
+    (forward 30)
+    (right 90)
+    (forward 30)
+    (right 90)
+    
+    ;; Okay, that's repetitive, so let's simplify that
+    
+    (clean)
+    (repeat 4 (all (forward 30) (right 90)))
+    
+    ;; Let's create an octagon (a stop-sign shape).
+    ;; It takes 2 turns to make a full 90 degrees, so
+    ;; each turn will be 45 degrees
+    
+    (repeat 8 (all (forward 30) (right 45)))
+    
+    ;; Let's give a name to the code that draws an octagon
+    
+    (defn octagon [] (repeat 8 (all (forward 30) (right 45))))
+    
+    ;; So we can just say octagon now
+    
+    (clean)
+    (octagon)
+    
+    ;; Using repeat and doing some turning, we can rotate our octagon around
+    
+    (repeat 12 (all (octagon) (right 30)))
+    
+    ;; Let's change the color and do that again
+    
+    (color [0 0 255])
+    (repeat 12 (all (octagon) (right 30)))
+    
+    ;; Let's go back to a simple octagon
+    
+    (clean)
+    (color [0])
+    (octagon)
+    
+    ;; If we know the length of an octagon, we can start tiling the octagons
+    
+    (def size (+ 30 (/ 60 (js/Math.sqrt 2))))
+    
+    (penup)
+    (forward size)
+    (pendown)
+    (octagon)
+    (penup)
+    (forward size)
+    (pendown)
+    (octagon)
+    
+    ;; Let's use range and map to create a column of octagons
+    
+    (def offsets (range -2 3))
+    
+    (def y-coords (map (fn [o] (* size o)) offsets))
+    
+    (defn octagon-at-height
+      [y]
+      (home)
+      (penup)
+      (forward y)
+      (pendown)
+      (octagon))
+    
+    (map octagon-at-height y-coords)
+    
+    ;; Let's cover the whole canvas.
+    ;; Instead of worrying about penup and pendown, let's use setxy to
+    
+    ;; teleport the turtle.  We'll generalize our octagon fn, and
+    ;; we'll use for to create the offsets.
+    ;; And we'll throw in some randomness to make the color interesting.
+ 
+ 
+    (do
+      
+      (def offsets-xy (for [x (range -3 3) y (range -3 4)] [x y]))
+    
+      (defn offset-to-coord
+        [offxy]
+        [(* size (first offxy)) (* size (second offxy))])
+    
+      (def coords (map offset-to-coord offsets-xy)))
+    
+    
+    
+    (do
+    
+      (defn octagon-here
+        [x y]
+        (setxy x y)
+        (color [0 (rand-int 255) (rand-int 255)])
+        (octagon))
+    
+      (defn octagon-at-coord
+        [coord]
+        (octagon-here (first coord) (second coord))))
+    
+    
+    
+    (map octagon-at-coord coords)
 
 ---
 
