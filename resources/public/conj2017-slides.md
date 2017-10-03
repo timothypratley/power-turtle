@@ -380,17 +380,17 @@ class: middle, inverse, center
     ;; Okay, that's repetitive, so let's simplify that
     
     (clean)
-    (repeat 4 (all (forward 30) (right 90)))
+    (repeat 4 #(do (forward 30) (right 90)))
     
     ;; Let's create an octagon (a stop-sign shape).
     ;; It takes 2 turns to make a full 90 degrees, so
     ;; each turn will be 45 degrees
     
-    (repeat 8 (all (forward 30) (right 45)))
+    (repeat 8 #(do (forward 30) (right 45)))
     
     ;; Let's give a name to the code that draws an octagon
     
-    (defn octagon [] (repeat 8 (all (forward 30) (right 45))))
+    (defn octagon [] (repeat 8 #(do (forward 30) (right 45))))
     
     ;; So we can just say octagon now
     
@@ -399,12 +399,12 @@ class: middle, inverse, center
     
     ;; Using repeat and doing some turning, we can rotate our octagon around
     
-    (repeat 12 (all (octagon) (right 30)))
+    (repeat 12 #(do (octagon) (right 30)))
     
     ;; Let's change the color and do that again
     
     (color [0 0 255])
-    (repeat 12 (all (octagon) (right 30)))
+    (repeat 12 #(do (octagon) (right 30)))
     
     ;; Let's go back to a simple octagon
     
