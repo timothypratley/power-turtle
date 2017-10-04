@@ -9,4 +9,6 @@
   [:div
    [:h3 "HTML"]
    [:hr]
-   @component])
+   [:div {:style {:text-align "left"
+                  :padding "10px"}}
+    @component]])

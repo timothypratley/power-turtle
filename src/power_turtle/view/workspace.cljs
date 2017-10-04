@@ -1,8 +1,9 @@
 (ns power-turtle.view.workspace
   (:require
-    [power-turtle.view.canvas.raster-canvas :as raster-canvas]
+    [power-turtle.view.canvas.chart-canvas :as chart-canvas]
     [power-turtle.view.canvas.html-canvas :as html-canvas]
     [power-turtle.view.canvas.quil-canvas :as quil-canvas]
+    [power-turtle.view.canvas.raster-canvas :as raster-canvas]
     [power-turtle.view.canvas.turtle-canvas :as turtle-canvas]
     [power-turtle.view.help :as help]
     [power-turtle.view.repl :as repl]
@@ -14,9 +15,10 @@
   {"turtle" [turtle-canvas/turtle-canvas]
    "raster" [raster-canvas/raster-canvas]
    "quil" [quil-canvas/quil-canvas]
+   "chart" [chart-canvas/chart-canvas]
    "html" [html-canvas/html-space]})
 
-(def freestyle-canvas
+(defonce freestyle-canvas
   (reagent/atom "turtle"))
 
 ;; TODO: why does clicking on them all break the chooser?

@@ -510,9 +510,7 @@ class: middle, inverse, center
 
 @ Timothy
 
-* Has anyone here had a similar experience to Elango learning Clojure?
-* I know I did.
-* What about trying to introduce someone to Clojure?
+* If you are interested in learning Clojure, how do you get started?
 
 ---
 
@@ -522,7 +520,8 @@ class: middle, inverse, center
 
 * My friend Nathan came up to me last year and said:
   - "I'm ready to give Clojure a try, I've even installed Emacs!"
-* You can probably guess where this is going right?
+* I winced a little because learning a new editor and language at the same time means danger ahead
+* But I was eager to show him how great Clojure was 
 
 ---
 
@@ -543,6 +542,7 @@ class: middle, inverse, center
 * Get Leiningen
 * Make a project
 * Add these dependencies
+* Start a REPL
 * Let's talk about the namespace syntax so you can use those dependencies
 * Don't press ctrl z in emacs!
 
@@ -552,7 +552,7 @@ class: middle, inverse, center
 
 ???
 
-* It's frustrating dealing with new tools when we just want to write code.
+* Learning a bunch of new tools is frustrating when we just want to write some code.
 
 ---
 
@@ -571,6 +571,8 @@ class: middle, inverse, center
 ???
 
 * All that changed last year with the arrival of ClojureScript REPLs
+* Now you can compile and Evaluate ClojureScript in the browser
+* All you need to get coding is a URL
 
 ---
 
@@ -590,8 +592,6 @@ class: middle, inverse, center
 
 ???
 
-* Now you can compile and Evaluate ClojureScript in the browser
-* All you need to get coding is a URL
 * I'd been talking with Elango about teaching Clojure through Logo 
   - and we thought, what if we marry turtle with a ClojureScript REPL
 
@@ -604,15 +604,14 @@ class: middle, inverse, center
 ???
 
 * This is Power Turtle; a batteries included REPL
-* The first lesson presents the Logo command: forward, left, right
-* Then combining commands into new commands
-* And how to repeat commands
-* There are a bunch of lessons
-  - we do not have time to look at them closely right now
-  - instead I'll quickly show you some of the capabilities of Power Turtle
+* The first lesson presents the Logo commands: forward, left, right
+* Then describes combining commands into new commands
+* And shows how to repeat commands
+* Users don't have to worry about tools and dependencies to get started.
 
+* I'll quickly show you the capabilities of Power Turtle
 * In freestyle mode you can choose from several canvases
-  - Turtle we know about already, you can build complex geometric shapes
+  - Turtle you have seen already; it's great for drawing geometric shapes
   
   
     (do
@@ -717,68 +716,64 @@ class: middle, inverse, center
     
       
   - The HTML canvas let's you create HTML elements.
-    * you can make webpages inside this webpage
   
   
     (html
-     [:span [:h1 "Hello Conj"]
-      [:form "What's your name? " [:input]]
-      [:button [:img {:src "turtle.jpg"}] "Click me"]
-      [:svg
-       [:circle {:r 50, :cx 100, :cy 100, :fill "green"}]
-       [:circle {:r 25, :cx 100, :cy 100, :fill "blue"}]]])
+      [:div
+       [:h1 "Greetings traveller"]
+       "What's your name? " [:input]
+       [:h3 "Shopping list:"]
+       [:ol [:li "milk"] [:li "bacon"] [:li "cheese"]]])
 
-  - How's our game of life progressing?    
-    
+  * you can make webpages inside this webpage
+  * you can create buttons and SVG images
+  * you can make little games
+
+  
+    (let [flip (reagent.core/atom 90)
+          flip-spring (reanimated.core/spring flip)]
+      (html
+        [(fn []
+           [:div
+            [:button {:on-click (fn [e] (swap! flip -))}
+             [:img {:src "turtle.jpg"
+                    :style {:transform (str "rotateY(" (+ 90 @flip-spring) "deg)")}}]
+             "Click me"]
+            [:br] [:br] [:br]
+            [:svg {:transform (str "rotate(" (+ 90 @flip-spring) ")")}
+             [:circle {:r 50, :cx 75, :cy 75, :fill "green"}]
+             [:circle {:r 25, :cx 75, :cy 75, :fill "blue"}]
+             [:path {:stroke-width 12 :stroke "white" :fill "none"
+                     :d "M 30,40 C 100,40 50,110 120,110"}]]])]))
+
+  * you can embed the other canvases
+
+
+    (html
+      [:div
+       [:div {:style {:width 150 :height 150 :display "inline-block"}}
+        [power-turtle.view.canvas.turtle-canvas/turtle-canvas]]
+       [:div {:style {:width 150 :height 150 :display "inline-block"}}
+        [power-turtle.view.canvas.chart-canvas/chart-canvas]]
+       [:div {:style {:width 300 :height 150 :display "inline-block"}}
+        [power-turtle.view.canvas.raster-canvas/raster-canvas]]])
+ 
+  
+    (js/clearTimeout @t)
+  
     
 * We want learners to transcend Logo
   - into other interesting things
   - in Clojure
-
-*** skip???
-Let's speed through one of the lessons:
-
-* triangle
-* square
-* offset square
-* param for octagon
-* Can anyone describe how to draw a circle?
-* concentric circles
-* spirals
-  - like circles, like concentric circles...
-  - how can you move from small to large?
-
-
-    (defn step [x]
-      (forward x)
-      (right 30))
-
-  - Sequences needed for incremental increase in distance travelled
-
-
-    (range 10)
-    (map step (range 10))
-
-  - Because this is a REPL we don't need to explain laziness yet
-  - But we can already talk about modifying a sequence 
-
-
-    (defn exp [x]
-      (* x x 0.1))
-    (map exp (range 40))
-    (map step (map exp (range 40)))
-*** end skip
-
-* We're writing Clojure.
-* There is a canvas where we can see a product of our efforts
-* There are lessons to guide beginners through core concepts
-* Each concept suggests examples to try
+* There are several lessons go through
+* Lessons are a slideshow of information and prompts
 * There is a progression of concepts...
   - call a function
   - combine functions into new functions
   - repeat functions
   - create sequences
-  - and modify sequences
+  - use sequences
+  - modify sequences
 
 ---
 background-image: url(../../../img/blockly-nested-blocks.png)
@@ -868,8 +863,7 @@ http://timothypratley.github.io/power-turtle#lessons.red[//server.org/my-lesson.
 * Your Markdown can be loaded remotely by url
   - you can deliver your own lesson with a link
   - you don't need us to do anything
-* Please contribute lessons so that we can link to them
-  - if you send us the markdown and we'll include it in the lesson list
+  - if you send us the markdown we will include it in the lesson list
 
 ---
 class: middle
@@ -891,9 +885,8 @@ Here is some feedback I received about the first lesson:
 * This is exactly what I had hoped for.
 * Lessons are guides, but you can really do whatever you want.
 * The emphasis is on self discovery.
-* Good lessons challenge us to figure out how to do something interesting
-  - with a small set of appropriate tools to do so
-
+* Good lessons challenge us; can you draw this shape?
+  - and provide just enough information to figure it out
 ---
 background-image: url(../../../img/korean.jpg)
 background-position: center
@@ -903,18 +896,18 @@ background-size: contain
 ???
 
 * On a completely different topic...
-* I'm currently learning Korean
+* I am learning Korean
 * The writing system is unique in that it was designed for literacy,
   unlike most other writing systems.
 * The characters are very logical.
-* Learning the Korean vocabulary is still difficult.
+* But learning the Korean vocabulary is still difficult.
 * I asked my friend Alex who is from Korea: "How did you learn programming?"
   - he replied: "I learnt English. Then I went to an Australian University. Now I work at Microsoft."
 * He made it sound easy, but that is a decade of dedication right there.
-* Only 5% of the world speaks English as their first language.
+* Only 5% of the world speaks English as a first language.
 * 20% if you include non-native speakers.
 * For most people who want to learn programming, the answer is:
-  - "Awesome! Go learn English first."
+  - "Awesome! Programming is really useful. Go learn English first."
 * But I knew that Elango had translated Clojure to Thamil
   - and I wondered if we could do that for other languages too
 

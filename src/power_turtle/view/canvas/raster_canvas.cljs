@@ -31,7 +31,8 @@
      (fn render-raster-canvas []
        [:canvas
         {:width (* api/width pixel-width)
-         :height (* api/height pixel-height)}])
+         :height (* api/height pixel-height)
+         :style {:width "100%" :height "100%"}}])
      :component-did-mount
      (fn raster-canvas-did-mount [this]
        (reset! canvas (dom/dom-node this))

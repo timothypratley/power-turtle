@@ -25,6 +25,7 @@
                  [com.cognitect/transit-cljs "0.8.239"]
                  [com.cemerick/piggieback "0.2.2"]
                  [com.google/clojure-turtle "0.3.0"]
+                 [cljsjs/chartjs "2.6.0-0"]
                  [cljsjs/codemirror "5.24.0-1"]
                  [cljsjs/highlight "9.12.0-0"]
                  [cljsjs/enquire "2.1.2-0"]

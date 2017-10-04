@@ -69,8 +69,8 @@ h1 {
     flex: 0 0 50%;
 }
 
-.space canvas,
-.space div
+.space > canvas,
+.space > div
  {
     width: 100%;
     height: 440px;

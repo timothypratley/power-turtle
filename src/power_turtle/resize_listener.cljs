@@ -2,7 +2,7 @@
   (:require [reagent.core :as reagent]
             [reagent.dom :as dom]))
 
-(def window-width
+(defonce window-width
   (reagent/atom nil))
 
 (defn on-window-resize [e]

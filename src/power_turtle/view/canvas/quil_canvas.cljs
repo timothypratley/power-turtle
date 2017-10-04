@@ -24,6 +24,8 @@
          [:canvas#turtle-canvas
           {:width @width
            :height @height
+           :style {:width "100%"
+                   :height "100%"}
            :ref
            (fn quil-canvas-ref [this]
              (when this
