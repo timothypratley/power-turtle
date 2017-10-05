@@ -66,7 +66,7 @@ background-size: contain
 ---
 class: middle
 
-<iframe src="index.html#logo" style="width:100%; height:71%">
+<iframe src="index.html#logo" style="width:100%; height:71%; border: none">
 <div id="app"></div>
 </iframe>
 
@@ -189,9 +189,7 @@ background-size: contain
 
 ---
 
-# Logo is interesting
-
-* Easy
+# How is Logo interesting?
 
 ???
 
@@ -199,108 +197,26 @@ TODO: insert drawing an E, and other things
 
 * Logo - I loved learning it:
   - took a class in middle school, at age 11
+* reveal
   - easy to pick up
-
-
---
-
-* Drew what I wanted
-
-???
-
-* Logo (cont'd)
+* reveal
   - drew random pictures
   - learned how to create more complex pics
     * fns & recursion to assist
-
---
-
-* Made programming fun
-
-???
-
-* Logo (cont'd)
+* reveal
   - took a class in middle school, at age 11
   - easy to pick up
   - drew random pictures
   - renewed my interest in programming
 
----
+--
+* Easy
 
-# What makes Logo interesting
+--
+* Drew what I wanted
 
-* Easy to learn
-* Exploration
-* Empowerment
-
-???
-
-# What makes Logo interesting
-
-* Logo is an environment that is:
-  - simple
-  - interactive
-  - visual
-* Exploration-based learning often as mode of instruction
-  - User learning how to interact & manipulate the environment
-  - Gives sense of:
-    * self-discovery, excitement, wonder
-    * empowerment
-
----
-background-image: url(../../../img/logo-turtle-robot.png)
-background-position: center
-background-repeat: no-repeat
-background-size: contain
-
-???
-
-* Interactivity means:
-  - more than just one sense (vision <- also sound, touch)
-  - more than just output (also input)
-* A physical object makes it "real"
-  - tangible
-  - relatable
-  - connected to reality, not abstract
-
----
-
-<img src="../../../img/dash-and-dot.jpg" width="350px">
-<img src="../../../img/ozo.png" width="350px">
-<img src="../../../img/microbit-guitar.png" width="700px">
-
-???
-
-* Toys following in those footsteps 
-
----
-background-image: url(../../../img/papert.gif)
-background-position: center
-background-repeat: no-repeat
-background-size: contain
-
-???
-
-# Philosophical design
-
-* main goals: interactivity & exploration - first & foremost
-  - Seymour Papert
-    * Knowledge = systems we create, to absorb new info
-      - Those systems must be based on existing knowledge systems we created
-    * Knowledge acquisition happens best when:
-      - We can relate new info to existing knowledge in a personal way
-      - We are put in control of our own learning
-    * Created Logo just as a means to exemplify his theory
-
----
-background-image: url(../../../img/mindstorms.jpg)
-background-position: center
-background-repeat: no-repeat
-background-size: contain
-
-???
-
-* Mindstorms
+--
+* Made programming fun
 
 ---
 class: middle, inverse, center
@@ -346,22 +262,11 @@ class: middle, inverse, center
   - Help make learning Clojure easier
 
 ---
+class: middle
 
-.left-column-small[
-
-<img src="../../../img/clojure_turtle2.png" width="100%">
-<img src="../../../img/clojure_turtle4.png" width="100%">
-<img src="../../../img/clojure-turtle.png" width="100%">
-
-]
-
-.right-column-large[
-
-<iframe src="index.html#logo" style="width:100%; height: 900px">
+<iframe src="index.html#logo" style="width:100%; height: 71%; border: none">
 <div id="app"></div>
 </iframe>
-
-]
 
 ???
 
@@ -479,6 +384,81 @@ class: middle, inverse, center
 
 ---
 
+# Why is Logo interesting?
+
+* Easy to learn
+* Exploration
+* Empowerment
+
+???
+
+* Logo is an environment that is:
+  - simple
+  - interactive
+  - visual
+* Exploration-based learning often used in Logo classes as mode of instruction
+  - User learning how to interact & manipulate the environment
+  - Gives sense of:
+    * self-discovery, excitement, wonder
+    * empowerment
+
+---
+background-image: url(../../../img/logo-turtle-robot.png)
+background-position: center
+background-repeat: no-repeat
+background-size: contain
+
+???
+
+* Interactivity means:
+  - more than just one sense (vision <- also sound, touch)
+  - more than just output (also input)
+* A physical object makes it "real"
+  - tangible
+  - relatable
+  - connected to reality, not abstract
+
+---
+
+<img src="../../../img/dash-and-dot.jpg" width="350px">
+<img src="../../../img/ozo.png" width="350px">
+<img src="../../../img/microbit-guitar.png" width="700px">
+
+???
+
+* Toys following in those footsteps 
+
+---
+background-image: url(../../../img/papert.gif)
+background-position: center
+background-repeat: no-repeat
+background-size: contain
+
+???
+
+# Philosophical design
+
+* main goals: interactivity & exploration - first & foremost
+  - Seymour Papert
+    * Knowledge = systems we create, to absorb new info
+      - Those systems must be based on existing knowledge systems we created
+    * Knowledge acquisition happens best when:
+      - We can relate new info to existing knowledge in a personal way
+      - We are put in control of our own learning
+    * Created Logo just as a means to exemplify his theory
+
+---
+background-image: url(../../../img/mindstorms.jpg)
+background-position: center
+background-repeat: no-repeat
+background-size: contain
+
+???
+
+* Mindstorms
+
+---
+
 # Prior art
 
 - Logo in Clojure
@@ -570,7 +550,7 @@ class: middle, inverse, center
 
 ???
 
-* All that changed last year with the arrival of ClojureScript REPLs
+* All that changed last year with the arrival of self hosted ClojureScript REPLs
 * Now you can compile and Evaluate ClojureScript in the browser
 * All you need to get coding is a URL
 
@@ -597,7 +577,7 @@ class: middle, inverse, center
 
 ---
 
-<iframe src="index.html" style="width:100%; height:100%">
+<iframe src="index.html" style="width:100%; height:100%; border: none">
 <div id="app"></div>
 </iframe>
 
@@ -699,7 +679,7 @@ class: middle, inverse, center
          (cycle [:light-blue])))))
 
       
-  - Quil is a comprehensive drawing system based on Processing
+  - Quil is a comprehensive drawing system
   
   
     (do (quil.core/ellipse 200 200 150 200)
@@ -909,11 +889,11 @@ background-size: contain
 * For most people who want to learn programming, the answer is:
   - "Awesome! Programming is really useful. Go learn English first."
 * But I knew that Elango had translated Clojure to Thamil
-  - and I wondered if we could do that for other languages too
+  - and I wondered if we could do that in Power Turtle
 
 ---
 
-<iframe src="index.html" style="width:100%; height:100%">
+<iframe src="index.html" style="width:100%; height:100%; border: none">
 <div id="app"></div>
 </iframe>
 
@@ -962,7 +942,8 @@ background-size: contain
 
 ???
 
-Elango had already translated Thamil and released a library called clj-thamil:
+This is Elango's library for writing Clojure in other spoken languages
+
   * It works great in Clojure
   * It relies on macro-writing macros, which does not work in ClojureScript
   * So we made something new
