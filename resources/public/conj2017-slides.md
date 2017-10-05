@@ -19,8 +19,7 @@ Baltimore, MD<br>
 
 I'm Elango, and this is Tim.
 
-I'll be talking about Logo;
-Timothy will be talking about combining Logo with a ClojureScript REPL.
+Our talk is entitled "Learning Clojure through Logo".
 
 This talk presents our personal views, not those of our employers.
 
