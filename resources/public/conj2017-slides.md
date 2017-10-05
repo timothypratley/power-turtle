@@ -289,19 +289,20 @@ class: middle
     ;; Let's create an octagon (a stop-sign shape).
     ;; It takes 2 turns to make a full 90 degrees, so
     ;; each turn will be 45 degrees
-    
+
+    (clean)
     (repeat 8 #(do (forward 30) (right 45)))
     
     ;; Let's give a name to the code that draws an octagon
-    
+
     (defn octagon [] (repeat 8 #(do (forward 30) (right 45))))
     
-    ;; So we can just say octagon now
+    ;; So we can just say `octagon` now
     
     (clean)
     (octagon)
     
-    ;; Using repeat and doing some turning, we can rotate our octagon around
+    ;; Using `repeat` and doing some turning, we can rotate our octagon around
     
     (repeat 12 #(do (octagon) (right 30)))
     
@@ -329,11 +330,7 @@ class: middle
     (pendown)
     (octagon)
     
-    ;; Let's use range and map to create a column of octagons
-    
-    (def offsets (range -2 3))
-    
-    (def y-coords (map (fn [o] (* size o)) offsets))
+    ;; Let's use `range` and `map` to create a column of octagons
     
     (defn octagon-at-height
       [y]
@@ -342,16 +339,21 @@ class: middle
       (forward y)
       (pendown)
       (octagon))
-    
+
+    (do
+      (def offsets (range -2 3))
+      (def y-coords (map (fn [o] (* size o)) offsets)))
+        
     (map octagon-at-height y-coords)
     
     ;; Let's cover the whole canvas.
-    ;; Instead of worrying about penup and pendown, let's use setxy to
-    
-    ;; teleport the turtle.  We'll generalize our octagon fn, and
-    ;; we'll use for to create the offsets.
-    ;; And we'll throw in some randomness to make the color interesting.
- 
+    ;; Instead of worrying about
+    ;; `penup` and `pendown`, let's use
+    ;; `setxy` to
+    ;; teleport the turtle.
+
+    ;; First, let's use `for` to create the
+    ;; xy-coordinates for all of the octagons 
  
     (do
       
@@ -363,6 +365,12 @@ class: middle
     
       (def coords (map offset-to-coord offsets-xy)))
     
+
+    ;; Next, we'll generalize our
+    ;; octagon fn to accept
+    ;; xy-coordinates. And we'll throw
+    ;; in some randomness to make the
+    ;; color interesting.
     
     
     (do
@@ -790,25 +798,25 @@ class: center
 
 
 * Progression becomes impt
-  - Macros
-    * We sometimes introduce macros midway through our lessons
-    * Don't need to create them to use them
-  - The 'list' fn
-    * Probably don't need it except when writing macros
-  - The 'vector' fn
-    * Probably don't need it except when transposing nested data
-  - cons cell
-    * Probably don't need it until writing a custom lazy seq
+  - **Macros**
+    * _We sometimes introduce macros midway through our lessons_
+    * _Don't need to create them to use them_
+  - **The 'list' fn**
+    * _Probably don't need it except when writing macros_
+  - **The 'vector' fn**
+    * _Probably don't need it except when transposing nested data_
+  - **cons cell**
+    * _Probably don't need it until writing a custom lazy seq_
 * Papert:
   - visual and interactive is necessary but not sufficient
   - new info must relate to existing knowledge
 * Clojure and Logo
-  - Logo - simple & small set of primitives
-    * Allows people internalize easily
+  - **Logo - simple & small set of primitives**
+    * _Allows people internalize easily_
   - Likewise, we can teach Clojure by starting with a small core of primitives
-  - Clojure vs. Logo
-    * Easy to learn everything there is to Logo because its core is small
-    * Clojure has much larger core, so ordering matters much more
+  - **Clojure vs. Logo**
+    * _Easy to learn everything there is to Logo because its core is small_
+    * _Clojure has much larger core, so ordering matters much more_
 
 ---
 
