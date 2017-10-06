@@ -1,6 +1,6 @@
 existing,alias,docstring,comment
-plot,trama
+plot,trazar
 scrn,pantalla
 hlin,linea-horizontal
 vlin,linea-vertical
-clear,claro
+clear,limpiar
