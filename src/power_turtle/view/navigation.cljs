@@ -40,25 +40,40 @@
 
 ;; TODO: Can we get this into the translation inputs somehow?
 (def languages
-  {"ko" "한국어"
-   "id" "Bahasa Indonesia"
-   "ta" "தமிழ்"
+  {"de" "Deutsche"
+   "en" "English"
    "es" "Español"
-   "en" "English"})
+   "fr" "Français"
+   "id" "Bahasa Indonesia"
+   "ko" "한국어"
+   "ru" "Русский"
+   "ta" "தமிழ்"
+   "zh_TW" "中國傳統的"
+   "zh_CN" "簡體中文"})
 
 (defn language-selector []
   (fn a-language-selector []
     [sa/MenuMenu
      {:position "right"}
-     (doall
-       (for [[language-id language-name] (sort languages)]
-         ^{:key language-id}
-         [sa/MenuItem
-          {:active (= @model/current-language language-id)
-           :on-click
-           (fn language-click [e]
-             (reset! model/current-language language-id))}
-          language-name]))]))
+     [sa/MenuItem
+      [sa/Dropdown
+       {:button true
+        :class-name "icon"
+        :floating true
+        :labeled true
+        :icon "world"
+        :placeholder "select language"
+        :fluid true
+        :default-value "en"
+        :options (clj->js
+                   (for [[lang-code lang-name] (sort-by key languages)]
+                     {:key lang-code
+                      :text lang-name
+                      :value lang-code}))
+        :on-change
+        (fn language-change [e v]
+          (reset! model/current-language (.-value v)))
+        }]]]))
 
 (defn menu-bar [route]
   [sa/Menu

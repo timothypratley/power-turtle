@@ -71,6 +71,7 @@
   nil)
 
 (defn color [x]
+  (prn "hi" x (type x))
   (if (keyword? x)
     (raster-api/color x)
     (turtle/color x))
@@ -91,7 +92,7 @@
             ['red red]
             ['green green]
             ['blue blue]
-            ['init init]]))
+            ['clear init]]))
 
 (defn html [x]
   #?(:cljs (reset! html-canvas/component x))

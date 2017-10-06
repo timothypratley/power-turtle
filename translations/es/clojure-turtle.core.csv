@@ -9,6 +9,5 @@ setheading,encabezado-de-conjunto
 setxy,xyconjunto
 start-fill,comience-el-llenado
 end-fill,relleno-final
-color,color
 wait,espere
 draw-turtle-commands,dibujar-comandos-tortuga

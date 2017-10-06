@@ -908,15 +908,16 @@ background-size: contain
 
 * And of course we can!
 
-# Demo - "Polyglot Clojure"
 
-    (앞으로 50)
-    
-    (권리 90)
+    (do
+      (앞으로 50)
+      (rechts 90)
+      (முன்னால் 50)
+      (verde)
+      (前锋 50)
+      (droite 90))
 
-* Thamil example - forward and turning
-* German example - repeat/repeatedly 3 to form a square
-* Wow Elango, you are quite the polyglot programmer!
+* polyglot programming!
 
 ---
 background-image: url(../../../img/etower.jpg)

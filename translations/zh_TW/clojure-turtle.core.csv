@@ -1,0 +1,9 @@
+existing,alias,docstring,comment
+penup,明确
+pendown,下筆
+setheading,設置標題
+setxy,設定位置
+start-fill,開始填寫
+end-fill,結束填充
+wait,等待
+draw-turtle-commands,畫烏龜命令

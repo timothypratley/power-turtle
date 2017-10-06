@@ -1,0 +1,9 @@
+existing,alias,docstring,comment
+penup,поднимать-вверх
+pendown,ручка-вниз
+setheading,установить-заголовок
+setxy,заданное-положение
+start-fill,начать-заполнять
+end-fill,конец-заполнения
+wait,Подождите
+draw-turtle-commands,рисовать-черепахи

@@ -9,6 +9,5 @@ setheading,menetapkankepala
 setxy,menetapkanxy
 start-fill,mulai-mengisi
 end-fill,akhir-mengisi
-color,warna
 wait,tunggu
 draw-turtle-commands,menggambar-perintah-penyu

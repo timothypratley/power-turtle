@@ -1,4 +1,130 @@
-{"en"
+{"de"
+ {"clojure-turtle.core"
+  {"draw-turtle-commands"
+   {:arglists ([turt]),
+    :resolved true,
+    :existing "draw-turtle-commands",
+    :alias "zeichne-schildkröte-befehle"},
+   "end-fill"
+   {:arglists ([] [turt-state]),
+    :resolved true,
+    :existing "end-fill",
+    :alias "ende-füllen"},
+   "pendown"
+   {:arglists ([] [turt-state]),
+    :resolved true,
+    :existing "pendown",
+    :alias "drin-nach-unten"},
+   "penup"
+   {:arglists ([] [turt-state]),
+    :resolved true,
+    :existing "penup",
+    :alias "steige-hoch"},
+   "setheading"
+   {:arglists ([ang] [turt-state ang]),
+    :resolved true,
+    :existing "setheading",
+    :alias "überschrift-setzen"},
+   "setxy"
+   {:arglists ([x y] [turt-state x y]),
+    :resolved true,
+    :existing "setxy",
+    :alias "xy-setzen"},
+   "start-fill"
+   {:arglists ([] [turt-state]),
+    :resolved true,
+    :existing "start-fill",
+    :alias "start-füllen"},
+   "wait"
+   {:arglists ([ms]),
+    :resolved true,
+    :existing "wait",
+    :alias "warte-ab"}},
+  "power-turtle.api"
+  {"add-action"
+   {:arglists ([label f]),
+    :resolved true,
+    :existing "add-action",
+    :alias "aktion-hinzufügen"},
+   "back"
+   {:arglists ([x]),
+    :resolved true,
+    :existing "back",
+    :alias "zurück"},
+   "blue"
+   {:arglists ([]), :resolved true, :existing "blue", :alias "blau"},
+   "clean"
+   {:arglists ([]),
+    :resolved true,
+    :existing "clean",
+    :alias "sauber"},
+   "color"
+   {:arglists ([x]),
+    :resolved true,
+    :existing "color",
+    :alias "farbe"},
+   "forward"
+   {:arglists ([x]),
+    :resolved true,
+    :existing "forward",
+    :alias "vorwärts"},
+   "green"
+   {:arglists ([]), :resolved true, :existing "green", :alias "grün"},
+   "home"
+   {:arglists ([]),
+    :resolved true,
+    :existing "home",
+    :alias "zuhause"},
+   "html"
+   {:arglists ([x]), :resolved true, :existing "html", :alias "html"},
+   "left"
+   {:arglists ([x]), :resolved true, :existing "left", :alias "links"},
+   "octagon"
+   {:arglists ([]),
+    :resolved true,
+    :existing "octagon",
+    :alias "achteck"},
+   "pattern"
+   {:arglists ([]),
+    :resolved true,
+    :existing "pattern",
+    :alias "muster"},
+   "red"
+   {:arglists ([]), :resolved true, :existing "red", :alias "rot"},
+   "repeat"
+   {:arglists ([n f]),
+    :resolved true,
+    :existing "repeat",
+    :alias "wiederhole"},
+   "right"
+   {:arglists ([x]),
+    :resolved true,
+    :existing "right",
+    :alias "rechts"}},
+  "power-turtle.view.canvas.raster-api"
+  {"clear"
+   {:arglists ([]), :resolved true, :existing "clear", :alias "klar"},
+   "hlin"
+   {:arglists ([x1 x2 y]),
+    :resolved true,
+    :existing "hlin",
+    :alias "horizontale-linie"},
+   "plot"
+   {:arglists ([x y]),
+    :resolved true,
+    :existing "plot",
+    :alias "grundstück"},
+   "scrn"
+   {:arglists ([x y]),
+    :resolved true,
+    :existing "scrn",
+    :alias "bildschirm"},
+   "vlin"
+   {:arglists ([y1 y2 x]),
+    :resolved true,
+    :existing "vlin",
+    :alias "vertikale-linie"}}},
+ "en"
  {"clojure-turtle.core"
   {"draw-turtle-commands"
    {:arglists ([turt]),
@@ -95,6 +221,11 @@
   "power-turtle.view.canvas.raster-api"
   {"clear"
    {:arglists ([]), :resolved true, :existing "clear", :alias "clear"},
+   "color"
+   {:arglists ([c]),
+    :resolved true,
+    :existing "color",
+    :alias "color"},
    "hlin"
    {:arglists ([x1 x2 y]),
     :resolved true,
@@ -122,11 +253,6 @@
     :resolved true,
     :existing "back",
     :alias "espalda"},
-   "color"
-   {:arglists ([c] [turt-state c]),
-    :resolved true,
-    :existing "color",
-    :alias "color"},
    "draw-turtle-commands"
    {:arglists ([turt]),
     :resolved true,
@@ -212,7 +338,156 @@
     :existing "pattern",
     :alias "patrón"},
    "red"
-   {:arglists ([]), :resolved true, :existing "red", :alias "rojo"}}},
+   {:arglists ([]), :resolved true, :existing "red", :alias "rojo"}},
+  "power-turtle.view.canvas.raster-api"
+  {"clear"
+   {:arglists ([]), :resolved true, :existing "clear", :alias "claro"},
+   "hlin"
+   {:arglists ([x1 x2 y]),
+    :resolved true,
+    :existing "hlin",
+    :alias "linea-horizontal"},
+   "plot"
+   {:arglists ([x y]),
+    :resolved true,
+    :existing "plot",
+    :alias "trama"},
+   "scrn"
+   {:arglists ([x y]),
+    :resolved true,
+    :existing "scrn",
+    :alias "pantalla"},
+   "vlin"
+   {:arglists ([y1 y2 x]),
+    :resolved true,
+    :existing "vlin",
+    :alias "linea-vertical"}}},
+ "fr"
+ {"clojure-turtle.core"
+  {"draw-turtle-commands"
+   {:arglists ([turt]),
+    :resolved true,
+    :existing "draw-turtle-commands",
+    :alias "dessiner-des-commandes-de-tortue"},
+   "end-fill"
+   {:arglists ([] [turt-state]),
+    :resolved true,
+    :existing "end-fill",
+    :alias "remplissage-final"},
+   "pendown"
+   {:arglists ([] [turt-state]),
+    :resolved true,
+    :existing "pendown",
+    :alias "stylo-vers-le-bas"},
+   "penup"
+   {:arglists ([] [turt-state]),
+    :resolved true,
+    :existing "penup",
+    :alias "plume"},
+   "setheading"
+   {:arglists ([ang] [turt-state ang]),
+    :resolved true,
+    :existing "setheading",
+    :alias "positionner-len-tête"},
+   "setxy"
+   {:arglists ([x y] [turt-state x y]),
+    :resolved true,
+    :existing "setxy",
+    :alias "ensemblexy"},
+   "start-fill"
+   {:arglists ([] [turt-state]),
+    :resolved true,
+    :existing "start-fill",
+    :alias "commencer-à-remplir"},
+   "wait"
+   {:arglists ([ms]),
+    :resolved true,
+    :existing "wait",
+    :alias "attendez"}},
+  "power-turtle.api"
+  {"add-action"
+   {:arglists ([label f]),
+    :resolved true,
+    :existing "add-action",
+    :alias "ajouter-une-action"},
+   "back"
+   {:arglists ([x]),
+    :resolved true,
+    :existing "back",
+    :alias "arrière"},
+   "blue"
+   {:arglists ([]), :resolved true, :existing "blue", :alias "bleu"},
+   "clean"
+   {:arglists ([]),
+    :resolved true,
+    :existing "clean",
+    :alias "nettoyer"},
+   "color"
+   {:arglists ([x]),
+    :resolved true,
+    :existing "color",
+    :alias "couleur"},
+   "forward"
+   {:arglists ([x]),
+    :resolved true,
+    :existing "forward",
+    :alias "avant"},
+   "green"
+   {:arglists ([]), :resolved true, :existing "green", :alias "vert"},
+   "home"
+   {:arglists ([]), :resolved true, :existing "home", :alias "maison"},
+   "html"
+   {:arglists ([x]), :resolved true, :existing "html", :alias "html"},
+   "left"
+   {:arglists ([x]),
+    :resolved true,
+    :existing "left",
+    :alias "gauche"},
+   "octagon"
+   {:arglists ([]),
+    :resolved true,
+    :existing "octagon",
+    :alias "octogone"},
+   "pattern"
+   {:arglists ([]),
+    :resolved true,
+    :existing "pattern",
+    :alias "modèle"},
+   "red"
+   {:arglists ([]), :resolved true, :existing "red", :alias "rouge"},
+   "repeat"
+   {:arglists ([n f]),
+    :resolved true,
+    :existing "repeat",
+    :alias "répéter"},
+   "right"
+   {:arglists ([x]),
+    :resolved true,
+    :existing "right",
+    :alias "droite"}},
+  "power-turtle.view.canvas.raster-api"
+  {"clear"
+   {:arglists ([]), :resolved true, :existing "clear", :alias "clair"},
+   "hlin"
+   {:arglists ([x1 x2 y]),
+    :resolved true,
+    :existing "hlin",
+    :alias "ligne-horizontale"},
+   "plot"
+   {:arglists ([x y]),
+    :resolved true,
+    :existing "plot",
+    :alias "terrain"},
+   "scrn"
+   {:arglists ([x y]),
+    :resolved true,
+    :existing "scrn",
+    :alias "écran"},
+   "vlin"
+   {:arglists ([y1 y2 x]),
+    :resolved true,
+    :existing "vlin",
+    :alias "ligne-verticale"}}},
  "id"
  {"clojure-turtle.core"
   {"back"
@@ -220,11 +495,6 @@
     :resolved true,
     :existing "back",
     :alias "kembali"},
-   "color"
-   {:arglists ([c] [turt-state c]),
-    :resolved true,
-    :existing "color",
-    :alias "warna"},
    "draw-turtle-commands"
    {:arglists ([turt]),
     :resolved true,
@@ -313,7 +583,33 @@
     :existing "pattern",
     :alias "pola"},
    "red"
-   {:arglists ([]), :resolved true, :existing "red", :alias "merah"}}},
+   {:arglists ([]), :resolved true, :existing "red", :alias "merah"}},
+  "power-turtle.view.canvas.raster-api"
+  {"clear"
+   {:arglists ([]),
+    :resolved true,
+    :existing "clear",
+    :alias "bersih"},
+   "hlin"
+   {:arglists ([x1 x2 y]),
+    :resolved true,
+    :existing "hlin",
+    :alias "garis-horisontal"},
+   "plot"
+   {:arglists ([x y]),
+    :resolved true,
+    :existing "plot",
+    :alias "merencanakan"},
+   "scrn"
+   {:arglists ([x y]),
+    :resolved true,
+    :existing "scrn",
+    :alias "layar"},
+   "vlin"
+   {:arglists ([y1 y2 x]),
+    :resolved true,
+    :existing "vlin",
+    :alias "garis-vertikal"}}},
  "ko"
  {"clojure-turtle.core"
   {"back"
@@ -394,7 +690,150 @@
    "pattern"
    {:arglists ([]), :resolved true, :existing "pattern", :alias "무늬"},
    "red"
-   {:arglists ([]), :resolved true, :existing "red", :alias "빨간"}}},
+   {:arglists ([]), :resolved true, :existing "red", :alias "빨간"}},
+  "power-turtle.view.canvas.raster-api"
+  {"clear"
+   {:arglists ([]), :resolved true, :existing "clear", :alias "명확한"},
+   "hlin"
+   {:arglists ([x1 x2 y]),
+    :resolved true,
+    :existing "hlin",
+    :alias "수평선"},
+   "plot"
+   {:arglists ([x y]), :resolved true, :existing "plot", :alias "음모"},
+   "scrn"
+   {:arglists ([x y]), :resolved true, :existing "scrn", :alias "화면"},
+   "vlin"
+   {:arglists ([y1 y2 x]),
+    :resolved true,
+    :existing "vlin",
+    :alias "수직선"}}},
+ "ru"
+ {"clojure-turtle.core"
+  {"draw-turtle-commands"
+   {:arglists ([turt]),
+    :resolved true,
+    :existing "draw-turtle-commands",
+    :alias "рисовать-черепахи"},
+   "end-fill"
+   {:arglists ([] [turt-state]),
+    :resolved true,
+    :existing "end-fill",
+    :alias "конец-заполнения"},
+   "pendown"
+   {:arglists ([] [turt-state]),
+    :resolved true,
+    :existing "pendown",
+    :alias "ручка-вниз"},
+   "penup"
+   {:arglists ([] [turt-state]),
+    :resolved true,
+    :existing "penup",
+    :alias "поднимать-вверх"},
+   "setheading"
+   {:arglists ([ang] [turt-state ang]),
+    :resolved true,
+    :existing "setheading",
+    :alias "установить-заголовок"},
+   "setxy"
+   {:arglists ([x y] [turt-state x y]),
+    :resolved true,
+    :existing "setxy",
+    :alias "заданное-положение"},
+   "start-fill"
+   {:arglists ([] [turt-state]),
+    :resolved true,
+    :existing "start-fill",
+    :alias "начать-заполнять"},
+   "wait"
+   {:arglists ([ms]),
+    :resolved true,
+    :existing "wait",
+    :alias "Подождите"}},
+  "power-turtle.api"
+  {"add-action"
+   {:arglists ([label f]),
+    :resolved true,
+    :existing "add-action",
+    :alias "добавить-действие"},
+   "back"
+   {:arglists ([x]), :resolved true, :existing "back", :alias "назад"},
+   "blue"
+   {:arglists ([]), :resolved true, :existing "blue", :alias "синий"},
+   "clean"
+   {:arglists ([]),
+    :resolved true,
+    :existing "clean",
+    :alias "чистый"},
+   "color"
+   {:arglists ([x]), :resolved true, :existing "color", :alias "цвет"},
+   "forward"
+   {:arglists ([x]),
+    :resolved true,
+    :existing "forward",
+    :alias "вперед"},
+   "green"
+   {:arglists ([]),
+    :resolved true,
+    :existing "green",
+    :alias "зеленый"},
+   "home"
+   {:arglists ([]),
+    :resolved true,
+    :existing "home",
+    :alias "Главная"},
+   "html"
+   {:arglists ([x]), :resolved true, :existing "html", :alias "html"},
+   "left"
+   {:arglists ([x]),
+    :resolved true,
+    :existing "left",
+    :alias "оставил"},
+   "octagon"
+   {:arglists ([]),
+    :resolved true,
+    :existing "octagon",
+    :alias "восьмиугольник"},
+   "pattern"
+   {:arglists ([]),
+    :resolved true,
+    :existing "pattern",
+    :alias "шаблон"},
+   "red"
+   {:arglists ([]), :resolved true, :existing "red", :alias "красный"},
+   "repeat"
+   {:arglists ([n f]),
+    :resolved true,
+    :existing "repeat",
+    :alias "повторение"},
+   "right"
+   {:arglists ([x]),
+    :resolved true,
+    :existing "right",
+    :alias "правильно"}},
+  "power-turtle.view.canvas.raster-api"
+  {"clear"
+   {:arglists ([]), :resolved true, :existing "clear", :alias "Чисто"},
+   "hlin"
+   {:arglists ([x1 x2 y]),
+    :resolved true,
+    :existing "hlin",
+    :alias "горизонтальная-линия"},
+   "plot"
+   {:arglists ([x y]),
+    :resolved true,
+    :existing "plot",
+    :alias "сюжет"},
+   "scrn"
+   {:arglists ([x y]),
+    :resolved true,
+    :existing "scrn",
+    :alias "экран"},
+   "vlin"
+   {:arglists ([y1 y2 x]),
+    :resolved true,
+    :existing "vlin",
+    :alias "вертикальная-линия"}}},
  "ta"
  {"clojure-turtle.core"
   {"back"
@@ -465,4 +904,211 @@
    {:arglists ([]),
     :resolved true,
     :existing "red",
-    :alias "சிவப்பு"}}}}
+    :alias "சிவப்பு"}},
+  "power-turtle.view.canvas.raster-api"
+  {"clear"
+   {:arglists ([]),
+    :resolved true,
+    :existing "clear",
+    :alias "தெளிவான"},
+   "hlin"
+   {:arglists ([x1 x2 y]),
+    :resolved true,
+    :existing "hlin",
+    :alias "படுக்கைவாட்டு-கொடு"},
+   "plot"
+   {:arglists ([x y]), :resolved true, :existing "plot", :alias "சதி"},
+   "scrn"
+   {:arglists ([x y]),
+    :resolved true,
+    :existing "scrn",
+    :alias "திரை"},
+   "vlin"
+   {:arglists ([y1 y2 x]),
+    :resolved true,
+    :existing "vlin",
+    :alias "செங்குத்து-கோடு"}}},
+ "zh_CN"
+ {"clojure-turtle.core"
+  {"draw-turtle-commands"
+   {:arglists ([turt]),
+    :resolved true,
+    :existing "draw-turtle-commands",
+    :alias "画乌龟命令"},
+   "end-fill"
+   {:arglists ([] [turt-state]),
+    :resolved true,
+    :existing "end-fill",
+    :alias "结束填充"},
+   "pendown"
+   {:arglists ([] [turt-state]),
+    :resolved true,
+    :existing "pendown",
+    :alias "下笔"},
+   "penup"
+   {:arglists ([] [turt-state]),
+    :resolved true,
+    :existing "penup",
+    :alias "抬起头"},
+   "setheading"
+   {:arglists ([ang] [turt-state ang]),
+    :resolved true,
+    :existing "setheading",
+    :alias "设置标题"},
+   "setxy"
+   {:arglists ([x y] [turt-state x y]),
+    :resolved true,
+    :existing "setxy",
+    :alias "设定位置"},
+   "start-fill"
+   {:arglists ([] [turt-state]),
+    :resolved true,
+    :existing "start-fill",
+    :alias "开始填写"},
+   "wait"
+   {:arglists ([ms]), :resolved true, :existing "wait", :alias "等待"}},
+  "power-turtle.api"
+  {"add-action"
+   {:arglists ([label f]),
+    :resolved true,
+    :existing "add-action",
+    :alias "添加动作"},
+   "back"
+   {:arglists ([x]), :resolved true, :existing "back", :alias "背部"},
+   "blue"
+   {:arglists ([]), :resolved true, :existing "blue", :alias "蓝色"},
+   "clean"
+   {:arglists ([]), :resolved true, :existing "clean", :alias "清洁"},
+   "color"
+   {:arglists ([x]), :resolved true, :existing "color", :alias "颜色"},
+   "forward"
+   {:arglists ([x]), :resolved true, :existing "forward", :alias "前锋"},
+   "green"
+   {:arglists ([]), :resolved true, :existing "green", :alias "绿色"},
+   "home"
+   {:arglists ([]), :resolved true, :existing "home", :alias "家"},
+   "html"
+   {:arglists ([x]), :resolved true, :existing "html", :alias "html"},
+   "left"
+   {:arglists ([x]), :resolved true, :existing "left", :alias "剩下"},
+   "octagon"
+   {:arglists ([]), :resolved true, :existing "octagon", :alias "八角形"},
+   "pattern"
+   {:arglists ([]), :resolved true, :existing "pattern", :alias "模式"},
+   "red" {:arglists ([]), :resolved true, :existing "red", :alias "红"},
+   "repeat"
+   {:arglists ([n f]),
+    :resolved true,
+    :existing "repeat",
+    :alias "重复"},
+   "right"
+   {:arglists ([x]), :resolved true, :existing "right", :alias "对"}},
+  "power-turtle.view.canvas.raster-api"
+  {"clear"
+   {:arglists ([]), :resolved true, :existing "clear", :alias "明确"},
+   "hlin"
+   {:arglists ([x1 x2 y]),
+    :resolved true,
+    :existing "hlin",
+    :alias "水平线"},
+   "plot"
+   {:arglists ([x y]), :resolved true, :existing "plot", :alias "情节"},
+   "scrn"
+   {:arglists ([x y]), :resolved true, :existing "scrn", :alias "屏幕"},
+   "vlin"
+   {:arglists ([y1 y2 x]),
+    :resolved true,
+    :existing "vlin",
+    :alias "垂线"}}},
+ "zh_TW"
+ {"clojure-turtle.core"
+  {"draw-turtle-commands"
+   {:arglists ([turt]),
+    :resolved true,
+    :existing "draw-turtle-commands",
+    :alias "畫烏龜命令"},
+   "end-fill"
+   {:arglists ([] [turt-state]),
+    :resolved true,
+    :existing "end-fill",
+    :alias "結束填充"},
+   "pendown"
+   {:arglists ([] [turt-state]),
+    :resolved true,
+    :existing "pendown",
+    :alias "下筆"},
+   "penup"
+   {:arglists ([] [turt-state]),
+    :resolved true,
+    :existing "penup",
+    :alias "明确"},
+   "setheading"
+   {:arglists ([ang] [turt-state ang]),
+    :resolved true,
+    :existing "setheading",
+    :alias "設置標題"},
+   "setxy"
+   {:arglists ([x y] [turt-state x y]),
+    :resolved true,
+    :existing "setxy",
+    :alias "設定位置"},
+   "start-fill"
+   {:arglists ([] [turt-state]),
+    :resolved true,
+    :existing "start-fill",
+    :alias "開始填寫"},
+   "wait"
+   {:arglists ([ms]), :resolved true, :existing "wait", :alias "等待"}},
+  "power-turtle.api"
+  {"add-action"
+   {:arglists ([label f]),
+    :resolved true,
+    :existing "add-action",
+    :alias "添加動作"},
+   "back"
+   {:arglists ([x]), :resolved true, :existing "back", :alias "背部"},
+   "blue"
+   {:arglists ([]), :resolved true, :existing "blue", :alias "藍色"},
+   "clean"
+   {:arglists ([]), :resolved true, :existing "clean", :alias "清潔"},
+   "color"
+   {:arglists ([x]), :resolved true, :existing "color", :alias "顏色"},
+   "forward"
+   {:arglists ([x]), :resolved true, :existing "forward", :alias "前鋒"},
+   "green"
+   {:arglists ([]), :resolved true, :existing "green", :alias "綠色"},
+   "home"
+   {:arglists ([]), :resolved true, :existing "home", :alias "家"},
+   "html"
+   {:arglists ([x]), :resolved true, :existing "html", :alias "html"},
+   "left"
+   {:arglists ([x]), :resolved true, :existing "left", :alias "剩下"},
+   "octagon"
+   {:arglists ([]), :resolved true, :existing "octagon", :alias "八角形"},
+   "pattern"
+   {:arglists ([]), :resolved true, :existing "pattern", :alias "模式"},
+   "red" {:arglists ([]), :resolved true, :existing "red", :alias "紅"},
+   "repeat"
+   {:arglists ([n f]),
+    :resolved true,
+    :existing "repeat",
+    :alias "重複"},
+   "right"
+   {:arglists ([x]), :resolved true, :existing "right", :alias "對"}},
+  "power-turtle.view.canvas.raster-api"
+  {"clear"
+   {:arglists ([]), :resolved true, :existing "clear", :alias "明確"},
+   "hlin"
+   {:arglists ([x1 x2 y]),
+    :resolved true,
+    :existing "hlin",
+    :alias "水平線"},
+   "plot"
+   {:arglists ([x y]), :resolved true, :existing "plot", :alias "情節"},
+   "scrn"
+   {:arglists ([x y]), :resolved true, :existing "scrn", :alias "屏幕"},
+   "vlin"
+   {:arglists ([y1 y2 x]),
+    :resolved true,
+    :existing "vlin",
+    :alias "垂線"}}}}
