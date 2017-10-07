@@ -135,8 +135,8 @@ background-size: contain
   - Other things based on Blockly (code.org, physical games for kids with coding component)
 * You can see the Logo origin
   - Moving character with spatial commands, structuring commands
-  - Even in similarity of Blockly blocks <-> Logo code blocks
-    * As Lispers, Logo code blocks -> Lisp forms without parens
+  - As Lispers, Logo code blocks -> Lisp forms without parens
+  - Paredit mode (struct. editing) = snapping blocks together inside others in blocks
 * Irony:
   - we start our lives in Lisp - easy to learn programming
   - then program with semi-colons & curly braces
