@@ -497,7 +497,7 @@ class: middle, inverse, center
 
 @ Timothy
 
-* If you are interested in learning Clojure, how do you get started?
+* Who can we reach by teaching Clojure through Logo?
 
 ---
 
@@ -507,8 +507,6 @@ class: middle, inverse, center
 
 * My friend Nathan came up to me last year and said:
   - "I'm ready to give Clojure a try, I've even installed Emacs!"
-* I winced a little because learning a new editor and language at the same time means danger ahead
-* But I was eager to show him how great Clojure was 
 
 ---
 
@@ -517,7 +515,7 @@ class: middle, inverse, center
 ???
 
 * I said:
-  - "Awesome! Clojure is so cool. First we need some other stuff..."
+  - "Awesome! Clojure is so cool. First we need to setup..."
 
 ---
 
@@ -527,11 +525,9 @@ class: middle, inverse, center
 
 * Install Java
 * Get Leiningen
-* Make a project
+* Run this command to make a project
 * Add these dependencies
-* Start a REPL
-* Let's talk about the namespace syntax so you can use those dependencies
-* Don't press ctrl z in emacs!
+* Start a REPL  control k meta j
 
 ---
 
@@ -539,31 +535,36 @@ class: middle, inverse, center
 
 ???
 
-* Learning a bunch of new tools is frustrating when we just want to write some code.
+And he said: What are you talking about???
 
 ---
 
-# Getting started is hard
+# Getting started
 
 ???
 
-* Getting started is hard right? Well, not any more!
+* Nathan is not a beginner.
+* He has been programming longer than me, is smarter than me, and more successful than me.
+* It's easy for us to forget the frustration of getting started because those things seem mundane to us now.
+* But there's a barrier there, and it's hard to overcome.
 
 ---
 
-# Getting started is ~~hard~~ easy!
+# Getting started
 
 <img src="../../../img/repl.png" width="400px" align="middle">
 
 ???
 
-* All that changed last year with the arrival of self hosted ClojureScript REPLs
-* Now you can compile and Evaluate ClojureScript in the browser
-* All you need to get coding is a URL
+
+* The good news is that now you can skip the setup.
+* This is a self hosted ClojureScript REPL.
+* All you need to get coding in Clojure is a URL.
+
 
 ---
 
-# Getting started is ~~hard~~ easy!
+# Getting started
 
 <img src="../../../img/repl.png" width="400px" align="middle">
 <img src="../../../img/turtlex.jpg" width="300px" align="middle">
@@ -580,7 +581,7 @@ class: middle, inverse, center
 ???
 
 * I'd been talking with Elango about teaching Clojure through Logo 
-  - and we thought, what if we marry turtle with a ClojureScript REPL
+  - and we thought, what if we marry turtle with self hosted ClojureScript
 
 ---
 
@@ -591,14 +592,11 @@ class: middle, inverse, center
 ???
 
 * This is Power Turtle; a batteries included REPL
-* The first lesson presents the Logo commands: forward, left, right
-* Then describes combining commands into new commands
-* And shows how to repeat commands
-* Users don't have to worry about tools and dependencies to get started.
-
+* The first lesson
 * I'll quickly show you the capabilities of Power Turtle
-* In freestyle mode you can choose from several canvases
-  - Turtle you have seen already; it's great for drawing geometric shapes
+* Freestyle mode
+
+  - Turtle
   
   
     (do
@@ -619,7 +617,7 @@ class: middle, inverse, center
               (f x))))
         (f 4))
   
-  - Raster provides another drawing system based on pixels
+  - Raster
   
   
     (do
@@ -628,25 +626,22 @@ class: middle, inverse, center
       (plot 10 5)
       (hlin 5 10 10))
      
-  * patterns provide a good motivation for sequences
+  - American flag
 
 
     (do    
       ;; Draw 13 stripes cycling over red/white
-      (doseq [[n c] (take 13 
-                      (map vector (range) (cycle [:red :white])))] 
+      (doseq [[n c] (take 13 (map vector (range) (cycle [:red :white])))]
         (color c)
         (let [x1 10 
               x2 30 
               y (+ 10 n)]
           (hlin x1 x2 y)))
-    
       ;; Fill in a dark blue field in the corner
       (color :dark-blue)
       (doseq [x (range 10 19)
               y (range 10 17)]
         (plot x y))
-    
       ;; Add some stars to the field by skipping by 2
       (color :white)
       (doseq [x (range 11 19 2)
@@ -654,7 +649,7 @@ class: middle, inverse, center
         (plot x y)))
         
     
-  * You can even create Conway's game of life
+  - Conway's game of life
 
    
     (do
@@ -666,7 +661,6 @@ class: middle, inverse, center
                    [-1 1]
                    [-1 0 1])]
           [(+ dx x) (+ dy y)]))
-    
       (defn step [cells]
         (into {}
           (for [[[x y :as loc] n] (frequencies (mapcat neighbours (keys cells)))
@@ -675,7 +669,6 @@ class: middle, inverse, center
             [loc (or
                    (cells loc)
                    (rand-nth [:dark-green :medium-green :light-green :light-blue :medium-blue :dark-blue]))])))
-    
       ((fn draw [board]
          (clear)
          (run! (fn [[[x y] c]] (color c) (plot x y)) board)
@@ -686,7 +679,7 @@ class: middle, inverse, center
          (cycle [:light-blue])))))
 
       
-  - Quil is a comprehensive drawing system
+  - Quil
   
   
     (do (quil.core/ellipse 200 200 150 200)
@@ -694,7 +687,7 @@ class: middle, inverse, center
       (quil.core/triangle 170 175 173 170 176 175)
       (quil.core/triangle 220 175 223 170 226 175))
 
-  - And a charting canvas
+  - charting
   
   
     (power-turtle.view.canvas.chart-canvas/chart (range 10))
@@ -702,7 +695,7 @@ class: middle, inverse, center
     (power-turtle.view.canvas.chart-canvas/chart (map #(/ 10 %) (range 1 11)))
     
       
-  - The HTML canvas let's you create HTML elements.
+  - HTML
   
   
     (html
@@ -749,11 +742,10 @@ class: middle, inverse, center
     (js/clearTimeout @t)
   
     
-* We want learners to transcend Logo
+* There is a path for learners to transcend Logo
   - into other interesting things
   - in Clojure
-* There are several lessons go through
-* Lessons are a slideshow of information and prompts
+* There are several lessons
 * There is a progression of concepts...
   - call a function
   - combine functions into new functions
@@ -872,8 +864,11 @@ Here is some feedback I received about the first lesson:
 * This is exactly what I had hoped for.
 * Lessons are guides, but you can really do whatever you want.
 * The emphasis is on self discovery.
-* Good lessons challenge us; can you draw this shape?
+* Lessons are interesting when they challenge us; can you draw this shape?
   - and provide just enough information to figure it out
+
+* Getting started is easier now, but there is another big barrier to learning Clojure,
+* you have to know English.
 ---
 background-image: url(../../../img/korean.jpg)
 background-position: center
@@ -882,20 +877,15 @@ background-size: contain
 
 ???
 
-* On a completely different topic...
-* I am learning Korean
-* The writing system is unique in that it was designed for literacy,
-  unlike most other writing systems.
-* The characters are very logical.
-* But learning the Korean vocabulary is still difficult.
+* Now I am currently learning Korean and can tell you it is not easy to pick up a spoken language.
 * I asked my friend Alex who is from Korea: "How did you learn programming?"
-  - he replied: "I learnt English. Then I went to an Australian University. Now I work at Microsoft."
+  - he said: "First I learnt English. Then I went to an Australian University. Now I work at Microsoft."
 * He made it sound easy, but that is a decade of dedication right there.
 * Only 5% of the world speaks English as a first language.
 * 20% if you include non-native speakers.
-* For most people who want to learn programming, the answer is:
+* To most people who want to learn programming, we say:
   - "Awesome! Programming is really useful. Go learn English first."
-* But I knew that Elango had translated Clojure to Thamil
+* I knew that Elango had translated Clojure to Thamil
   - and I wondered if we could do that in Power Turtle
 
 ---
@@ -913,11 +903,18 @@ background-size: contain
       (앞으로 50)
       (rechts 90)
       (முன்னால் 50)
-      (verde)
-      (前锋 50)
-      (droite 90))
+      (droite 90)
+      (前锋 50))
 
-* polyglot programming!
+* Let's use some Clojure functions like `map` and `range`
+
+
+    (விவரி (fungsi step [x]
+            (вперед x)
+            (对 95))
+          (gama 10 400 5))
+
+* This is polyglot programming!
 
 ---
 background-image: url(../../../img/etower.jpg)
@@ -932,15 +929,15 @@ background-size: contain
 # Parlez vous Clojure?
 
 * I'm pretty sure Clojure is a French word right?
-* I think it's strange but Elango and I hear a common response to programming in another language;
+* I think it is strange but Elango and I hear a common response to programming in another language;
   "They're going to have to learn English anyway."
-* That’s missing something that I want to point out: Translations are great!
-  - I'm sure you know geometry... it’s Greek! Someone translated it for you.
+* That’s missing the point: Translations are great!
+  - I'm sure you know geometry... it’s Greek! Someone translated it.
   - Astronomy? Latin
-  - Einstein’s work? German
-  - Marie Curie’s work? French
-  - Translations are just plain useful  
-  - They are also super easy in Clojure, almost no effort, so why not?
+  - Einstein? wrote his work in German
+  - Marie Curie? French
+  - Translations are just plain useful
+  - They are also super easy in Clojure, so why not?
 
 ---
 
@@ -954,7 +951,7 @@ This is Elango's library for writing Clojure in other spoken languages
 
   * It works great in Clojure
   * It relies on macro-writing macros, which does not work in ClojureScript
-  * So we made something new
+  * So we made something that works in both
 
 ---
       
@@ -969,12 +966,10 @@ This is Elango's library for writing Clojure in other spoken languages
   
 ???
 
-Clojure By Another Name, or CBAN for short.
-
-* lein-cban creates translation wrappers
-  - you can use it translate libraries of code
-* cban currently has translations of clojure.core to Spanish, Korean, Thamil, and Indonesian
-* Clojure and ClojureScript
+Clojure By Another Name,
+* cban for short.
+* plugin creates translation wrappers
+* cban currently has several translations of clojure.core
   
 ---
   
@@ -1021,9 +1016,8 @@ Dear Tim
 
 Not sure what I am doing, Love Mum
 
-* This is the error message you get when you typo a function call
-  - if we can find a way to improve this, we can reach a larger audience
-  - good error messages are helpful to everybody, not just beginners
+* When you typo a function call, this is the message you get
+* I'd like to replace this with something more helpful
 
 ---
 
@@ -1069,11 +1063,13 @@ Clojure is
 Which brings us back to Learning Clojure through Logo...
 
 Clojure is
-* Easy to get started. Visit our webpage and get coding
-* Its Fun! Logo is fun, the canvases are fun.
-* Come to program in Logo
+* Easy to get started.
+* Its Fun!
+  - You can draw stuff.
+  - You can interact with interesting canvases.
+* Come for the Logo
 * Stay for the Clojure
-* We hope to reach more programmers by skipping the boring bits
+* We aim to reach more people by skipping the setup
   - and getting them hooked on what Clojure can do
 
 ---
@@ -1095,10 +1091,6 @@ Clojure is
 
 @ Elango
 
-* ClojureScript self-hosting has some quirks
-  - but there are lots of helpful people eager to help out
-  - in particular these people helped us greatly.
-
 ---
 
 # Links
@@ -1106,24 +1098,19 @@ Clojure is
 * Power Turtle - https://timothypratley.github.io/power-turtle
 * clojure-turtle - https://github.com/google/clojure-turtle
 * CBAN - https://github.com/timothypratley/cban
-* Blockly - https://developers.google.com/blockly/
+* Blockly - https://developers.google.com/blockly
 
 # Contact
  
 - Elango Cheran: elango.cheran@gmail.com
 - Timothy Pratley: timothypratley@gmail.com
 
-### Comments / suggestions / contributions welcome!
+### Comments / suggestions / contributions welcome
+
+--
+
+# Thank you!
 
 ???
 
----
-class: middle, inverse
-
-# Thanks
-
-???
-
-@ Elango & Timothy
-
-* Any Questions?
+Thank you
