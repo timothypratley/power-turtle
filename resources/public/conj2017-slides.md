@@ -102,11 +102,7 @@ You can issue commands like
       (REPEAT 8 [ (RIGHT 45) (FORWARD 50) ])
       (HOME)
      END)
-
-???
-
-* TODO: make parens bluish
-  
+ 
 ---
 background-image: url(../../../img/scratch.png)
 background-position: center
@@ -115,10 +111,7 @@ background-size: contain
 
 ???
 
-* TODO: crop out title bar with date
-
-# What's old is new
-
+* What's old is new
 * Old yet we still use it to teach kids
   - Scratch
 
@@ -197,8 +190,10 @@ TODO: insert drawing an E, and other things
   - easy to pick up
 * reveal
   - drew random pictures
+* reveal
   - learned how to create more complex pics
-    * fns & recursion to assist
+* reveal
+  - fns & recursion to assist
 * reveal
   - renewed my interest in programming
 
@@ -206,9 +201,27 @@ TODO: insert drawing an E, and other things
 * Easy
 
 --
+background-image: url(../img/logo-drawing-big-e.png)
+background-position: center
+background-repeat: no-repeat
+background-size: contain
+
 * Drew what I wanted
 
 --
+background-image: url(../img/logo-koch-segment-1.png)
+background-position: center
+background-repeat: no-repeat
+background-size: contain
+
+--
+background-image: url(../img/logo-koch-segment-2.png)
+background-position: center
+background-repeat: no-repeat
+background-size: contain
+
+--
+
 * Made programming fun
 
 ---
@@ -1073,17 +1086,15 @@ class: inverse
 Which brings us back to Learning Clojure through Logo...
 
 We built Power Turtle as a way to Learn Clojure that was
-* Fun
-* Easy
-* Open ended
+* fun
+* easy
+* and open ended
 * We aim to reach more people by skipping the setup
-  - and getting them hooked on what Clojure can do
-
-But what we really want to do is to inspire educators
-to teach programming through Logo
-in Clojure
-to everyone in the world.
-And give them a way to do it.
+* But what we really want to do is to inspire educators
+* to teach programming through Logo
+* in Clojure
+* to everyone in the world.
+* And give them a way to do it.
 
 ---
 
