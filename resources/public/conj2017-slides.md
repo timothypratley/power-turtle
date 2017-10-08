@@ -57,7 +57,7 @@ background-size: contain
 
 ???
 
-* Logo is a programming language to control a robot turtle.
+* Logo is a programming language to control a turtle (an object).
 * The turtle is represented as a triangle.
 * You send movement commands to the turtle instructing it where to go.
 * When the pen is down, wherever the turtle goes, it draws a line.
@@ -135,11 +135,11 @@ background-size: contain
   - Other things based on Blockly (code.org, physical games for kids with coding component)
 * You can see the Logo origin
   - Moving character with spatial commands, structuring commands
-  - Even in similarity of Blockly blocks <-> Logo code blocks
-    * As Lispers, Logo code blocks -> Lisp forms without parens
+  - As Lispers, Logo code blocks -> Lisp forms without parens
+  - Paredit mode (struct. editing) = snapping blocks together inside others in blocks
 * Irony:
-  - we start our lives in Lisp - easy to learn programming
-  - then program with semi-colons & curly braces
+  - we use Lisp today as an easy, effective way to teach kids programming
+  - when the kids grow up, they program with semi-colons & curly braces
   - then we come back to Lisp - unrivalled power and simplicity
 * Which begs the question:
   - if the same thing is good for beginners and very advanced users...
@@ -180,11 +180,8 @@ background-size: contain
 ???
 
 * BASIC (cont'd)
-  - took a class at age 10
-  - only could learn enough for a guessing game
-  - too hard to go further
+  - too hard to do anything interesting
   - gave up on programming
-  - (so much for Beginner's All-purpose Symbolic Instruction Code)
 
 ---
 
@@ -203,9 +200,6 @@ TODO: insert drawing an E, and other things
   - learned how to create more complex pics
     * fns & recursion to assist
 * reveal
-  - took a class in middle school, at age 11
-  - easy to pick up
-  - drew random pictures
   - renewed my interest in programming
 
 --
@@ -310,14 +304,18 @@ class: middle
     
     (color [0 0 255])
     (repeat 12 #(do (octagon) (right 30)))
-    
+
+    ;; Okay, let's see what we can do when we introduce
+    ;; a little bit more Clojure gradually
+
     ;; Let's go back to a simple octagon
     
     (clean)
     (color [0])
     (octagon)
     
-    ;; If we know the length of an octagon, we can start tiling the octagons
+    ;; If we know the length of an octagon, we can start drawing
+    ;; things around the octagon
     
     (def size (+ 30 (/ 60 (js/Math.sqrt 2))))
     
@@ -417,6 +415,8 @@ background-size: contain
 
 ???
 
+* Logo more than just drawing on a 2-D screen
+  - Turtle envisioned also to be manifest as a real robot
 * Interactivity means:
   - more than just one sense (vision <- also sound, touch)
   - more than just output (also input)
@@ -445,6 +445,9 @@ background-size: contain
 
 # Philosophical design
 
+* Logo's benefits not a happy coincidence, but by design
+* Logo created by Seymour Papert
+  - researcher in education and computer science
 * main goals: interactivity & exploration - first & foremost
   - Seymour Papert
     * Knowledge = systems we create, to absorb new info
