@@ -96,3 +96,31 @@
 (defn html [x]
   #?(:cljs (reset! html-canvas/component x))
   nil)
+
+(defn penup []
+  (turtle/penup)
+  nil)
+
+(defn pendown []
+  (turtle/pendown)
+  nil)
+
+(defn setheading [angle]
+  (turtle/setheading angle))
+
+(defn setxy [x y]
+  (turtle/setxy x y))
+
+(defn start-fill []
+  (turtle/start-fill)
+  nil)
+
+(defn end-fill []
+  (turtle/end-fill)
+  nil)
+
+(defn wait [ms]
+  (turtle/wait ms))
+
+(defn draw-turtle-commands [turtle]
+  (turtle/draw-turtle-commands turtle))

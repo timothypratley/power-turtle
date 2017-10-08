@@ -19,8 +19,10 @@
 
 (defn -main [caches-dir output-cache-file]
   (println "Collect caches: Started")
-  (let [mega-cache (collect-caches caches-dir)]
-    (with-open [out (io/output-stream output-cache-file)]
+  (let [mega-cache (collect-caches caches-dir)
+        out (io/file output-cache-file)]
+    (io/make-parents out)
+    (with-open [out (io/output-stream out)]
       (transit/write
         (transit/writer out :json)
         mega-cache))

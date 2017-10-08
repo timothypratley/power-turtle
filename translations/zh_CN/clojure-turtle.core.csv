@@ -1,9 +1,0 @@
-existing,alias,docstring,comment
-penup,抬起头
-pendown,下笔
-setheading,设置标题
-setxy,设定位置
-start-fill,开始填写
-end-fill,结束填充
-wait,等待
-draw-turtle-commands,画乌龟命令

@@ -14,3 +14,11 @@ octagon,octagon
 pattern,pattern
 clean,clean
 home,home
+penup,penup
+pendown,pendown
+setheading,setheading
+setxy,setxy
+start-fill,start-fill
+end-fill,end-fill
+wait,wait
+draw-turtle-commands,draw-turtle-commands

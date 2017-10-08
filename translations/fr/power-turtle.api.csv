@@ -14,3 +14,11 @@ octagon,octogone
 pattern,modèle
 clean,nettoyer
 home,maison
+penup,plume
+pendown,stylo-vers-le-bas
+setheading,positionner-len-tête
+setxy,ensemblexy
+start-fill,commencer-à-remplir
+end-fill,remplissage-final
+wait,attendez
+draw-turtle-commands,dessiner-des-commandes-de-tortue

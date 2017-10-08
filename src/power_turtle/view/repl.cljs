@@ -26,10 +26,8 @@
   (io/fetch-file!
     "aot/cache.json"
     (fn fetched [txt]
-      #_(println "Loading aot cache")
       (let [cache (transit/read (transit/reader :json) txt)]
-        (swap! replumb-repl/st update :cljs.analyzer/namespaces merge cache)
-        #_(println "Loaded" (count cache) "namespaces")))))
+        (swap! replumb-repl/st update :cljs.analyzer/namespaces merge cache)))))
 
 (load-cljs-core-cache!)
 

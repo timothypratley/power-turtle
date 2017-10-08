@@ -8,3 +8,15 @@ octagon,segidelapan
 pattern,pola
 home,rumah
 clean,bersih
+forward,meneruskan
+back,kembali
+right,kanan
+left,kiri
+penup,penanaik
+pendown,penake
+setheading,menetapkankepala
+setxy,menetapkanxy
+start-fill,mulai-mengisi
+end-fill,akhir-mengisi
+wait,tunggu
+draw-turtle-commands,menggambar-perintah-penyu

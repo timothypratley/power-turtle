@@ -924,7 +924,7 @@ background-size: contain
 
 ---
 
-<iframe src="index.html" style="width:100%; height:100%; border: none">
+<iframe src="index.html#freestyle" style="width:100%; height:100%; border: none">
 <div id="app"></div>
 </iframe>
 

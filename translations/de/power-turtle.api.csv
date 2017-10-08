@@ -14,3 +14,11 @@ octagon,achteck
 pattern,muster
 clean,sauber
 home,zuhause
+penup,steige-hoch
+pendown,drin-nach-unten
+setheading,überschrift-setzen
+setxy,xy-setzen
+start-fill,start-füllen
+end-fill,ende-füllen
+wait,warte-ab
+draw-turtle-commands,zeichne-schildkröte-befehle

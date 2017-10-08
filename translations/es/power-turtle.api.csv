@@ -8,3 +8,15 @@ octagon,octágono
 pattern,patrón
 clean,limpiar
 home,inicio
+forward,avanzar
+back,retroceder
+right,derecha
+left,izquierda
+penup,levantar-pincel
+pendown,bajar-pincel
+setheading,asignar-encabezado
+setxy,asignar-conjuntoxy
+start-fill,iniciar-llenado
+end-fill,termiar-llenado
+wait,esperar
+draw-turtle-commands,dibujar-comandos-tortuga
