@@ -513,7 +513,11 @@ class: middle, inverse, center
 
 @ Timothy
 
-* So what's stopping people learning Clojure through Logo?
+* I have a bold claim.
+* I believe that Clojure is uniquely positioned to be the best first programming language
+for nearly everybody interested in programming.
+
+* I have some things to show you which I hope will convince you too.
 
 ---
 
@@ -521,7 +525,9 @@ class: middle, inverse, center
 
 ???
 
-* My friend Nathan came up to me last year and said:
+* But actually I had the opposite opinion as recently as last year
+
+* My friend Nathan
   - "I'm ready to give Clojure a try, I've even installed Emacs!"
 
 ---
@@ -597,7 +603,7 @@ And he said: What is all this? I just want to write Clojure.
 ???
 
 * I'd been talking with Elango about teaching Clojure through Logo 
-  - and we thought, what if we marry turtle with self hosted ClojureScript
+  - and we thought, what if we marry turtle with a self hosted ClojureScript REPL
 
 ---
 
@@ -704,13 +710,21 @@ And he said: What is all this? I just want to write Clojure.
       (quil.core/triangle 220 175 223 170 226 175))
 
   - Charting
-  
-  
+
+
     (power-turtle.view.canvas.chart-canvas/chart (range 10))
+
+  -
+
+
     (power-turtle.view.canvas.chart-canvas/chart (map #(* % %) (range 10)))
+
+  -
+
+
     (power-turtle.view.canvas.chart-canvas/chart (map #(/ 10 %) (range 1 11)))
-    
-      
+
+
   - HTML
   
   
@@ -885,8 +899,8 @@ Here is some feedback I received about the existing lessons:
   - and provide just enough information to figure it out
 
 * Getting started in Power Turtle is easy
-  - but there is an even bigger barrier to learning Clojure;
-  - you pretty much have to understand one particular human language.
+  - but there is an even bigger barrier to learning Clojure for the majority of people;
+  - they have to learn a foreign language first.
 
 ---
 background-image: url(../../../img/korean.jpg)
@@ -1037,7 +1051,8 @@ Dear Tim
 Not sure what I am doing, Love Mum
 
 * When you typo a function call, this is the message you get
-* I'd like to replace this with something more helpful
+* I'd like to replace this with something more helpful in the future
+* There's still some friction areas that we need to smooth out
 
 ---
 
@@ -1071,30 +1086,17 @@ class: inverse
 
 # Learning Clojure through Logo
 
-* Fun
-* Easy
-* Open ended
 
---
-
-<br>
-<br>
-<img src="../../../img/flags.jpg" width="500px">
 
 ???
 
 Which brings us back to Learning Clojure through Logo...
 
-We built Power Turtle as a way to Learn Clojure that was
-* fun
-* easy
-* and open ended
-* We aim to reach more people by skipping the setup
-* But what we really want to do is to inspire educators
-* to teach programming through Logo
-* in Clojure
-* to everyone in the world.
-* And give them a way to do it.
+* The Clojure Logo connection is a steady progression from beginner to advanced
+* We used self hosted ClojureScript to make it easy to get started
+* Translations make it accessible to the wider world
+* It's fun and you're in control
+* That is why I believe Clojure is the best first language, for everyone.
 
 ---
 
