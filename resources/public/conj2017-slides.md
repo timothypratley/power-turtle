@@ -415,6 +415,8 @@ background-size: contain
 
 ???
 
+* Logo more than just drawing on a 2-D screen
+  - Turtle envisioned also to be manifest as a real robot
 * Interactivity means:
   - more than just one sense (vision <- also sound, touch)
   - more than just output (also input)
@@ -443,6 +445,9 @@ background-size: contain
 
 # Philosophical design
 
+* Logo's benefits not a happy coincidence, but by design
+* Logo created by Seymour Papert
+  - researcher in education and computer science
 * main goals: interactivity & exploration - first & foremost
   - Seymour Papert
     * Knowledge = systems we create, to absorb new info
