@@ -71,7 +71,6 @@
   nil)
 
 (defn color [x]
-  (prn "hi" x (type x))
   (if (keyword? x)
     (raster-api/color x)
     (turtle/color x))

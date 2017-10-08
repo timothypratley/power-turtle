@@ -497,7 +497,7 @@ class: middle, inverse, center
 
 @ Timothy
 
-* Who can we reach by teaching Clojure through Logo?
+* So what's stopping people learning Clojure through Logo?
 
 ---
 
@@ -525,9 +525,9 @@ class: middle, inverse, center
 
 * Install Java
 * Get Leiningen
-* Run this command to make a project
+* Run this command to create a project
 * Add these dependencies
-* Start a REPL  control k meta j
+* Start a REPL with control k meta j
 
 ---
 
@@ -535,7 +535,7 @@ class: middle, inverse, center
 
 ???
 
-And he said: What are you talking about???
+And he said: What is all this? I just want to write Clojure.
 
 ---
 
@@ -543,10 +543,12 @@ And he said: What are you talking about???
 
 ???
 
-* Nathan is not a beginner.
-* He has been programming longer than me, is smarter than me, and more successful than me.
-* It's easy for us to forget the frustration of getting started because those things seem mundane to us now.
-* But there's a barrier there, and it's hard to overcome.
+* Nathan is one of the best coders I know.
+* But there's a barrier here, and it's hard to overcome even for him.
+* we have all experienced this.
+* It's easy to forget or dismiss this barrier
+  - because these things seem mundane to us now.
+  - but can you recommend Clojure to a school student?
 
 ---
 
@@ -556,11 +558,9 @@ And he said: What are you talking about???
 
 ???
 
-
-* The good news is that now you can skip the setup.
-* This is a self hosted ClojureScript REPL.
+* The good news is that now you can skip that setup
+  - thanks to self hosted ClojureScript.
 * All you need to get coding in Clojure is a URL.
-
 
 ---
 
@@ -591,7 +591,7 @@ And he said: What are you talking about???
 
 ???
 
-* This is Power Turtle; a batteries included REPL
+* This is Power Turtle; a batteries included programming environment
 * The first lesson
 * I'll quickly show you the capabilities of Power Turtle
 * Freestyle mode
@@ -687,7 +687,7 @@ And he said: What are you talking about???
       (quil.core/triangle 170 175 173 170 176 175)
       (quil.core/triangle 220 175 223 170 226 175))
 
-  - charting
+  - Charting
   
   
     (power-turtle.view.canvas.chart-canvas/chart (range 10))
@@ -705,8 +705,6 @@ And he said: What are you talking about???
        [:h3 "Shopping list:"]
        [:ol [:li "milk"] [:li "bacon"] [:li "cheese"]]])
 
-  * you can make webpages inside this webpage
-  * you can create buttons and SVG images
   * you can make little games
 
   
@@ -737,22 +735,21 @@ And he said: What are you talking about???
         [power-turtle.view.canvas.chart-canvas/chart-canvas]]
        [:div {:style {:width 300 :height 150 :display "inline-block"}}
         [power-turtle.view.canvas.raster-canvas/raster-canvas]]])
- 
-  
-    (js/clearTimeout @t)
-  
-    
-* There is a path for learners to transcend Logo
-  - into other interesting things
-  - in Clojure
-* There are several lessons
-* There is a progression of concepts...
+
+* You can do all this without any setup
+  - without knowing anything about the JVM, dependencies, or editors
+  - I want potential users to experience Clojure first
+  - before they invest their time learning the surrounding tools
+* There are lessons with a progression of concepts...
   - call a function
   - combine functions into new functions
   - repeat functions
   - create sequences
   - use sequences
   - modify sequences
+* There is a path for learners to start with Logo and transcend
+  - into other interesting things
+  - in Clojure
 
 ---
 background-image: url(../../../img/blockly-nested-blocks.png)
@@ -836,13 +833,17 @@ http://timothypratley.github.io/power-turtle#lessons.red[//server.org/my-lesson.
 
 @ Timothy
 
+* Not all students fit one lesson plan
+  - beginners may be from other fields, university, high school or even primary school
+  - maybe they only speak French
+  - so we invite teachers to create their customized lessons as well.
 * Perhaps you have a lesson in mind that you want to teach?
-* Good news! Lessons are markdown text files
-* Markdown is very easy to edit
-* Your Markdown can be loaded remotely by url
-  - you can deliver your own lesson with a link
-  - you don't need us to do anything
-  - if you send us the markdown we will include it in the lesson list
+  - Good news! Lessons are markdown text files
+  - Markdown is easy to edit
+* The lesson can be loaded remotely by supplying a url suffix
+  - this link loads your lesson in power turtle
+  - we would love it if you send us the markdown
+    * we will include it in the lesson list so that everyone can benefit
 
 ---
 class: middle
@@ -857,7 +858,7 @@ class: middle
 
 @ Timothy
 
-Here is some feedback I received about the first lesson:
+Here is some feedback I received about the existing lessons:
 
 > “It was quite astounding how Noah went off on his own tangent to draw his own patterns about half way through the lesson!”
 
@@ -867,8 +868,10 @@ Here is some feedback I received about the first lesson:
 * Lessons are interesting when they challenge us; can you draw this shape?
   - and provide just enough information to figure it out
 
-* Getting started is easier now, but there is another big barrier to learning Clojure,
-* you have to know English.
+* Getting started in Power Turtle is easy
+  - but there is an even bigger barrier to learning Clojure;
+  - you pretty much have to understand one particular human language.
+
 ---
 background-image: url(../../../img/korean.jpg)
 background-position: center
@@ -877,13 +880,14 @@ background-size: contain
 
 ???
 
-* Now I am currently learning Korean and can tell you it is not easy to pick up a spoken language.
+* I am learning Korean
+  - and wow, it's really tough to learn another human language.
 * I asked my friend Alex who is from Korea: "How did you learn programming?"
   - he said: "First I learnt English. Then I went to an Australian University. Now I work at Microsoft."
 * He made it sound easy, but that is a decade of dedication right there.
 * Only 5% of the world speaks English as a first language.
 * 20% if you include non-native speakers.
-* To most people who want to learn programming, we say:
+* For most people who want to learn programming, their getting started experience is
   - "Awesome! Programming is really useful. Go learn English first."
 * I knew that Elango had translated Clojure to Thamil
   - and I wondered if we could do that in Power Turtle
@@ -1047,30 +1051,36 @@ More effort, more control
   - Takes more effort, provides more control
 
 ---
-class: middle, inverse
+class: inverse
 
 # Learning Clojure through Logo
 
-Clojure is
-1. Easy to get started
-2. Fun (it's Logo)
-3. Learn programming through Logo
-4. in Clojure
-5. Transcend Logo into Clojure
+* Fun
+* Easy
+* Open ended
+
+--
+
+<br>
+<br>
+<img src="../../../img/flags.jpg" width="500px">
 
 ???
 
 Which brings us back to Learning Clojure through Logo...
 
-Clojure is
-* Easy to get started.
-* Its Fun!
-  - You can draw stuff.
-  - You can interact with interesting canvases.
-* Come for the Logo
-* Stay for the Clojure
+We built Power Turtle as a way to Learn Clojure that was
+* Fun
+* Easy
+* Open ended
 * We aim to reach more people by skipping the setup
   - and getting them hooked on what Clojure can do
+
+But what we really want to do is to inspire educators
+to teach programming through Logo
+in Clojure
+to everyone in the world.
+And give them a way to do it.
 
 ---
 
