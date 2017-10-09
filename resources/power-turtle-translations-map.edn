@@ -1,11 +1,44 @@
 {"de"
- {"power-turtle.api"
+ {"power-turtle.api.html"
   {"add-action"
    {:arglists ([label f]),
     :resolved true,
     :existing "add-action",
-    :alias "aktion-hinzufügen"},
-   "back"
+    :alias "aktion-hinzufügen",
+    :docstring "",
+    :comment ""},
+   "html"
+   {:arglists ([x]),
+    :resolved true,
+    :existing "html",
+    :alias "html",
+    :docstring "",
+    :comment ""}},
+  "power-turtle.api.raster"
+  {"clear"
+   {:arglists ([]), :resolved true, :existing "clear", :alias "klar"},
+   "hlin"
+   {:arglists ([x1 x2 y]),
+    :resolved true,
+    :existing "hlin",
+    :alias "horizontale-linie"},
+   "plot"
+   {:arglists ([x y]),
+    :resolved true,
+    :existing "plot",
+    :alias "grundstück"},
+   "scrn"
+   {:arglists ([x y]),
+    :resolved true,
+    :existing "scrn",
+    :alias "bildschirm"},
+   "vlin"
+   {:arglists ([y1 y2 x]),
+    :resolved true,
+    :existing "vlin",
+    :alias "vertikale-linie"}},
+  "power-turtle.api.turtle"
+  {"back"
    {:arglists ([x]),
     :resolved true,
     :existing "back",
@@ -44,8 +77,6 @@
     :resolved true,
     :existing "home",
     :alias "zuhause"},
-   "html"
-   {:arglists ([x]), :resolved true, :existing "html", :alias "html"},
    "left"
    {:arglists ([x]), :resolved true, :existing "left", :alias "links"},
    "octagon"
@@ -99,38 +130,61 @@
    {:arglists ([ms]),
     :resolved true,
     :existing "wait",
-    :alias "warte-ab"}},
-  "power-turtle.view.canvas.raster-api"
-  {"clear"
-   {:arglists ([]), :resolved true, :existing "clear", :alias "klar"},
-   "hlin"
-   {:arglists ([x1 x2 y]),
-    :resolved true,
-    :existing "hlin",
-    :alias "horizontale-linie"},
-   "plot"
-   {:arglists ([x y]),
-    :resolved true,
-    :existing "plot",
-    :alias "grundstück"},
-   "scrn"
-   {:arglists ([x y]),
-    :resolved true,
-    :existing "scrn",
-    :alias "bildschirm"},
-   "vlin"
-   {:arglists ([y1 y2 x]),
-    :resolved true,
-    :existing "vlin",
-    :alias "vertikale-linie"}}},
+    :alias "warte-ab"}}},
  "en"
- {"power-turtle.api"
+ {"power-turtle.api.chart"
+  {"chart"
+   {:arglists ([a] [a b]),
+    :resolved true,
+    :existing "chart",
+    :alias "chart",
+    :docstring "",
+    :comment ""}},
+  "power-turtle.api.html"
   {"add-action"
    {:arglists ([label f]),
     :resolved true,
     :existing "add-action",
-    :alias "add-action"},
-   "back"
+    :alias "add-action",
+    :docstring "",
+    :comment ""},
+   "html"
+   {:arglists ([x]),
+    :resolved true,
+    :existing "html",
+    :alias "html",
+    :docstring "",
+    :comment ""}},
+  "power-turtle.api.raster"
+  {"clear"
+   {:arglists ([]), :resolved true, :existing "clear", :alias "clear"},
+   "color"
+   {:arglists ([c]),
+    :resolved true,
+    :existing "color",
+    :alias "color"},
+   "hlin"
+   {:arglists ([x1 x2 y]),
+    :resolved true,
+    :existing "hlin",
+    :alias "hlin"},
+   "plot"
+   {:arglists ([x y]),
+    :resolved true,
+    :existing "plot",
+    :alias "plot"},
+   "scrn"
+   {:arglists ([x y]),
+    :resolved true,
+    :existing "scrn",
+    :alias "scrn"},
+   "vlin"
+   {:arglists ([y1 y2 x]),
+    :resolved true,
+    :existing "vlin",
+    :alias "vlin"}},
+  "power-turtle.api.turtle"
+  {"back"
    {:arglists ([x]), :resolved true, :existing "back", :alias "back"},
    "blue"
    {:arglists ([]), :resolved true, :existing "blue", :alias "blue"},
@@ -160,8 +214,6 @@
    {:arglists ([]), :resolved true, :existing "green", :alias "green"},
    "home"
    {:arglists ([]), :resolved true, :existing "home", :alias "home"},
-   "html"
-   {:arglists ([x]), :resolved true, :existing "html", :alias "html"},
    "left"
    {:arglists ([x]), :resolved true, :existing "left", :alias "left"},
    "octagon"
@@ -212,43 +264,44 @@
    {:arglists ([ms]),
     :resolved true,
     :existing "wait",
-    :alias "wait"}},
-  "power-turtle.view.canvas.raster-api"
-  {"clear"
-   {:arglists ([]), :resolved true, :existing "clear", :alias "clear"},
-   "color"
-   {:arglists ([c]),
-    :resolved true,
-    :existing "color",
-    :alias "color"},
-   "hlin"
-   {:arglists ([x1 x2 y]),
-    :resolved true,
-    :existing "hlin",
-    :alias "hlin"},
-   "plot"
-   {:arglists ([x y]),
-    :resolved true,
-    :existing "plot",
-    :alias "plot"},
-   "scrn"
-   {:arglists ([x y]),
-    :resolved true,
-    :existing "scrn",
-    :alias "scrn"},
-   "vlin"
-   {:arglists ([y1 y2 x]),
-    :resolved true,
-    :existing "vlin",
-    :alias "vlin"}}},
+    :alias "wait"}}},
  "es"
- {"power-turtle.api"
+ {"power-turtle.api.html"
   {"add-action"
    {:arglists ([label f]),
     :resolved true,
     :existing "add-action",
     :alias "añadir-acción"},
-   "back"
+   "html"
+   {:arglists ([x]), :resolved true, :existing "html", :alias "html"}},
+  "power-turtle.api.raster"
+  {"clear"
+   {:arglists ([]),
+    :resolved true,
+    :existing "clear",
+    :alias "limpiar"},
+   "hlin"
+   {:arglists ([x1 x2 y]),
+    :resolved true,
+    :existing "hlin",
+    :alias "linea-horizontal"},
+   "plot"
+   {:arglists ([x y]),
+    :resolved true,
+    :existing "plot",
+    :alias "trazar"},
+   "scrn"
+   {:arglists ([x y]),
+    :resolved true,
+    :existing "scrn",
+    :alias "pantalla"},
+   "vlin"
+   {:arglists ([y1 y2 x]),
+    :resolved true,
+    :existing "vlin",
+    :alias "linea-vertical"}},
+  "power-turtle.api.turtle"
+  {"back"
    {:arglists ([x]),
     :resolved true,
     :existing "back",
@@ -279,8 +332,6 @@
    {:arglists ([]), :resolved true, :existing "green", :alias "verde"},
    "home"
    {:arglists ([]), :resolved true, :existing "home", :alias "inicio"},
-   "html"
-   {:arglists ([x]), :resolved true, :existing "html", :alias "html"},
    "left"
    {:arglists ([x]),
     :resolved true,
@@ -332,41 +383,41 @@
    {:arglists ([ms]),
     :resolved true,
     :existing "wait",
-    :alias "esperar"}},
-  "power-turtle.view.canvas.raster-api"
-  {"clear"
-   {:arglists ([]),
-    :resolved true,
-    :existing "clear",
-    :alias "limpiar"},
-   "hlin"
-   {:arglists ([x1 x2 y]),
-    :resolved true,
-    :existing "hlin",
-    :alias "linea-horizontal"},
-   "plot"
-   {:arglists ([x y]),
-    :resolved true,
-    :existing "plot",
-    :alias "trazar"},
-   "scrn"
-   {:arglists ([x y]),
-    :resolved true,
-    :existing "scrn",
-    :alias "pantalla"},
-   "vlin"
-   {:arglists ([y1 y2 x]),
-    :resolved true,
-    :existing "vlin",
-    :alias "linea-vertical"}}},
+    :alias "esperar"}}},
  "fr"
- {"power-turtle.api"
+ {"power-turtle.api.html"
   {"add-action"
    {:arglists ([label f]),
     :resolved true,
     :existing "add-action",
     :alias "ajouter-une-action"},
-   "back"
+   "html"
+   {:arglists ([x]), :resolved true, :existing "html", :alias "html"}},
+  "power-turtle.api.raster"
+  {"clear"
+   {:arglists ([]), :resolved true, :existing "clear", :alias "clair"},
+   "hlin"
+   {:arglists ([x1 x2 y]),
+    :resolved true,
+    :existing "hlin",
+    :alias "ligne-horizontale"},
+   "plot"
+   {:arglists ([x y]),
+    :resolved true,
+    :existing "plot",
+    :alias "terrain"},
+   "scrn"
+   {:arglists ([x y]),
+    :resolved true,
+    :existing "scrn",
+    :alias "écran"},
+   "vlin"
+   {:arglists ([y1 y2 x]),
+    :resolved true,
+    :existing "vlin",
+    :alias "ligne-verticale"}},
+  "power-turtle.api.turtle"
+  {"back"
    {:arglists ([x]),
     :resolved true,
     :existing "back",
@@ -402,8 +453,6 @@
    {:arglists ([]), :resolved true, :existing "green", :alias "vert"},
    "home"
    {:arglists ([]), :resolved true, :existing "home", :alias "maison"},
-   "html"
-   {:arglists ([x]), :resolved true, :existing "html", :alias "html"},
    "left"
    {:arglists ([x]),
     :resolved true,
@@ -457,38 +506,47 @@
    {:arglists ([ms]),
     :resolved true,
     :existing "wait",
-    :alias "attendez"}},
-  "power-turtle.view.canvas.raster-api"
-  {"clear"
-   {:arglists ([]), :resolved true, :existing "clear", :alias "clair"},
-   "hlin"
-   {:arglists ([x1 x2 y]),
-    :resolved true,
-    :existing "hlin",
-    :alias "ligne-horizontale"},
-   "plot"
-   {:arglists ([x y]),
-    :resolved true,
-    :existing "plot",
-    :alias "terrain"},
-   "scrn"
-   {:arglists ([x y]),
-    :resolved true,
-    :existing "scrn",
-    :alias "écran"},
-   "vlin"
-   {:arglists ([y1 y2 x]),
-    :resolved true,
-    :existing "vlin",
-    :alias "ligne-verticale"}}},
+    :alias "attendez"}}},
  "id"
- {"power-turtle.api"
+ {"power-turtle.api.html"
   {"add-action"
    {:arglists ([label f]),
     :resolved true,
     :existing "add-action",
     :alias "menambahkan-tindakan"},
-   "back"
+   "html"
+   {:arglists ([x]),
+    :resolved true,
+    :existing "html",
+    :alias "jaringan"}},
+  "power-turtle.api.raster"
+  {"clear"
+   {:arglists ([]),
+    :resolved true,
+    :existing "clear",
+    :alias "bersih"},
+   "hlin"
+   {:arglists ([x1 x2 y]),
+    :resolved true,
+    :existing "hlin",
+    :alias "garis-horisontal"},
+   "plot"
+   {:arglists ([x y]),
+    :resolved true,
+    :existing "plot",
+    :alias "merencanakan"},
+   "scrn"
+   {:arglists ([x y]),
+    :resolved true,
+    :existing "scrn",
+    :alias "layar"},
+   "vlin"
+   {:arglists ([y1 y2 x]),
+    :resolved true,
+    :existing "vlin",
+    :alias "garis-vertikal"}},
+  "power-turtle.api.turtle"
+  {"back"
    {:arglists ([x]),
     :resolved true,
     :existing "back",
@@ -519,11 +577,6 @@
    {:arglists ([]), :resolved true, :existing "green", :alias "hijau"},
    "home"
    {:arglists ([]), :resolved true, :existing "home", :alias "rumah"},
-   "html"
-   {:arglists ([x]),
-    :resolved true,
-    :existing "html",
-    :alias "jaringan"},
    "left"
    {:arglists ([x]), :resolved true, :existing "left", :alias "kiri"},
    "octagon"
@@ -572,41 +625,35 @@
    {:arglists ([ms]),
     :resolved true,
     :existing "wait",
-    :alias "tunggu"}},
-  "power-turtle.view.canvas.raster-api"
-  {"clear"
-   {:arglists ([]),
-    :resolved true,
-    :existing "clear",
-    :alias "bersih"},
-   "hlin"
-   {:arglists ([x1 x2 y]),
-    :resolved true,
-    :existing "hlin",
-    :alias "garis-horisontal"},
-   "plot"
-   {:arglists ([x y]),
-    :resolved true,
-    :existing "plot",
-    :alias "merencanakan"},
-   "scrn"
-   {:arglists ([x y]),
-    :resolved true,
-    :existing "scrn",
-    :alias "layar"},
-   "vlin"
-   {:arglists ([y1 y2 x]),
-    :resolved true,
-    :existing "vlin",
-    :alias "garis-vertikal"}}},
+    :alias "tunggu"}}},
  "ko"
- {"power-turtle.api"
+ {"power-turtle.api.html"
   {"add-action"
    {:arglists ([label f]),
     :resolved true,
     :existing "add-action",
     :alias "작업을추가"},
-   "back"
+   "html"
+   {:arglists ([x]), :resolved true, :existing "html", :alias "웹페이지"}},
+  "power-turtle.api.raster"
+  {"clear"
+   {:arglists ([]), :resolved true, :existing "clear", :alias "명확한"},
+   "hlin"
+   {:arglists ([x1 x2 y]),
+    :resolved true,
+    :existing "hlin",
+    :alias "수평선"},
+   "plot"
+   {:arglists ([x y]), :resolved true, :existing "plot", :alias "음모"},
+   "scrn"
+   {:arglists ([x y]), :resolved true, :existing "scrn", :alias "화면"},
+   "vlin"
+   {:arglists ([y1 y2 x]),
+    :resolved true,
+    :existing "vlin",
+    :alias "수직선"}},
+  "power-turtle.api.turtle"
+  {"back"
    {:arglists ([x]), :resolved true, :existing "back", :alias "뒤로"},
    "blue"
    {:arglists ([]), :resolved true, :existing "blue", :alias "푸른"},
@@ -631,8 +678,6 @@
    {:arglists ([]), :resolved true, :existing "green", :alias "녹색"},
    "home"
    {:arglists ([]), :resolved true, :existing "home", :alias "집"},
-   "html"
-   {:arglists ([x]), :resolved true, :existing "html", :alias "웹페이지"},
    "left"
    {:arglists ([x]), :resolved true, :existing "left", :alias "왼쪽"},
    "octagon"
@@ -660,32 +705,44 @@
     :existing "start-fill",
     :alias "채우기시작"},
    "wait"
-   {:arglists ([ms]), :resolved true, :existing "wait", :alias "기다림"}},
-  "power-turtle.view.canvas.raster-api"
-  {"clear"
-   {:arglists ([]), :resolved true, :existing "clear", :alias "명확한"},
-   "hlin"
-   {:arglists ([x1 x2 y]),
+   {:arglists ([ms]),
     :resolved true,
-    :existing "hlin",
-    :alias "수평선"},
-   "plot"
-   {:arglists ([x y]), :resolved true, :existing "plot", :alias "음모"},
-   "scrn"
-   {:arglists ([x y]), :resolved true, :existing "scrn", :alias "화면"},
-   "vlin"
-   {:arglists ([y1 y2 x]),
-    :resolved true,
-    :existing "vlin",
-    :alias "수직선"}}},
+    :existing "wait",
+    :alias "기다림"}}},
  "ru"
- {"power-turtle.api"
+ {"power-turtle.api.html"
   {"add-action"
    {:arglists ([label f]),
     :resolved true,
     :existing "add-action",
     :alias "добавить-действие"},
-   "back"
+   "html"
+   {:arglists ([x]), :resolved true, :existing "html", :alias "html"}},
+  "power-turtle.api.raster"
+  {"clear"
+   {:arglists ([]), :resolved true, :existing "clear", :alias "Чисто"},
+   "hlin"
+   {:arglists ([x1 x2 y]),
+    :resolved true,
+    :existing "hlin",
+    :alias "горизонтальная-линия"},
+   "plot"
+   {:arglists ([x y]),
+    :resolved true,
+    :existing "plot",
+    :alias "сюжет"},
+   "scrn"
+   {:arglists ([x y]),
+    :resolved true,
+    :existing "scrn",
+    :alias "экран"},
+   "vlin"
+   {:arglists ([y1 y2 x]),
+    :resolved true,
+    :existing "vlin",
+    :alias "вертикальная-линия"}},
+  "power-turtle.api.turtle"
+  {"back"
    {:arglists ([x]), :resolved true, :existing "back", :alias "назад"},
    "blue"
    {:arglists ([]), :resolved true, :existing "blue", :alias "синий"},
@@ -721,8 +778,6 @@
     :resolved true,
     :existing "home",
     :alias "Главная"},
-   "html"
-   {:arglists ([x]), :resolved true, :existing "html", :alias "html"},
    "left"
    {:arglists ([x]),
     :resolved true,
@@ -779,38 +834,38 @@
    {:arglists ([ms]),
     :resolved true,
     :existing "wait",
-    :alias "Подождите"}},
-  "power-turtle.view.canvas.raster-api"
-  {"clear"
-   {:arglists ([]), :resolved true, :existing "clear", :alias "Чисто"},
-   "hlin"
-   {:arglists ([x1 x2 y]),
-    :resolved true,
-    :existing "hlin",
-    :alias "горизонтальная-линия"},
-   "plot"
-   {:arglists ([x y]),
-    :resolved true,
-    :existing "plot",
-    :alias "сюжет"},
-   "scrn"
-   {:arglists ([x y]),
-    :resolved true,
-    :existing "scrn",
-    :alias "экран"},
-   "vlin"
-   {:arglists ([y1 y2 x]),
-    :resolved true,
-    :existing "vlin",
-    :alias "вертикальная-линия"}}},
+    :alias "Подождите"}}},
  "ta"
- {"power-turtle.api"
+ {"power-turtle.api.html"
   {"add-action"
    {:arglists ([label f]),
     :resolved true,
     :existing "add-action",
     :alias "சேர்க்க-நடவடிக்கை"},
-   "back"
+   "html"
+   {:arglists ([x]), :resolved true, :existing "html", :alias "html"}},
+  "power-turtle.api.raster"
+  {"clear"
+   {:arglists ([]), :resolved true, :existing "clear", :alias "காலி"},
+   "hlin"
+   {:arglists ([x1 x2 y]),
+    :resolved true,
+    :existing "hlin",
+    :alias "கிட-கோடு"},
+   "plot"
+   {:arglists ([x y]), :resolved true, :existing "plot", :alias "சதி"},
+   "scrn"
+   {:arglists ([x y]),
+    :resolved true,
+    :existing "scrn",
+    :alias "திரை"},
+   "vlin"
+   {:arglists ([y1 y2 x]),
+    :resolved true,
+    :existing "vlin",
+    :alias "செங்குத்து-கோடு"}},
+  "power-turtle.api.turtle"
+  {"back"
    {:arglists ([x]),
     :resolved true,
     :existing "back",
@@ -831,8 +886,6 @@
    {:arglists ([]), :resolved true, :existing "green", :alias "பச்சை"},
    "home"
    {:arglists ([]), :resolved true, :existing "home", :alias "வீடு"},
-   "html"
-   {:arglists ([x]), :resolved true, :existing "html", :alias "html"},
    "left"
    {:arglists ([x]), :resolved true, :existing "left", :alias "இடது"},
    "octagon"
@@ -863,35 +916,35 @@
    {:arglists ([angle]),
     :resolved true,
     :existing "setheading",
-    :alias "திசைவை"}},
-  "power-turtle.view.canvas.raster-api"
-  {"clear"
-   {:arglists ([]), :resolved true, :existing "clear", :alias "காலி"},
-   "hlin"
-   {:arglists ([x1 x2 y]),
-    :resolved true,
-    :existing "hlin",
-    :alias "கிட-கோடு"},
-   "plot"
-   {:arglists ([x y]), :resolved true, :existing "plot", :alias "சதி"},
-   "scrn"
-   {:arglists ([x y]),
-    :resolved true,
-    :existing "scrn",
-    :alias "திரை"},
-   "vlin"
-   {:arglists ([y1 y2 x]),
-    :resolved true,
-    :existing "vlin",
-    :alias "செங்குத்து-கோடு"}}},
+    :alias "திசைவை"}}},
  "zh_CN"
- {"power-turtle.api"
+ {"power-turtle.api.html"
   {"add-action"
    {:arglists ([label f]),
     :resolved true,
     :existing "add-action",
     :alias "添加动作"},
-   "back"
+   "html"
+   {:arglists ([x]), :resolved true, :existing "html", :alias "html"}},
+  "power-turtle.api.raster"
+  {"clear"
+   {:arglists ([]), :resolved true, :existing "clear", :alias "明确"},
+   "hlin"
+   {:arglists ([x1 x2 y]),
+    :resolved true,
+    :existing "hlin",
+    :alias "水平线"},
+   "plot"
+   {:arglists ([x y]), :resolved true, :existing "plot", :alias "情节"},
+   "scrn"
+   {:arglists ([x y]), :resolved true, :existing "scrn", :alias "屏幕"},
+   "vlin"
+   {:arglists ([y1 y2 x]),
+    :resolved true,
+    :existing "vlin",
+    :alias "垂线"}},
+  "power-turtle.api.turtle"
+  {"back"
    {:arglists ([x]), :resolved true, :existing "back", :alias "背部"},
    "blue"
    {:arglists ([]), :resolved true, :existing "blue", :alias "蓝色"},
@@ -915,8 +968,6 @@
    {:arglists ([]), :resolved true, :existing "green", :alias "绿色"},
    "home"
    {:arglists ([]), :resolved true, :existing "home", :alias "家"},
-   "html"
-   {:arglists ([x]), :resolved true, :existing "html", :alias "html"},
    "left"
    {:arglists ([x]), :resolved true, :existing "left", :alias "剩下"},
    "octagon"
@@ -951,32 +1002,35 @@
     :existing "start-fill",
     :alias "开始填写"},
    "wait"
-   {:arglists ([ms]), :resolved true, :existing "wait", :alias "等待"}},
-  "power-turtle.view.canvas.raster-api"
+   {:arglists ([ms]), :resolved true, :existing "wait", :alias "等待"}}},
+ "zh_TW"
+ {"power-turtle.api.html"
+  {"add-action"
+   {:arglists ([label f]),
+    :resolved true,
+    :existing "add-action",
+    :alias "添加動作"},
+   "html"
+   {:arglists ([x]), :resolved true, :existing "html", :alias "html"}},
+  "power-turtle.api.raster"
   {"clear"
-   {:arglists ([]), :resolved true, :existing "clear", :alias "明确"},
+   {:arglists ([]), :resolved true, :existing "clear", :alias "明確"},
    "hlin"
    {:arglists ([x1 x2 y]),
     :resolved true,
     :existing "hlin",
-    :alias "水平线"},
+    :alias "水平線"},
    "plot"
-   {:arglists ([x y]), :resolved true, :existing "plot", :alias "情节"},
+   {:arglists ([x y]), :resolved true, :existing "plot", :alias "情節"},
    "scrn"
    {:arglists ([x y]), :resolved true, :existing "scrn", :alias "屏幕"},
    "vlin"
    {:arglists ([y1 y2 x]),
     :resolved true,
     :existing "vlin",
-    :alias "垂线"}}},
- "zh_TW"
- {"power-turtle.api"
-  {"add-action"
-   {:arglists ([label f]),
-    :resolved true,
-    :existing "add-action",
-    :alias "添加動作"},
-   "back"
+    :alias "垂線"}},
+  "power-turtle.api.turtle"
+  {"back"
    {:arglists ([x]), :resolved true, :existing "back", :alias "背部"},
    "blue"
    {:arglists ([]), :resolved true, :existing "blue", :alias "藍色"},
@@ -1000,8 +1054,6 @@
    {:arglists ([]), :resolved true, :existing "green", :alias "綠色"},
    "home"
    {:arglists ([]), :resolved true, :existing "home", :alias "家"},
-   "html"
-   {:arglists ([x]), :resolved true, :existing "html", :alias "html"},
    "left"
    {:arglists ([x]), :resolved true, :existing "left", :alias "剩下"},
    "octagon"
@@ -1036,21 +1088,4 @@
     :existing "start-fill",
     :alias "開始填寫"},
    "wait"
-   {:arglists ([ms]), :resolved true, :existing "wait", :alias "等待"}},
-  "power-turtle.view.canvas.raster-api"
-  {"clear"
-   {:arglists ([]), :resolved true, :existing "clear", :alias "明確"},
-   "hlin"
-   {:arglists ([x1 x2 y]),
-    :resolved true,
-    :existing "hlin",
-    :alias "水平線"},
-   "plot"
-   {:arglists ([x y]), :resolved true, :existing "plot", :alias "情節"},
-   "scrn"
-   {:arglists ([x y]), :resolved true, :existing "scrn", :alias "屏幕"},
-   "vlin"
-   {:arglists ([y1 y2 x]),
-    :resolved true,
-    :existing "vlin",
-    :alias "垂線"}}}}
+   {:arglists ([ms]), :resolved true, :existing "wait", :alias "等待"}}}}

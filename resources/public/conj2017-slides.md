@@ -712,17 +712,17 @@ And he said: What is all this? I just want to write Clojure.
   - Charting
 
 
-    (power-turtle.view.canvas.chart-canvas/chart (range 10))
+    (chart (range 10))
 
   -
 
 
-    (power-turtle.view.canvas.chart-canvas/chart (map #(* % %) (range 10)))
+    (chart (map #(* % %) (range 10)))
 
   -
 
 
-    (power-turtle.view.canvas.chart-canvas/chart (map #(/ 10 %) (range 1 11)))
+    (chart ["Mandarin" "Spanish" "English" "Hindi/Urdu"] [14 6 5 4])
 
 
   - HTML
@@ -767,9 +767,11 @@ And he said: What is all this? I just want to write Clojure.
         [power-turtle.view.canvas.raster-canvas/raster-canvas]]])
 
 * You can do all this without any setup
-  - without knowing anything about the JVM, dependencies, or editors
-  - I want potential users to experience Clojure first
-  - before they invest their time learning the surrounding tools
+  - nothing about the JVM, dependencies, or editors
+    - or namespaces or referring symbols
+  - I want programmers like Nathan to experience Clojure first
+    - before they invest their time in the other stuff
+    - and the same goes for beginner students too.
 * There are lessons with a progression of concepts...
   - call a function
   - combine functions into new functions
@@ -777,6 +779,7 @@ And he said: What is all this? I just want to write Clojure.
   - create sequences
   - use sequences
   - modify sequences
+  - always building cool stuff in the canvases
 * There is a path for learners to start with Logo and transcend
   - into other interesting things
   - in Clojure

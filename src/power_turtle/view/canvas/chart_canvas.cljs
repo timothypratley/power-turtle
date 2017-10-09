@@ -1,52 +1,37 @@
 (ns power-turtle.view.canvas.chart-canvas
   (:require
+    [power-turtle.resize-listener :as resize]
+    [power-turtle.api.chart :as api]
     [cljsjs.chartjs]
     [reagent.core :as reagent]
     [reagent.dom :as dom]))
 
-;;(power-turtle.view.canvas.chart-canvas/chart (map #(* % %) (range 10)))
-
-(defonce chart-data
-  (atom {:datasets [{:label "Turtles"
-                     :data [10 2 21]}]}))
-
-;; TODO: maybe just svg it huh?
-
-(defn p [ys]
-  (mapv (fn [x y] {:x x :y y}) (range) ys))
-
-(defn linize [d]
-  (update-in d [:datasets 0 :data] p))
-
-(defn chart [ys]
-  (swap! chart-data assoc-in [:datasets 0 :data] ys)
-  nil)
-
-(defn cc [r]
-  (let [c (atom nil)]
-    (add-watch r :watch-r
-               (fn [k r a b]
-                 (when @c
-                   (set! (.-data @c) (clj->js (linize b)))
-                   (.update @c))))
+(defn chart-component [chart-data-ref]
+  (let [chart-obj (atom nil)
+        elem (atom nil)
+        create #(reset! chart-obj (js/Chart. @elem (clj->js @chart-data-ref)))]
+    (add-watch chart-data-ref :watch-r
+               (fn watch-r [k r a b]
+                 (when @chart-obj
+                   (.destroy @chart-obj)
+                   (create))))
     (reagent/create-class
       {:display-name "chart"
        :component-did-mount
-       (defn chart-did-mount [this]
-         (reset! c
-                 (js/Chart.
-                   (dom/dom-node this)
-                   (clj->js
-                     {:type "scatter"
-                      :data (linize @r)
-                      :options {:scales {:xAxes [{:type "linear"
-                                                  :position "bottom"}]
-                                         :yAxes [{:ticks {:beginAtZero true}}]}}}))))
+       (fn chart-did-mount [this]
+         (reset! elem (dom/dom-node this))
+         (create))
+       :component-will-unmount
+       (fn chart-will-unmount []
+         (when @chart-obj
+           (.destroy @chart-obj)
+           (reset! chart-obj nil)))
        :reagent-render
        (fn chart-render []
+         @resize/window-width
          [:canvas {:style {:width "100%"
                            :height "100%"}}])})))
 
 (defn chart-canvas []
   [:div
-   [cc chart-data]])
+   [chart-component api/chart-data]])

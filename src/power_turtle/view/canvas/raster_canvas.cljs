@@ -1,6 +1,6 @@
 (ns power-turtle.view.canvas.raster-canvas
   (:require
-    [power-turtle.view.canvas.raster-api :as api]
+    [power-turtle.api.raster :as api]
     [reagent.core :as reagent]
     [reagent.dom :as dom]))
 

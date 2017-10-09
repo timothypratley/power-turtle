@@ -23,6 +23,7 @@
     ;; uses regex to allow slashes in the id, which can be a url
     ["lessons" #'lessons/lessons-view]
     ["lesson" [[["" [#".*" :id]] #'lesson/lesson-view]]]
+    ;; TODO: add route to specific canvases
     ["freestyle" [["" #'workspace/workspace]]]
     ["forum" #'forum/forum]]])
 

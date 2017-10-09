@@ -5,11 +5,11 @@
 (defonce window-width
   (reagent/atom nil))
 
-(defn on-window-resize [e]
-  (reset! window-width js/window.innerWidth))
-
-(defonce listener
-  (js/window.addEventListener "resize" on-window-resize))
+(defonce ^:private listener
+  (js/window.addEventListener
+    "resize"
+    (fn on-window-resize [e]
+      (reset! window-width js/window.innerWidth))))
 
 (defn dims [elem]
   (let [cs (js/getComputedStyle (.-parentNode elem))

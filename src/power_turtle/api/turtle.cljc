@@ -1,11 +1,9 @@
-(ns power-turtle.api
+(ns power-turtle.api.turtle
   (:refer-clojure :exclude [repeat])
   (:require
-    ;; TODO: make api namespaces
-    #?(:cljs [power-turtle.view.toolbar :as toolbar])
-    #?(:cljs [power-turtle.view.canvas.html-canvas :as html-canvas])
-    [power-turtle.view.canvas.raster-api :as raster-api]
-    [clojure-turtle.core :as turtle]))
+    [power-turtle.api.raster :as raster-api]
+    [clojure-turtle.core :as turtle]
+    #?(:cljs [power-turtle.view.toolbar :as toolbar])))
 
 (defn repeat
   "Repeatedly calls input function f n times and returns the last result"
@@ -76,27 +74,6 @@
     (turtle/color x))
   nil)
 
-(defn add-action [label f]
-  #?(:cljs (swap! toolbar/actions conj [label f])))
-
-#?(:cljs
-   (reset! toolbar/actions
-           [['<- (fn [] (left 45))]
-            ['-> (fn [] (right 45))]
-            ["^" (fn [] (forward 50))]
-            ['<-. forward-left]
-            ['.-> forward-right]
-            ['octagon octagon]
-            ['pattern pattern]
-            ['red red]
-            ['green green]
-            ['blue blue]
-            ['clear init]]))
-
-(defn html [x]
-  #?(:cljs (reset! html-canvas/component x))
-  nil)
-
 (defn penup []
   (turtle/penup)
   nil)
@@ -124,3 +101,17 @@
 
 (defn draw-turtle-commands [turtle]
   (turtle/draw-turtle-commands turtle))
+
+#?(:cljs
+   (reset! toolbar/actions
+           [['<- (fn [] (left 45))]
+            ['-> (fn [] (right 45))]
+            ["^" (fn [] (forward 50))]
+            ['<-. forward-left]
+            ['.-> forward-right]
+            ['octagon octagon]
+            ['pattern pattern]
+            ['red red]
+            ['green green]
+            ['blue blue]
+            ['clear init]]))

@@ -1,4 +1,4 @@
-(ns power-turtle.view.canvas.raster-api)
+(ns power-turtle.api.raster)
 
 (def ^:private ^:const width 40)
 (def ^:private ^:const height 40)
