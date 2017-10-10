@@ -517,9 +517,9 @@ class: middle, inverse, center
 
 * I have a bold claim.
 * I believe that Clojure is uniquely positioned to be the best first programming language
-for nearly everybody interested in programming.
+for nearly everybody.
   - I have some things to show you which I hope will convince too.
-  - I did not believe it last year
+  - I did not believe this last year
 
 ---
 
@@ -557,7 +557,8 @@ for nearly everybody interested in programming.
 
 ???
 
-And he said: What is all this? I want to learn Clojure, not this stuff.
+And he said:
+   - "What is all this? I want to learn Clojure, not this stuff."
 
 ---
 
@@ -565,11 +566,11 @@ And he said: What is all this? I want to learn Clojure, not this stuff.
 
 ???
 
-* Nathan is one of the best coders I know.
-* but there's a barrier here
-* we have all experienced this.
+* Nathan is one of the best coders I know,
+  - but there's a barrier here.
+  - we have all experienced this.
 * It's easy to forget or dismiss this barrier
-  - because these things seem mundane to us now...
+  - these things seem mundane to us now...
   - but only a small target audience has the background to pick up our tools quickly
 
 ---
@@ -580,9 +581,9 @@ And he said: What is all this? I want to learn Clojure, not this stuff.
 
 ???
 
-* The good news is that you can skip that setup now
+* The good news is that you can skip all that now
   - thanks to self hosted ClojureScript.
-* All you need to code Clojure is a URL.
+* All you need to code Clojure is a web browser.
 
 ---
 
@@ -603,7 +604,8 @@ And he said: What is all this? I want to learn Clojure, not this stuff.
 ???
 
 * I'd been talking with Elango about teaching Clojure through Logo 
-  - and we thought, what if we marry turtle with a self hosted ClojureScript REPL
+  - and we thought,
+  - what if we marry turtle with a self hosted ClojureScript REPL
 
 ---
 
@@ -767,7 +769,7 @@ And he said: What is all this? I want to learn Clojure, not this stuff.
         [power-turtle.view.canvas.raster-canvas/raster-canvas]]])
 
 * You can do all this without any setup
-  - nothing about the JVM, dependencies, or editors
+  - knowing nothing about the JVM, dependencies, or editors
     - or namespaces or referring symbols
   - I want programmers like Nathan to experience Clojure first
     - before they invest their time in the other stuff
@@ -875,7 +877,7 @@ http://timothypratley.github.io/power-turtle#lessons.red[//server.org/my-lesson.
   - maybe they only speak French and need a translation
   - so it is very important to us that you can create a lesson tailored to your situation
 * Your lesson can be loaded remotely by supplying a url suffix
-  - this link loads your lesson in power turtle
+  - this link loads your lesson in Power Turtle
   - we would love it if you would send us the markdown
     * we will include it in the lesson list
     * so that everyone can benefit
@@ -1078,10 +1080,10 @@ More effort, more control
 * Perhaps you are interested in building something like Power Turtle yourself
 * Here's how you can go about it:
   - If you want to embed a ClojureScript REPL on your blog or website,
-  - Klipse provides a really easy way to do this
+  - use Klipse
     * it's super easy!
     * just include a script in your page and any code blocks become editable
-    * users really appreciate it; I get double the traffic when I use it
+    * users really appreciate it; I get much more traffic when I use it
 
 * Replumb is what Power Turtle uses as a REPL
   - Takes more effort, provides more control
