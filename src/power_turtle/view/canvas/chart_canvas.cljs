@@ -10,8 +10,8 @@
   (let [chart-obj (atom nil)
         elem (atom nil)
         create #(reset! chart-obj (js/Chart. @elem (clj->js @chart-data-ref)))]
-    (add-watch chart-data-ref :watch-r
-               (fn watch-r [k r a b]
+    (add-watch chart-data-ref :watch-chart-data-ref
+               (fn watch-chart-data-ref [k r a b]
                  (when @chart-obj
                    (.destroy @chart-obj)
                    (create))))

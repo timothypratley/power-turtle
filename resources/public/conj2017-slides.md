@@ -516,8 +516,8 @@ class: middle, inverse, center
 * I have a bold claim.
 * I believe that Clojure is uniquely positioned to be the best first programming language
 for nearly everybody interested in programming.
-
-* I have some things to show you which I hope will convince you too.
+  - I have some things to show you which I hope will convince too.
+  - I did not believe it last year
 
 ---
 
@@ -525,9 +525,7 @@ for nearly everybody interested in programming.
 
 ???
 
-* But actually I had the opposite opinion as recently as last year
-
-* My friend Nathan
+* last year my friend Nathan
   - "I'm ready to give Clojure a try, I've even installed Emacs!"
 
 ---
@@ -557,7 +555,7 @@ for nearly everybody interested in programming.
 
 ???
 
-And he said: What is all this? I just want to write Clojure.
+And he said: What is all this? I want to learn Clojure, not this stuff.
 
 ---
 
@@ -566,11 +564,11 @@ And he said: What is all this? I just want to write Clojure.
 ???
 
 * Nathan is one of the best coders I know.
-* But there's a barrier here, and it's hard to overcome even for him.
+* but there's a barrier here
 * we have all experienced this.
 * It's easy to forget or dismiss this barrier
-  - because these things seem mundane to us now.
-  - but can you recommend Clojure to a school student?
+  - because these things seem mundane to us now...
+  - but only a small target audience has the background to pick up our tools quickly
 
 ---
 
@@ -580,9 +578,9 @@ And he said: What is all this? I just want to write Clojure.
 
 ???
 
-* The good news is that now you can skip that setup
+* The good news is that you can skip that setup now
   - thanks to self hosted ClojureScript.
-* All you need to get coding in Clojure is a URL.
+* All you need to code Clojure is a URL.
 
 ---
 
@@ -613,7 +611,7 @@ And he said: What is all this? I just want to write Clojure.
 
 ???
 
-* This is Power Turtle; a batteries included programming environment
+* This is our website: Power Turtle; a batteries included REPL
 * The first lesson
 * I'll quickly show you the capabilities of Power Turtle
 * Freestyle mode
@@ -866,17 +864,19 @@ http://timothypratley.github.io/power-turtle#lessons.red[//server.org/my-lesson.
 
 @ Timothy
 
-* Not all students fit one lesson plan
-  - beginners may be from other fields, university, high school or even primary school
-  - maybe they only speak French
-  - so we invite teachers to create their customized lessons as well.
 * Perhaps you have a lesson in mind that you want to teach?
   - Good news! Lessons are markdown text files
   - Markdown is easy to edit
-* The lesson can be loaded remotely by supplying a url suffix
+* We want our lessons to cater to most beginners,
+* But beginners come from different backgrounds
+  - school, university, other fields
+  - maybe they only speak French and need a translation
+  - so it is very important to us that you can create a lesson tailored to your situation
+* Your lesson can be loaded remotely by supplying a url suffix
   - this link loads your lesson in power turtle
-  - we would love it if you send us the markdown
-    * we will include it in the lesson list so that everyone can benefit
+  - we would love it if you would send us the markdown
+    * we will include it in the lesson list
+    * so that everyone can benefit
 
 ---
 class: middle
@@ -899,7 +899,7 @@ Here is some feedback I received about the existing lessons:
 * Lessons are guides, but you can really do whatever you want.
 * The emphasis is on self discovery.
 * Lessons are interesting when they challenge us; can you draw this shape?
-  - and provide just enough information to figure it out
+  - and provide a new concept to achieve it
 
 * Getting started in Power Turtle is easy
   - but there is an even bigger barrier to learning Clojure for the majority of people;
@@ -914,12 +914,13 @@ background-size: contain
 ???
 
 * I am learning Korean
-  - and wow, it's really tough to learn another human language.
-* I asked my friend Alex who is from Korea: "How did you learn programming?"
+  - and wow, learning a new language is really tough.
+* My friend Alex is from Korea.
+* I asked him: "How did you learn programming?"
   - he said: "First I learnt English. Then I went to an Australian University. Now I work at Microsoft."
 * He made it sound easy, but that is a decade of dedication right there.
 * Only 5% of the world speaks English as a first language.
-* 20% if you include non-native speakers.
+* 20% if you include bilingual speakers.
 * For most people who want to learn programming, their getting started experience is
   - "Awesome! Programming is really useful. Go learn English first."
 * I knew that Elango had translated Clojure to Thamil
@@ -1045,7 +1046,6 @@ Love Mum
 ???
 
 * Here is one part of Power Turtle that did not work out very well...
-  - Error handling
 
 Dear Tim
 
@@ -1054,8 +1054,8 @@ Dear Tim
 Not sure what I am doing, Love Mum
 
 * When you typo a function call, this is the message you get
+* There's still some friction here that we need to smooth out
 * I'd like to replace this with something more helpful in the future
-* There's still some friction areas that we need to smooth out
 
 ---
 
@@ -1089,14 +1089,12 @@ class: inverse
 
 # Learning Clojure through Logo
 
-
-
 ???
 
 Which brings us back to Learning Clojure through Logo...
 
-* The Clojure Logo connection is a steady progression from beginner to advanced
-* We used self hosted ClojureScript to make it easy to get started
+* The Logo - Clojure connection is a steady progression from beginner to advanced
+* Self hosted ClojureScript makes it easy to get started
 * Translations make it accessible to the wider world
 * It's fun and you're in control
 * That is why I believe Clojure is the best first language, for everyone.
