@@ -182,8 +182,6 @@ background-size: contain
 
 ???
 
-TODO: insert drawing an E, and other things
-
 * Logo - I loved learning it:
   - took a class in middle school, at age 11
 * reveal
@@ -197,32 +195,36 @@ TODO: insert drawing an E, and other things
 * reveal
   - renewed my interest in programming
 
---
+---
+
+# How is Logo interesting?
+
 * Easy
 
---
-background-image: url(../img/logo-drawing-big-e.png)
-background-position: center
-background-repeat: no-repeat
-background-size: contain
+---
 
+# How is Logo interesting?
+
+* Easy
 * Drew what I wanted
+<br/>
+<br/>
 
---
-background-image: url(../img/logo-koch-segment-1.png)
-background-position: center
-background-repeat: no-repeat
-background-size: contain
+<img src="../../../img/logo-drawing-big-e.png" width="300px">
+<img src="../../../img/logo-koch-segment-1.png" width="300px" style="float:right">
+<img src="../../../img/logo-koch-segment-2.png" width="300px" style="float:right">
+---
 
---
-background-image: url(../img/logo-koch-segment-2.png)
-background-position: center
-background-repeat: no-repeat
-background-size: contain
+# How is Logo interesting?
 
---
-
+* Easy
+* Drew what I wanted
 * Made programming fun
+
+<img src="../../../img/logo-drawing-big-e.png" width="300px">
+<img src="../../../img/logo-koch-segment-1.png" width="300px" style="float:right">
+<img src="../../../img/logo-koch-segment-2.png" width="300px" style="float:right">
+
 
 ---
 class: middle, inverse, center
