@@ -2,40 +2,35 @@
 
 Interactive turtle power in your browser.
 
-http://timothypratley.github.io/power-turtle
-
-http://timothypratley.blogspot.com
-
-## Overview
-
-Conveniences for using clojure-turtle in ClojureScript.
+Visit the site to try it out: http://timothypratley.github.io/power-turtle
 
 ## Todo
 
 * Allow preferred language in route
-* Toggle languages
+* Specify a canvas in freestyle route
+* Translate lessons to other languages
 
-## Setup
+## Developing
+
+Pull requests welcome :)
+
+To generate the translations run:
+
+    lein cban
 
 To get an interactive development environment run:
 
     lein dev
 
-and open your browser at [localhost:3449](http://localhost:3449/).
-This will auto compile and send all changes to the browser without the
-need to reload. After the compilation process is complete, you will
-get a Browser Connected REPL. An easy way to try it is:
+After the first compilation completes, open a new tab and run:
 
-    (js/alert "Am I connected?")
+    lein collect-caches
 
-and you should see an alert in the browser window.
+Now open your browser at [localhost:3449](http://localhost:3449/).
 
-To create a production build run:
+## Deploy
 
-    lein min
-
-And open your browser in `resources/public/index.html`. You will not
-get live reloading, nor a REPL. 
+    ./deploy.sh
 
 ## License
 

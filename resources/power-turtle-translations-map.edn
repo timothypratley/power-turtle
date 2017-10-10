@@ -1,19 +1,12 @@
 {"de"
  {"power-turtle.api.html"
   {"add-action"
-   {:arglists ([label f]),
-    :resolved true,
-    :existing "add-action",
+   {:existing "add-action",
     :alias "aktion-hinzufügen",
     :docstring "",
     :comment ""},
    "html"
-   {:arglists ([x]),
-    :resolved true,
-    :existing "html",
-    :alias "html",
-    :docstring "",
-    :comment ""}},
+   {:existing "html", :alias "html", :docstring "", :comment ""}},
   "power-turtle.api.raster"
   {"clear"
    {:arglists ([]), :resolved true, :existing "clear", :alias "klar"},
@@ -142,19 +135,12 @@
     :comment ""}},
   "power-turtle.api.html"
   {"add-action"
-   {:arglists ([label f]),
-    :resolved true,
-    :existing "add-action",
+   {:existing "add-action",
     :alias "add-action",
     :docstring "",
     :comment ""},
    "html"
-   {:arglists ([x]),
-    :resolved true,
-    :existing "html",
-    :alias "html",
-    :docstring "",
-    :comment ""}},
+   {:existing "html", :alias "html", :docstring "", :comment ""}},
   "power-turtle.api.raster"
   {"clear"
    {:arglists ([]), :resolved true, :existing "clear", :alias "clear"},
@@ -267,13 +253,8 @@
     :alias "wait"}}},
  "es"
  {"power-turtle.api.html"
-  {"add-action"
-   {:arglists ([label f]),
-    :resolved true,
-    :existing "add-action",
-    :alias "añadir-acción"},
-   "html"
-   {:arglists ([x]), :resolved true, :existing "html", :alias "html"}},
+  {"add-action" {:existing "add-action", :alias "añadir-acción"},
+   "html" {:existing "html", :alias "html"}},
   "power-turtle.api.raster"
   {"clear"
    {:arglists ([]),
@@ -386,13 +367,8 @@
     :alias "esperar"}}},
  "fr"
  {"power-turtle.api.html"
-  {"add-action"
-   {:arglists ([label f]),
-    :resolved true,
-    :existing "add-action",
-    :alias "ajouter-une-action"},
-   "html"
-   {:arglists ([x]), :resolved true, :existing "html", :alias "html"}},
+  {"add-action" {:existing "add-action", :alias "ajouter-une-action"},
+   "html" {:existing "html", :alias "html"}},
   "power-turtle.api.raster"
   {"clear"
    {:arglists ([]), :resolved true, :existing "clear", :alias "clair"},
@@ -510,15 +486,8 @@
  "id"
  {"power-turtle.api.html"
   {"add-action"
-   {:arglists ([label f]),
-    :resolved true,
-    :existing "add-action",
-    :alias "menambahkan-tindakan"},
-   "html"
-   {:arglists ([x]),
-    :resolved true,
-    :existing "html",
-    :alias "jaringan"}},
+   {:existing "add-action", :alias "menambahkan-tindakan"},
+   "html" {:existing "html", :alias "jaringan"}},
   "power-turtle.api.raster"
   {"clear"
    {:arglists ([]),
@@ -628,13 +597,8 @@
     :alias "tunggu"}}},
  "ko"
  {"power-turtle.api.html"
-  {"add-action"
-   {:arglists ([label f]),
-    :resolved true,
-    :existing "add-action",
-    :alias "작업을추가"},
-   "html"
-   {:arglists ([x]), :resolved true, :existing "html", :alias "웹페이지"}},
+  {"add-action" {:existing "add-action", :alias "작업을추가"},
+   "html" {:existing "html", :alias "웹페이지"}},
   "power-turtle.api.raster"
   {"clear"
    {:arglists ([]), :resolved true, :existing "clear", :alias "명확한"},
@@ -711,13 +675,8 @@
     :alias "기다림"}}},
  "ru"
  {"power-turtle.api.html"
-  {"add-action"
-   {:arglists ([label f]),
-    :resolved true,
-    :existing "add-action",
-    :alias "добавить-действие"},
-   "html"
-   {:arglists ([x]), :resolved true, :existing "html", :alias "html"}},
+  {"add-action" {:existing "add-action", :alias "добавить-действие"},
+   "html" {:existing "html", :alias "html"}},
   "power-turtle.api.raster"
   {"clear"
    {:arglists ([]), :resolved true, :existing "clear", :alias "Чисто"},
@@ -837,13 +796,8 @@
     :alias "Подождите"}}},
  "ta"
  {"power-turtle.api.html"
-  {"add-action"
-   {:arglists ([label f]),
-    :resolved true,
-    :existing "add-action",
-    :alias "சேர்க்க-நடவடிக்கை"},
-   "html"
-   {:arglists ([x]), :resolved true, :existing "html", :alias "html"}},
+  {"add-action" {:existing "add-action", :alias "சேர்க்க-நடவடிக்கை"},
+   "html" {:existing "html", :alias "html"}},
   "power-turtle.api.raster"
   {"clear"
    {:arglists ([]), :resolved true, :existing "clear", :alias "காலி"},
@@ -919,13 +873,8 @@
     :alias "திசைவை"}}},
  "zh_CN"
  {"power-turtle.api.html"
-  {"add-action"
-   {:arglists ([label f]),
-    :resolved true,
-    :existing "add-action",
-    :alias "添加动作"},
-   "html"
-   {:arglists ([x]), :resolved true, :existing "html", :alias "html"}},
+  {"add-action" {:existing "add-action", :alias "添加动作"},
+   "html" {:existing "html", :alias "html"}},
   "power-turtle.api.raster"
   {"clear"
    {:arglists ([]), :resolved true, :existing "clear", :alias "明确"},
@@ -1005,13 +954,8 @@
    {:arglists ([ms]), :resolved true, :existing "wait", :alias "等待"}}},
  "zh_TW"
  {"power-turtle.api.html"
-  {"add-action"
-   {:arglists ([label f]),
-    :resolved true,
-    :existing "add-action",
-    :alias "添加動作"},
-   "html"
-   {:arglists ([x]), :resolved true, :existing "html", :alias "html"}},
+  {"add-action" {:existing "add-action", :alias "添加動作"},
+   "html" {:existing "html", :alias "html"}},
   "power-turtle.api.raster"
   {"clear"
    {:arglists ([]), :resolved true, :existing "clear", :alias "明確"},

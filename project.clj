@@ -48,7 +48,7 @@
 
   :source-paths ["src"]
 
-  :cban {:output-dir "src"}
+  :cban {}
 
   :clean-targets ^{:protect false} ["resources/public/js/compiled" "target"]
 
