@@ -1,4 +1,4 @@
-(defproject power-turtle "0.1.0-SNAPSHOT"
+(defproject power-turtle "0.1.0"
   :description "Learn programming in your native language"
   :url "http://timothypratley.github.io/power-turtle"
   :license {:name "Eclipse Public License"
@@ -20,7 +20,7 @@
                  [adzerk/cljs-console "0.1.1"]
                  [binaryage/devtools "0.9.4"]
                  [bidi "2.1.2"]
-                 [cban "0.1.0-SNAPSHOT"]
+                 [cban "0.1.0"]
                  [com.cognitect/transit-clj "0.8.300"]
                  [com.cognitect/transit-cljs "0.8.239"]
                  [com.cemerick/piggieback "0.2.2"]
@@ -43,7 +43,7 @@
                  [timothypratley/reanimated "0.3.0"]]
 
   :plugins [[lein-figwheel "0.5.13"]
-            [lein-cban "0.1.0-SNAPSHOT"]
+            [lein-cban "0.1.0"]
             [lein-cljsbuild "1.1.7" :exclusions [[org.clojure/clojure]]]]
 
   :source-paths ["src"]
