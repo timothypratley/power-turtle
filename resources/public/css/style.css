@@ -86,7 +86,7 @@ h1 {
 .re-console-container {
     flex: 1;
     text-align: left;
-    background-color: #F0F0F0;
+    background-color: #F8F8F8;
     overflow-y: scroll;
     height: 400px;
     padding: 10px;

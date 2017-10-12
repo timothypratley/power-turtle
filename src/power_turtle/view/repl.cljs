@@ -11,6 +11,7 @@
     [replumb.repl :as replumb-repl]
     [re-console.core :as console]
     [re-console.io :as io]
+    [re-frame.core :as re-frame]
     [power-turtle.replumb-proxy :as replumb-proxy]))
 
 (defonce console-key :cljs-console)
@@ -37,3 +38,8 @@
     {:eval-opts (replumb-proxy/eval-opts replumb-opts)
      :mode-line? false}]
    [:div.re-console-mode-line " "]])
+
+;;(power-turtle.view.repl.exec "(forward 50)")
+;;slideshow.clone.window.frames["lang"].power_turtle.view.repl.exec("(forward 50)");
+(defn ^:export exec [s]
+  ((:evaluate (replumb-proxy/eval-opts replumb-opts)) #(re-frame/dispatch [:on-eval-complete console-key %]) s))

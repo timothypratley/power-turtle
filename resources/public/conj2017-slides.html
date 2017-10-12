@@ -134,7 +134,210 @@
          highlightLanguage: 'clojure',
          highlightStyle: 'github',
          highlightSpans: true,
-         slideNumberFormat: ''});
+         slideNumberFormat: '',
+         navigation: {
+           scroll: false,
+           touch: false,
+           click: false
+         }});
+
+var es = [
+`(forward 30)`,
+`(right 90)`,
+`(clean)`,
+`(repeat 4 #(do (forward 30) (right 90)))`,
+`(clean)`,
+`(repeat 8 #(do (forward 30) (right 45)))`,
+`(defn octagon [] (repeat 8 #(do (forward 30) (right 45))))`,
+`(clean)`,
+`(octagon)`,
+`(repeat 12 #(do (octagon) (right 30)))`,
+`(color [0 0 255])`,
+`(repeat 12 #(do (octagon) (right 30)))`,
+`(clean)`,
+`(color [0])`,
+`(octagon)`,
+`(def size (+ 30 (/ 60 (js/Math.sqrt 2))))`,
+`(penup)`,
+`(forward size)`,
+`(pendown)`,
+`(octagon)`,
+`(penup)`,
+`(forward size)`,
+`(pendown)`,
+`(octagon)`,
+`(defn octagon-at-height
+  [y]
+  (home)
+  (penup)
+  (forward y)
+  (pendown)
+  (octagon))`,
+`(do
+  (def offsets (range -2 3))
+  (def y-coords (map (fn [o] (* size o)) offsets)))`,
+`(map octagon-at-height y-coords)`,
+`(do
+  (def offsets-xy (for [x (range -3 3) y (range -3 4)] [x y]))
+  (defn offset-to-coord
+    [offxy]
+    [(* size (first offxy)) (* size (second offxy))])
+  (def coords (map offset-to-coord offsets-xy)))`,
+`(do
+  (defn octagon-here
+    [x y]
+    (setxy x y)
+    (color [0 (rand-int 255) (rand-int 255)])
+    (octagon))
+  (defn octagon-at-coord
+    [coord]
+    (octagon-here (first coord) (second coord))))`,
+`(map octagon-at-coord coords)`
+];
+
+function introc(x) { slideshow.clone.window.frames["elango"].power_turtle.view.repl.exec(es[x]); }
+
+
+function freestyle_a() { slideshow.clone.window.frames["freestyle"].power_turtle.view.repl.exec(
+`(do
+  (defn g [x]
+    (if (zero? x)
+      (forward 14)
+      (let [x (dec x)]
+        (g x)
+        (g x))))
+  (defn f [x]
+    (if (zero? x)
+      (forward 14)
+      (let [x (dec x)]
+       (f x) (left 120)
+        (g x) (right 120)
+        (f x) (right 120)
+        (g x) (left 120)
+        (f x))))
+  (f 4))`);}
+
+function freestyle_b() { slideshow.clone.window.frames["freestyle"].power_turtle.view.repl.exec(
+`(do
+  (plot 5 5)
+  (color :light-green)
+  (plot 10 5)
+  (hlin 5 10 10))`);}
+
+function freestyle_c() { slideshow.clone.window.frames["freestyle"].power_turtle.view.repl.exec(
+`(do
+  ;; Draw 13 stripes cycling over red/white
+  (doseq [[n c] (take 13 (map vector (range) (cycle [:red :white])))]
+    (color c)
+    (let [x1 10
+          x2 30
+          y (+ 10 n)]
+      (hlin x1 x2 y)))
+  ;; Fill in a dark blue field in the corner
+  (color :dark-blue)
+  (doseq [x (range 10 19)
+          y (range 10 17)]
+    (plot x y))
+  ;; Add some stars to the field by skipping by 2
+  (color :white)
+  (doseq [x (range 11 19 2)
+          y (range 11 17 2)]
+    (plot x y)))`);}
+
+function freestyle_d() { slideshow.clone.window.frames["freestyle"].power_turtle.view.repl.exec(
+`(do
+  (defonce t (atom nil))
+  (when t (js/clearTimeout @t)
+  (defn neighbours [[x y]]
+    (for [dx [-1 0 1]
+          dy (if (zero? dx)
+               [-1 1]
+               [-1 0 1])]
+      [(+ dx x) (+ dy y)]))
+  (defn step [cells]
+    (into {}
+      (for [[[x y :as loc] n] (frequencies (mapcat neighbours (keys cells)))
+            :when (or (= n 3) (and (= n 2) (cells loc)))
+            :when (and (< -1 x 30) (< -1 y 30))]
+        [loc (or
+               (cells loc)
+               (rand-nth [:dark-green :medium-green :light-green :light-blue :medium-blue :dark-blue]))])))
+  ((fn draw [board]
+     (clear)
+     (run! (fn [[[x y] c]] (color c) (plot x y)) board)
+     (reset! t (js/setTimeout #(draw (step board)) 50)))
+   (zipmap
+     [[0 2] [1 0] [1 2] [2 1] [2 2]
+      [21 15] [22 15] [20 16] [21 16] [21 17]]
+     (cycle [:light-blue])))))`);}
+
+function freestyle_e() { slideshow.clone.window.frames["freestyle"].power_turtle.view.repl.exec(
+`(do (quil.core/ellipse 200 200 150 200)
+  (quil.core/arc 200 240 50 50 0 js/Math.PI)
+  (quil.core/triangle 170 175 173 170 176 175)
+  (quil.core/triangle 220 175 223 170 226 175))`);}
+
+function freestyle_f() { slideshow.clone.window.frames["freestyle"].power_turtle.view.repl.exec(
+`(chart (range 10))`);}
+
+function freestyle_g() { slideshow.clone.window.frames["freestyle"].power_turtle.view.repl.exec(
+`(chart (map #(* % %) (range 10)))`);}
+
+function freestyle_h() { slideshow.clone.window.frames["freestyle"].power_turtle.view.repl.exec(
+`(chart ["Mandarin" "Spanish" "English" "Hindi/Urdu"] [14 6 5 4])`);}
+
+function freestyle_i() { slideshow.clone.window.frames["freestyle"].power_turtle.view.repl.exec(
+`(html
+  [:div
+   [:h1 "Greetings traveller"]
+   "What's your name? " [:input]
+   [:h3 "Shopping list:"]
+   [:ol [:li "milk"] [:li "bacon"] [:li "cheese"]]])`);}
+
+function freestyle_j() { slideshow.clone.window.frames["freestyle"].power_turtle.view.repl.exec(
+`(let [flip (reagent.core/atom 90)
+      flip-spring (reanimated.core/spring flip)]
+  (html
+    [(fn []
+       [:div
+        [:button {:on-click (fn [e] (swap! flip -))}
+         [:img {:src "turtle.jpg"
+                :style {:transform (str "rotateY(" (+ 90 @flip-spring) "deg)")}}]
+         "Click me"]
+        [:br] [:br] [:br]
+        [:svg {:transform (str "rotate(" (+ 90 @flip-spring) ")")}
+         [:circle {:r 50, :cx 75, :cy 75, :fill "green"}]
+         [:circle {:r 25, :cx 75, :cy 75, :fill "blue"}]
+         [:path {:stroke-width 12 :stroke "white" :fill "none"
+                 :d "M 30,40 C 100,40 50,110 120,110"}]]])]))`);}
+
+function freestyle_k() { slideshow.clone.window.frames["freestyle"].power_turtle.view.repl.exec(
+`(html
+  [:div
+   [:div {:style {:width 150 :height 150 :display "inline-block"}}
+    [power-turtle.view.canvas.turtle-canvas/turtle-canvas]]
+   [:div {:style {:width 150 :height 150 :display "inline-block"}}
+    [power-turtle.view.canvas.chart-canvas/chart-canvas]]
+   [:div {:style {:width 300 :height 150 :display "inline-block"}}
+    [power-turtle.view.canvas.raster-canvas/raster-canvas]]])`);}
+
+
+
+function lang_a() { slideshow.clone.window.frames["lang"].power_turtle.view.repl.exec(
+`(do
+  (앞으로 50)
+  (rechts 90)
+  (முன்னால் 50)
+  (droite 90)
+  (前锋 50))`);}
+
+function lang_b() { slideshow.clone.window.frames["lang"].power_turtle.view.repl.exec(
+`(விவரி (fungsi step [x]
+        (вперед x)
+        (对 95))
+      (gama 10 400 5))`);}
+
+
 </script>
 
 </body>

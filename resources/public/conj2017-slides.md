@@ -272,14 +272,16 @@ class: middle, inverse, center
 ---
 class: middle
 
-<iframe src="index.html#logo" style="width:100%; height: 71%; border: none">
+<iframe name="elango" src="index.html#logo" style="width:100%; height: 71%; border: none">
 <div id="app"></div>
 </iframe>
 
 ???
 
 
-    ;; Let's start off with a really simple shape: a square
+Let's start off with a really simple shape: a square
+<button onclick='introc(0);'>forward</button>
+<button onclick='introc(1);'>right</button>
     
     (forward 30)
     (right 90)
@@ -289,48 +291,65 @@ class: middle
     (right 90)
     (forward 30)
     (right 90)
-    
-    ;; Okay, that's repetitive, so let's simplify that
-    
-    (clean)
-    (repeat 4 #(do (forward 30) (right 90)))
-    
-    ;; Let's create an octagon (a stop-sign shape).
-    ;; It takes 2 turns to make a full 90 degrees, so
-    ;; each turn will be 45 degrees
+Okay, that's repetitive, so let's simplify that
+<button onclick='introc(2);'>clean</button>
 
     (clean)
+<button onclick='introc(3);'>square</button>
+
+    (repeat 4 #(do (forward 30) (right 90)))
+Let's create an octagon (a stop-sign shape).
+It takes 2 turns to make a full 90 degrees, so
+each turn will be 45 degrees
+<button onclick='introc(4);'>clean</button>
+
+    (clean)
+<button onclick='introc(5);'>octagon</button>
+
     (repeat 8 #(do (forward 30) (right 45)))
-    
-    ;; Let's give a name to the code that draws an octagon
+Let's give a name to the code that draws an octagon
+<button onclick='introc(6);'>defn octagon</button>
 
     (defn octagon [] (repeat 8 #(do (forward 30) (right 45))))
-    
-    ;; So we can just say `octagon` now
-    
+So we can just say `octagon` now
+<button onclick='introc(7);'>clean</button>
+   
     (clean)
-    (octagon)
-    
-    ;; Using `repeat` and doing some turning, we can rotate our octagon around
+<button onclick='introc(8);'>call octagon</button>
+
+    (octagon)    
+Using `repeat` and doing some turning, we can rotate our octagon around
+<button onclick='introc(9);'>spiragraph</button>
     
     (repeat 12 #(do (octagon) (right 30)))
-    
-    ;; Let's change the color and do that again
+Let's change the color and do that again
+<button onclick='introc(10);'>blue</button>
     
     (color [0 0 255])
+<button onclick='introc(11);'>spiragraph</button>
+
     (repeat 12 #(do (octagon) (right 30)))
-
-    ;; Okay, let's see what we can do when we introduce
-    ;; a little bit more Clojure gradually
-
-    ;; Let's go back to a simple octagon
+Okay, let's see what we can do when we introduce
+a little bit more Clojure gradually.
+Let's go back to a simple octagon
+<button onclick='introc(12);'>clean</button>
+<button onclick='introc(13);'>black</button>
+<button onclick='introc(14);'>octagon</button>
     
     (clean)
     (color [0])
     (octagon)
-    
-    ;; If we know the length of an octagon, we can start drawing
-    ;; things around the octagon
+If we know the length of an octagon, we can start drawing
+things around the octagon
+<button onclick='introc(15);'>def size</button>
+<button onclick='introc(16);'>penup</button>
+<button onclick='introc(17);'>forward size</button>
+<button onclick='introc(18);'>pendown</button>
+<button onclick='introc(19);'>octagon</button>
+<button onclick='introc(20);'>penup</button>
+<button onclick='introc(21);'>forward size</button>
+<button onclick='introc(22);'>pendown</button>
+<button onclick='introc(23);'>octagon</button>
     
     (def size (+ 30 (/ 60 (js/Math.sqrt 2))))
     
@@ -342,8 +361,8 @@ class: middle
     (forward size)
     (pendown)
     (octagon)
-    
-    ;; Let's use `range` and `map` to create a column of octagons
+Let's use `range` and `map` to create a column of octagons
+<button onclick='introc(24);'>def octagon-at-height</button>
     
     (defn octagon-at-height
       [y]
@@ -352,21 +371,23 @@ class: middle
       (forward y)
       (pendown)
       (octagon))
+  - <button onclick='introc(25);'>def offsets</button>
+
 
     (do
       (def offsets (range -2 3))
       (def y-coords (map (fn [o] (* size o)) offsets)))
-        
+  - <button onclick='introc(26);'>map octagon-at-height</button>
+       
+       
     (map octagon-at-height y-coords)
-    
-    ;; Let's cover the whole canvas.
-    ;; Instead of worrying about
-    ;; `penup` and `pendown`, let's use
-    ;; `setxy` to
-    ;; teleport the turtle.
-
-    ;; First, let's use `for` to create the
-    ;; xy-coordinates for all of the octagons 
+Let's cover the whole canvas.
+Instead of worrying about `penup` and `pendown`,
+let's use `setxy` to teleport the turtle.
+First, let's use `for` to create the
+xy-coordinates for all of the octagons 
+<button onclick='introc(27);'>def coords</button>
+ 
  
     (do
       
@@ -377,14 +398,10 @@ class: middle
         [(* size (first offxy)) (* size (second offxy))])
     
       (def coords (map offset-to-coord offsets-xy)))
-    
+Next, we'll generalize our octagon fn to accept xy-coordinates.
+And we'll throw in some randomness to make the color interesting.
+<button onclick='introc(28);'>with-coords</button>
 
-    ;; Next, we'll generalize our
-    ;; octagon fn to accept
-    ;; xy-coordinates. And we'll throw
-    ;; in some randomness to make the
-    ;; color interesting.
-    
     
     (do
     
@@ -396,10 +413,10 @@ class: middle
     
       (defn octagon-at-coord
         [coord]
-        (octagon-here (first coord) (second coord))))
-    
-    
-    
+        (octagon-here (first coord) (second coord))))    
+  - <button onclick='introc(29);'>cover plane</button>
+
+
     (map octagon-at-coord coords)
 
 ---
@@ -567,11 +584,11 @@ And he said:
 ???
 
 * Nathan is one of the best coders I know,
-  - but there's a barrier here.
+  - but there's still a barrier here.
   - we have all experienced this.
 * It's easy to forget or dismiss this barrier
   - these things seem mundane to us now...
-  - but only a small target audience has the background to pick up our tools quickly
+  - but learning new tools is often frustrating
 
 ---
 
@@ -605,11 +622,11 @@ And he said:
 
 * I'd been talking with Elango about teaching Clojure through Logo 
   - and we thought,
-  - what if we marry turtle with a self hosted ClojureScript REPL
+  - what if we marry Logo with a self hosted ClojureScript REPL
 
 ---
 
-<iframe src="index.html" style="width:100%; height:100%; border: none">
+<iframe name="freestyle" src="index.html" style="width:100%; height:100%; border: none">
 <div id="app"></div>
 </iframe>
 
@@ -618,156 +635,19 @@ And he said:
 * This is our website: Power Turtle; a batteries included REPL
 * The first lesson
 * I'll quickly show you the capabilities of Power Turtle
+* small snippets that anyone can write, with some help from a lesson
 * Freestyle mode
-
-  - Turtle
-  
-  
-    (do
-        (defn g [x]
-          (if (zero? x)
-            (forward 14)
-            (let [x (dec x)]
-              (g x)
-              (g x))))
-        (defn f [x]
-          (if (zero? x)
-            (forward 14)
-            (let [x (dec x)]
-              (f x) (left 120)
-              (g x) (right 120)
-              (f x) (right 120)
-              (g x) (left 120)
-              (f x))))
-        (f 4))
-  
-  - Raster
-  
-  
-    (do
-      (plot 5 5)
-      (color :light-green)
-      (plot 10 5)
-      (hlin 5 10 10))
-     
-  - American flag
-
-
-    (do    
-      ;; Draw 13 stripes cycling over red/white
-      (doseq [[n c] (take 13 (map vector (range) (cycle [:red :white])))]
-        (color c)
-        (let [x1 10 
-              x2 30 
-              y (+ 10 n)]
-          (hlin x1 x2 y)))
-      ;; Fill in a dark blue field in the corner
-      (color :dark-blue)
-      (doseq [x (range 10 19)
-              y (range 10 17)]
-        (plot x y))
-      ;; Add some stars to the field by skipping by 2
-      (color :white)
-      (doseq [x (range 11 19 2)
-              y (range 11 17 2)]
-        (plot x y)))
-        
-    
-  - Conway's game of life
-
-   
-    (do
-      (defonce t (atom nil))
-      (when t (js/clearTimeout @t)
-      (defn neighbours [[x y]]
-        (for [dx [-1 0 1]
-              dy (if (zero? dx)
-                   [-1 1]
-                   [-1 0 1])]
-          [(+ dx x) (+ dy y)]))
-      (defn step [cells]
-        (into {}
-          (for [[[x y :as loc] n] (frequencies (mapcat neighbours (keys cells)))
-                :when (or (= n 3) (and (= n 2) (cells loc)))
-                :when (and (< -1 x 30) (< -1 y 30))]
-            [loc (or
-                   (cells loc)
-                   (rand-nth [:dark-green :medium-green :light-green :light-blue :medium-blue :dark-blue]))])))
-      ((fn draw [board]
-         (clear)
-         (run! (fn [[[x y] c]] (color c) (plot x y)) board)
-         (reset! t (js/setTimeout #(draw (step board)) 50)))
-       (zipmap
-         [[0 2] [1 0] [1 2] [2 1] [2 2]
-          [21 15] [22 15] [20 16] [21 16] [21 17]]
-         (cycle [:light-blue])))))
-
-      
-  - Quil
-  
-  
-    (do (quil.core/ellipse 200 200 150 200)
-      (quil.core/arc 200 240 50 50 0 js/Math.PI)
-      (quil.core/triangle 170 175 173 170 176 175)
-      (quil.core/triangle 220 175 223 170 226 175))
-
-  - Charting
-
-
-    (chart (range 10))
-
-  -
-
-
-    (chart (map #(* % %) (range 10)))
-
-  -
-
-
-    (chart ["Mandarin" "Spanish" "English" "Hindi/Urdu"] [14 6 5 4])
-
-
-  - HTML
-  
-  
-    (html
-      [:div
-       [:h1 "Greetings traveller"]
-       "What's your name? " [:input]
-       [:h3 "Shopping list:"]
-       [:ol [:li "milk"] [:li "bacon"] [:li "cheese"]]])
-
-  * you can make little games
-
-  
-    (let [flip (reagent.core/atom 90)
-          flip-spring (reanimated.core/spring flip)]
-      (html
-        [(fn []
-           [:div
-            [:button {:on-click (fn [e] (swap! flip -))}
-             [:img {:src "turtle.jpg"
-                    :style {:transform (str "rotateY(" (+ 90 @flip-spring) "deg)")}}]
-             "Click me"]
-            [:br] [:br] [:br]
-            [:svg {:transform (str "rotate(" (+ 90 @flip-spring) ")")}
-             [:circle {:r 50, :cx 75, :cy 75, :fill "green"}]
-             [:circle {:r 25, :cx 75, :cy 75, :fill "blue"}]
-             [:path {:stroke-width 12 :stroke "white" :fill "none"
-                     :d "M 30,40 C 100,40 50,110 120,110"}]]])]))
-
-  * you can embed the other canvases
-
-
-    (html
-      [:div
-       [:div {:style {:width 150 :height 150 :display "inline-block"}}
-        [power-turtle.view.canvas.turtle-canvas/turtle-canvas]]
-       [:div {:style {:width 150 :height 150 :display "inline-block"}}
-        [power-turtle.view.canvas.chart-canvas/chart-canvas]]
-       [:div {:style {:width 300 :height 150 :display "inline-block"}}
-        [power-turtle.view.canvas.raster-canvas/raster-canvas]]])
-
+  - Turtle: <button onclick='freestyle_a()'>Turtle</button>
+  - Raster: <button onclick='freestyle_b()'>Raster</button>
+    - <button onclick='freestyle_c()'>American flag</button>
+    - <button onclick='freestyle_d()'>Conway's game of life</button>
+  - Quil: <button onclick='freestyle_e()'>Elipses and animations</button>
+  - Chart: <button onclick='freestyle_f()'>range</button>
+  - <button onclick='freestyle_g()'>function</button>
+  - <button onclick='freestyle_h()'>bar chart</button>
+  - HTML: <button onclick='freestyle_i()'>headings,forms,lists</button>
+  - <button onclick='freestyle_j()'>buttons, svg, games</button>
+  - <button onclick='freestyle_k()'>embed other canvases</button>
 * You can do all this without any setup
   - knowing nothing about the JVM, dependencies, or editors
     - or namespaces or referring symbols
@@ -782,6 +662,7 @@ And he said:
   - use sequences
   - modify sequences
   - always building cool stuff in the canvases
+  - and on to more advanced topics
 * There is a path for learners to start with Logo and transcend
   - into other interesting things
   - in Clojure
@@ -932,7 +813,7 @@ background-size: contain
 
 ---
 
-<iframe src="index.html#freestyle" style="width:100%; height:100%; border: none">
+<iframe name="lang" src="index.html#freestyle" style="width:100%; height:100%; border: none">
 <div id="app"></div>
 </iframe>
 
@@ -940,6 +821,7 @@ background-size: contain
 
 * And of course we can!
 
+<button onclick='lang_a()'>example a</button>
 
     (do
       (앞으로 50)
@@ -950,6 +832,7 @@ background-size: contain
 
 * Let's use some Clojure functions like `map` and `range`
 
+<button onclick='lang_b()'>example b</button>
 
     (விவரி (fungsi step [x]
             (вперед x)
@@ -971,7 +854,7 @@ background-size: contain
 # Parlez vous Clojure?
 
 * I'm pretty sure Clojure is a French word right?
-* I think it is strange but Elango and I hear a common response to programming in another language;
+* I think it strange but Elango and I hear a common response to programming in another language;
   "They're going to have to learn English anyway."
 * That’s missing the point: Translations are great!
   - I'm sure you know geometry... it’s Greek! Someone translated it.
