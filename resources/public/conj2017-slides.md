@@ -1018,6 +1018,7 @@ Which brings us back to Learning Clojure through Logo...
  
 - Elango Cheran: elango.cheran@gmail.com
 - Timothy Pratley: timothypratley@gmail.com
+- Feedback?: clojure-2017@nestlabs.com
 
 ### Comments / suggestions / contributions welcome
 
