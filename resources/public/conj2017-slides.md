@@ -638,6 +638,7 @@ And he said:
 * small snippets that anyone can write, with some help from a lesson
 * Freestyle mode
   - Turtle: <button onclick='freestyle_a()'>Turtle</button>
+    - <button onclick='freestyle_aa()'>Add action</button>
   - Raster: <button onclick='freestyle_b()'>Raster</button>
     - <button onclick='freestyle_c()'>American flag</button>
     - <button onclick='freestyle_d()'>Conway's game of life</button>
@@ -989,6 +990,17 @@ Which brings us back to Learning Clojure through Logo...
 ---
 
 # Acknowledgements
+
+<img src="../../../img/conj/maria.jpeg" width="130px">
+<img src="../../../img/conj/ar.png" width="130px">
+<img src="../../../img/conj/mfikes.jpeg" width="130px">
+<img src="../../../img/conj/th.jpeg" width="130px">
+<img src="../../../img/conj/am.png" width="130px">
+<img src="../../../img/conj/viebel.jpeg" width="130px">
+<img src="../../../img/conj/nikita.jpeg" width="130px">
+<img src="../../../img/conj/neilfraser.jpeg" width="130px">
+<img src="../../../img/conj/dnolen.jpg" width="130px">
+<img src="../../../img/conj/rich.png" width="130px">
 
 * Maria Geller - Bootstrap ClojureScript contributions and advocacy
 * Andrea Richiardi - Replumb

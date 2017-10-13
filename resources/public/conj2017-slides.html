@@ -217,6 +217,9 @@ function freestyle_a() { slideshow.clone.window.frames["freestyle"].power_turtle
         (f x))))
   (f 4))`);}
 
+function freestyle_aa() { slideshow.clone.window.frames["freestyle"].power_turtle.view.repl.exec(
+`(add-action "my-step" (fn [] (forward 10) (right 10)))`);}
+
 function freestyle_b() { slideshow.clone.window.frames["freestyle"].power_turtle.view.repl.exec(
 `(do
   (plot 5 5)
