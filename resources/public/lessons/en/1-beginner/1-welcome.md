@@ -55,7 +55,7 @@ You can create a combination of commands using `defn`:
     (defn zig []
       (forward 50)
       (right 120)
-      (forward 50)))
+      (forward 50))
 
 And then you can call your new command by name just like any other command:
 
