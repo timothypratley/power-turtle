@@ -679,7 +679,10 @@
    "html" {:existing "html", :alias "html"}},
   "power-turtle.api.raster"
   {"clear"
-   {:arglists ([]), :resolved true, :existing "clear", :alias "Чисто"},
+   {:arglists ([]),
+    :resolved true,
+    :existing "clear",
+    :alias "очистить"},
    "hlin"
    {:arglists ([x1 x2 y]),
     :resolved true,
@@ -689,7 +692,7 @@
    {:arglists ([x y]),
     :resolved true,
     :existing "plot",
-    :alias "сюжет"},
+    :alias "рисунок"},
    "scrn"
    {:arglists ([x y]),
     :resolved true,
@@ -709,19 +712,19 @@
    {:arglists ([]),
     :resolved true,
     :existing "clean",
-    :alias "чистый"},
+    :alias "очистить"},
    "color"
    {:arglists ([x]), :resolved true, :existing "color", :alias "цвет"},
    "draw-turtle-commands"
    {:arglists ([turtle]),
     :resolved true,
     :existing "draw-turtle-commands",
-    :alias "рисовать-черепахи"},
+    :alias "команды-черепахи"},
    "end-fill"
    {:arglists ([]),
     :resolved true,
     :existing "end-fill",
-    :alias "конец-заполнения"},
+    :alias "закончить-заполнения"},
    "forward"
    {:arglists ([x]),
     :resolved true,
@@ -736,12 +739,12 @@
    {:arglists ([]),
     :resolved true,
     :existing "home",
-    :alias "Главная"},
+    :alias "главная"},
    "left"
    {:arglists ([x]),
     :resolved true,
     :existing "left",
-    :alias "оставил"},
+    :alias "налево"},
    "octagon"
    {:arglists ([]),
     :resolved true,
@@ -756,24 +759,24 @@
    {:arglists ([]),
     :resolved true,
     :existing "pendown",
-    :alias "ручка-вниз"},
+    :alias "опустить-перо"},
    "penup"
    {:arglists ([]),
     :resolved true,
     :existing "penup",
-    :alias "поднимать-вверх"},
+    :alias "поднятъ-перо"},
    "red"
    {:arglists ([]), :resolved true, :existing "red", :alias "красный"},
    "repeat"
    {:arglists ([n f]),
     :resolved true,
     :existing "repeat",
-    :alias "повторение"},
+    :alias "повторить"},
    "right"
    {:arglists ([x]),
     :resolved true,
     :existing "right",
-    :alias "правильно"},
+    :alias "направо "},
    "setheading"
    {:arglists ([angle]),
     :resolved true,
@@ -783,17 +786,17 @@
    {:arglists ([x y]),
     :resolved true,
     :existing "setxy",
-    :alias "заданное-положение"},
+    :alias "задать-положение"},
    "start-fill"
    {:arglists ([]),
     :resolved true,
     :existing "start-fill",
-    :alias "начать-заполнять"},
+    :alias "начать-заполнение"},
    "wait"
    {:arglists ([ms]),
     :resolved true,
     :existing "wait",
-    :alias "Подождите"}}},
+    :alias "ждать"}}},
  "ta"
  {"power-turtle.api.html"
   {"add-action" {:existing "add-action", :alias "சேர்க்க-நடவடிக்கை"},

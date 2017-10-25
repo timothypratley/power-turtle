@@ -94,7 +94,7 @@ You can issue commands like
 ---
 
 # Lisp
-    
+
     (TO STOPSIGN
       (FORWARD 200)
       (LEFT 90)
@@ -102,7 +102,7 @@ You can issue commands like
       (REPEAT 8 [ (RIGHT 45) (FORWARD 50) ])
       (HOME)
      END)
- 
+
 ---
 background-image: url(../../../img/scratch.png)
 background-position: center
@@ -167,7 +167,7 @@ background-size: contain
 * BASIC - for "beginners"
 * playing -> programming
 * gave up on programming
- 
+
 ]
 
 ???
@@ -282,7 +282,7 @@ class: middle
 Let's start off with a really simple shape: a square
 <button onclick='introc(0);'>forward</button>
 <button onclick='introc(1);'>right</button>
-    
+
     (forward 30)
     (right 90)
     (forward 30)
@@ -313,18 +313,18 @@ Let's give a name to the code that draws an octagon
     (defn octagon [] (repeat 8 #(do (forward 30) (right 45))))
 So we can just say `octagon` now
 <button onclick='introc(7);'>clean</button>
-   
+
     (clean)
 <button onclick='introc(8);'>call octagon</button>
 
-    (octagon)    
+    (octagon)
 Using `repeat` and doing some turning, we can rotate our octagon around
 <button onclick='introc(9);'>spiragraph</button>
-    
+
     (repeat 12 #(do (octagon) (right 30)))
 Let's change the color and do that again
 <button onclick='introc(10);'>blue</button>
-    
+
     (color [0 0 255])
 <button onclick='introc(11);'>spiragraph</button>
 
@@ -335,7 +335,7 @@ Let's go back to a simple octagon
 <button onclick='introc(12);'>clean</button>
 <button onclick='introc(13);'>black</button>
 <button onclick='introc(14);'>octagon</button>
-    
+
     (clean)
     (color [0])
     (octagon)
@@ -350,9 +350,8 @@ things around the octagon
 <button onclick='introc(21);'>forward size</button>
 <button onclick='introc(22);'>pendown</button>
 <button onclick='introc(23);'>octagon</button>
-    
+
     (def size (+ 30 (/ 60 (js/Math.sqrt 2))))
-    
     (penup)
     (forward size)
     (pendown)
@@ -363,7 +362,7 @@ things around the octagon
     (octagon)
 Let's use `range` and `map` to create a column of octagons
 <button onclick='introc(24);'>def octagon-at-height</button>
-    
+
     (defn octagon-at-height
       [y]
       (home)
@@ -378,42 +377,42 @@ Let's use `range` and `map` to create a column of octagons
       (def offsets (range -2 3))
       (def y-coords (map (fn [o] (* size o)) offsets)))
   - <button onclick='introc(26);'>map octagon-at-height</button>
-       
-       
+
+
     (map octagon-at-height y-coords)
 Let's cover the whole canvas.
 Instead of worrying about `penup` and `pendown`,
 let's use `setxy` to teleport the turtle.
 First, let's use `for` to create the
-xy-coordinates for all of the octagons 
+xy-coordinates for all of the octagons
 <button onclick='introc(27);'>def coords</button>
- 
- 
+
+
     (do
-      
+
       (def offsets-xy (for [x (range -3 3) y (range -3 4)] [x y]))
-    
+
       (defn offset-to-coord
         [offxy]
         [(* size (first offxy)) (* size (second offxy))])
-    
+
       (def coords (map offset-to-coord offsets-xy)))
 Next, we'll generalize our octagon fn to accept xy-coordinates.
 And we'll throw in some randomness to make the color interesting.
 <button onclick='introc(28);'>with-coords</button>
 
-    
+
     (do
-    
+
       (defn octagon-here
         [x y]
         (setxy x y)
         (color [0 (rand-int 255) (rand-int 255)])
         (octagon))
-    
+
       (defn octagon-at-coord
         [coord]
-        (octagon-here (first coord) (second coord))))    
+        (octagon-here (first coord) (second coord))))
   - <button onclick='introc(29);'>cover plane</button>
 
 
@@ -465,7 +464,7 @@ background-size: contain
 
 ???
 
-* Toys following in those footsteps 
+* Toys following in those footsteps
 
 ---
 background-image: url(../../../img/papert.gif)
@@ -507,7 +506,7 @@ background-size: contain
   * Nurullah Akkaya - https://nakkaya.com/2010/01/09/a-simple-turtle-graphics-implementation-in-clojure/
   * rm-hull/turtle
   * japonophile/clogo
-  
+
 - Logo in the browser
   * MIT App Inventor
   * Scratch / code.org / etc.
@@ -620,7 +619,7 @@ And he said:
 
 ???
 
-* I'd been talking with Elango about teaching Clojure through Logo 
+* I'd been talking with Elango about teaching Clojure through Logo
   - and we thought,
   - what if we marry Logo with a self hosted ClojureScript REPL
 
@@ -684,7 +683,7 @@ background-size: contain
 
 * Functions/HOF were the hard part for beginner students
   - Problems occur when explaining before internalization
-  
+
 * From our experience:
   - Show first, encourage practice, then explain
   - just show them fn & repeat
@@ -880,33 +879,33 @@ This is Elango's library for writing Clojure in other spoken languages
   * So we made something that works in both
 
 ---
-      
+
 # Clojure By Another Name
 
 > _What's in a name? that which we call a rose<br>
   By any other name would smell as sweet;<br><br>
   -- Romeo and Juliet (William Shakespeare)_
-  
+
       [lein-cban "0.1.0"]
       [cban "0.1.0"]
-  
+
 ???
 
 Clojure By Another Name,
 * cban for short.
 * plugin creates translation wrappers
 * cban currently has several translations of clojure.core
-  
+
 ---
-  
+
 # Translations are text files
-  
+
     existing,alias,docstring,comment
     forward,앞으로
     back,뒤로
     right,권리
     left,왼쪽
-  
+
 ???
 
 * Translations are comma separated text files
@@ -1008,7 +1007,7 @@ Which brings us back to Learning Clojure through Logo...
 * Thomas Heller - Macro renaming
 * António Monteiro - Bootstrap ClojureScript contributions
 * Yehonathan Sharvit - KLIPSE
-* Nikita Beloglazov - Quil 
+* Nikita Beloglazov - Quil
 * Neil Fraser - Blockly
 * David Nolen - ClojureScript lead
 * Rich Hickey - Creator of Clojure
@@ -1027,7 +1026,7 @@ Which brings us back to Learning Clojure through Logo...
 * Blockly - https://developers.google.com/blockly
 
 # Contact
- 
+
 - Elango Cheran: elango.cheran@gmail.com
 - Timothy Pratley: timothypratley@gmail.com
 - Feedback?: clojure-2017@nestlabs.com
