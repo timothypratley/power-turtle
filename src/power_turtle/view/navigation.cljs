@@ -47,6 +47,7 @@
    "fr" "Français"
    "id" "Bahasa Indonesia"
    "ko" "한국어"
+   "pt_PT" "Português"
    "ru" "Русский"
    "ta" "தமிழ்"
    "zh_TW" "中國傳統的"
