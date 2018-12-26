@@ -38,7 +38,7 @@
   (mapv parse-slide (string/split markdown slide-separator)))
 
 (defn parse-lessons [tree]
-  (into {}
+  (into (sorted-map)
         (for [[k v] tree]
           [k
            (if (map? v)

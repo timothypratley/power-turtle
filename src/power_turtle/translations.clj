@@ -16,7 +16,7 @@
 (defn load-lessons [^File dir]
   (try
     (into
-      (sorted-map)
+      {}
       (for [^File f (.listFiles dir)]
         [(.getName f)
          (cond
