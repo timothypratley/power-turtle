@@ -50,6 +50,7 @@
    "pt_PT" "Português"
    "ru" "Русский"
    "ta" "தமிழ்"
+   "tl" "Tagalog"
    "zh_TW" "中國傳統的"
    "zh_CN" "簡體中文"})
 
