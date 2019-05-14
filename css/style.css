@@ -1,0 +1,162 @@
+/* workaround for refresh issues in webkit-based browsers */
+@-webkit-keyframes androidBugfix {from { padding: 0; } to { padding: 0; }}
+body { -webkit-animation: androidBugfix infinite 1s; }
+/* end workaround */
+
+body {
+  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+  text-align: center;
+}
+
+a {
+    color: #0095dd;
+    text-decoration: none;
+}
+
+
+button {
+  display: inline-block;
+  margin: 0 10px 0 0;
+  line-height: 1.8;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 5px;
+}
+
+button:focus {
+  outline: none;
+}
+
+button {
+  color: #6496c8;
+  background: rgba(0,0,0,0);
+  border: solid 1px #6496c8;
+}
+button:hover {
+  border-color: #346392;
+  color: #346392;
+}
+button:active {
+  border-color: #27496d;
+  color: #27496d;
+}
+
+h1 {
+    font-size: 16pt;
+}
+
+.buttons-container {
+    padding: 10px;
+}
+
+.button-element {
+    margin-right: 5px;
+    color: #fff !important;
+    word-spacing: 0.25em;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    border: none;
+    line-height: 22px;
+    padding: 12px 13px 11px;
+    text-align: center;
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 18px;
+    text-decoration: none;
+}
+
+.space {
+    flex: 0 0 50%;
+}
+
+.space > canvas,
+.space > div
+ {
+    width: 100%;
+    height: 440px;
+    border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid lightgrey;
+}
+
+.repl {
+    flex: 1;
+}
+
+.re-console-container {
+    flex: 1;
+    text-align: left;
+    background-color: #FAFAFA;
+    overflow-y: scroll;
+    height: 400px;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    -webkit-transform: translateZ(0);
+    -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+}
+
+.re-console {
+    .CodeMirror {
+        height: auto;
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+
+    .CodeMirror-code {
+        background-color: #FFF;
+    }
+}
+
+.re-console .CodeMirror-lines, .re-console .CodeMirror pre {
+    padding: 0;
+}
+
+.re-console-item, .re-console-item pre, .re-console-item-error pre {
+    font-size: 15px;
+    opacity: 0.7;
+    background: transparent;
+    border: none;
+    margin: 0;
+    padding: 0px;
+    white-space: pre-wrap;       /* CSS 3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;
+}
+
+.re-console-item-error {
+    color: #e60000;
+}
+
+.re-console-mode-line {
+    font-size: 10px;
+    text-align: center;
+    background-color: #414141;
+    color: white;
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    -webkit-transform: translateZ(0);
+    -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+    white-space: pre-wrap;       /* CSS 3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;
+}
+
+.main {
+    display: flex;
+    width: 100%;
+}
+
+@media all and (max-width: 600px) {
+    .main {
+        flex-direction: column;
+    }
+    .space {
+        order: 0;
+    }
+}

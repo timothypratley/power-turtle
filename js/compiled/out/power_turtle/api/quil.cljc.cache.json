@@ -1,0 +1,1 @@
+["^ ","~:rename-macros",["^ "],"~:renames",["^ "],"~:use-macros",["^ "],"~:excludes",["~#set",[]],"~:name","~$power-turtle.api.quil","~:imports",null,"~:requires",["^ ","~$quil","~$quil.core","^:","^:"],"~:cljs.spec/speced-vars",[],"~:uses",null,"~:defs",["^ "],"~:cljs.spec/registry-ref",[],"~:require-macros",null,"~:doc",null]
