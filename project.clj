@@ -13,7 +13,7 @@
             "min" ["do" ["clean"] #_["cban"] ["write-user-namespace"] ["cljsbuild" "once" "dev"] ["collect-caches"] ["cljsbuild" "once" "min"]]}
 
   :dependencies [[org.clojure/clojure "1.10.0"]
-                 [org.clojure/clojurescript "1.10.439"]
+                 [org.clojure/clojurescript "1.12.134"]
                  [org.clojure/core.async "0.4.490" :exclusions [org.clojure/tools.reader]]
                  [org.clojure/tools.reader "1.3.2"]
                  [org.clojars.stumitchell/clairvoyant "0.2.1"]
