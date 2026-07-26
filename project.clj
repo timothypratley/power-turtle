@@ -64,6 +64,7 @@
                            :asset-path "js/compiled/out"
                            :output-to "resources/public/js/compiled/power_turtle.js"
                            :output-dir "resources/public/js/compiled/out"
+                           :optimizations :none
                            :foreign-libs
                            [{:file "resources/public/js/clojure-parinfer.js"
                              :provides ["parinfer.codemirror.mode.clojure.clojure-parinfer"]}]
@@ -83,7 +84,7 @@
                                              "clairvoyant.core.devmode" false}
                            :elide-asserts true
                            :source-map-timestamp true
-                           :optimizations :simple
+                           :optimizations :none
                            :parallel-build true
                            :optimize-constants true
                            :static-fns true

@@ -17,3 +17,5 @@ pom.xml
 resources/public/.git
 resources/public/aot
 cban-out/
+/.clj-kondo/
+/.lsp/

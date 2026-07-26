@@ -13,3 +13,8 @@ left,இடது
 penup,எழுதுகோலெடு
 pendown,எழுதுகோல்வை
 setheading,திசைவை
+setxy,இடம்வை
+start-fill,நிரப்பு-தொடங்கு
+end-fill,நிரப்பு-முடி
+wait,காத்திரு
+draw-turtle-commands,ஆமை-கட்டளை-வரை
