@@ -7,13 +7,15 @@ What happens when you use different numbers for the angle to turn right?
 (home)
 (right 90)
 (forward 50)
+```
 
-(clean)
+```
 (home)
 (right 180)
 (forward 50)
+```
 
-(clean)
+```
 (home)
 (right 270)
 (forward 50)
@@ -99,12 +101,12 @@ We get half an octagon. If we do it again, we will finish the whole octagon.
 ---
 
 It is difficult to repeat the commands many times.
-We can repeat a set of commands N times by putting them inside `(repeat N #(do  ... ))`
+We can repeat a set of commands N times by putting them inside `(repeat N  ... )`
 
 ```
 (clean)
 (home)
-(repeat 8 #(do (forward 50) (right 45) ))
+(repeat 8 (forward 50) (right 45) ))
 ```
 
 ---
@@ -114,7 +116,6 @@ We don't have to write each command on a single line. We only need to ensure tha
 ```
 (clean)
 (home)
-(repeat 8 #(do
-            (forward 50)
-            (right 45)))
+(repeat 8 (forward 50)
+          (right 45))
 ```

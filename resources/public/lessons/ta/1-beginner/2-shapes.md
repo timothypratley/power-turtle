@@ -19,10 +19,12 @@ Here is a square:
 
 ---
 
-Use these commands to draw more pictures:
+When you're done with one drawing, you can use these commands to start again and draw more pictures:
 
 * `(clean)` - clear the entire screen
 * `(home)` - move the turtle back to the center, pointing up
+
+---
 
 Can you draw a staircase?
 

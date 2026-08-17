@@ -13,9 +13,8 @@ Let's replace our `square` function so that it can take the number that we give 
 
 ```
 (defn square [length]
-  (repeat 4 #(do
-               (forward length)
-               (right 90))))
+  (repeat 4 (forward length)
+            (right 90)))
 ```
 
 We called the given number as `length` because it is the length of a side.
@@ -29,9 +28,8 @@ With the new `square` function, we must specify the length.
 (clean)
 (home)
 
-(repeat 8 #(do
-             (square 50)
-             (right 45)))
+(repeat 8 (square 50)
+          (right 45)))
 ```
 
 ---
@@ -56,9 +54,8 @@ Can you make a function that draws a shape by taking 2 numbers:
 
 ```
 (defn shape [length num-sides]
-  (repeat num-sides #(do
-                       (forward length)
-                       (right (/ 360 num-sides)))))
+  (repeat num-sides (forward length)
+                    (right (/ 360 num-sides)))))
 ```
 
 Try it!
