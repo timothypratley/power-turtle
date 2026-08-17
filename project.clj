@@ -13,7 +13,7 @@
             "min" ["do" ["clean"] #_["cban"] ["write-user-namespace"] ["cljsbuild" "once" "dev"] ["collect-caches"] ["cljsbuild" "once" "min"]]}
 
   :dependencies [[org.clojure/clojure "1.10.0"]
-                 [org.clojure/clojurescript "1.10.439"]
+                 [org.clojure/clojurescript "1.12.134"]
                  [org.clojure/core.async "0.4.490" :exclusions [org.clojure/tools.reader]]
                  [org.clojure/tools.reader "1.3.2"]
                  [org.clojars.stumitchell/clairvoyant "0.2.1"]
@@ -64,6 +64,7 @@
                            :asset-path "js/compiled/out"
                            :output-to "resources/public/js/compiled/power_turtle.js"
                            :output-dir "resources/public/js/compiled/out"
+                           :optimizations :none
                            :foreign-libs
                            [{:file "resources/public/js/clojure-parinfer.js"
                              :provides ["parinfer.codemirror.mode.clojure.clojure-parinfer"]}]
@@ -83,7 +84,7 @@
                                              "clairvoyant.core.devmode" false}
                            :elide-asserts true
                            :source-map-timestamp true
-                           :optimizations :simple
+                           :optimizations :none
                            :parallel-build true
                            :optimize-constants true
                            :static-fns true
